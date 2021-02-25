@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e86783aa7d754f2ba32ce6fbe4b53bbc" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Model.Clients" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Post_Type" Width="1.5" PointX="8" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Rooms" Width="1.5" PointX="3.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Tasks" Width="1.5" PointX="3.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Booked_Rooms" Width="1.5" PointX="5.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Task_Type" Width="1.5" PointX="5.5" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Booked_Ro__Clien__22FF2F51" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Task_Type__Post___0C1BC9F9" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Booked_Ro__Rooms__220B0B18" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Tasks__ID_ROOM__7DCDAAA2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Task_Type__Task___0B27A5C0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
