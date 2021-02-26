@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel-California.dbo.Booked_Rooms' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="Booked_Rooms">
+    <Key>
+      <PropertyRef Name="Begins" />
+      <PropertyRef Name="Ends" />
+    </Key>
+    <Property Name="Rooms_ID" Type="int" />
+    <Property Name="Clients_ID" Type="int" />
+    <Property Name="Begins" Type="date" Nullable="false" />
+    <Property Name="Ends" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Clients_ID" />
+    </Key>
+    <Property Name="Clients_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Post_Type">
+    <Key>
+      <PropertyRef Name="Post_ID" />
+    </Key>
+    <Property Name="Post_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="Rooms_ID" />
+    </Key>
+    <Property Name="Rooms_ID" Type="int" Nullable="false" />
+    <Property Name="People_Count" Type="int" Nullable="false" />
+    <Property Name="Quality" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="Task_Type">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Task_ID" Type="int" />
+    <Property Name="Post_ID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tasks">
+    <Key>
+      <PropertyRef Name="Task_ID" />
+    </Key>
+    <Property Name="Task_ID" Type="int" Nullable="false" />
+    <Property Name="ID_ROOM" Type="int" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Booked_Ro__Clien__22FF2F51">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+    <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Clients_ID" />
+      </Principal>
+      <Dependent Role="Booked_Rooms">
+        <PropertyRef Name="Clients_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booked_Ro__Rooms__220B0B18">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+    <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="Rooms_ID" />
+      </Principal>
+      <Dependent Role="Booked_Rooms">
+        <PropertyRef Name="Rooms_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task_Type__Post___0C1BC9F9">
+    <End Role="Post_Type" Type="Self.Post_Type" Multiplicity="0..1" />
+    <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post_Type">
+        <PropertyRef Name="Post_ID" />
+      </Principal>
+      <Dependent Role="Task_Type">
+        <PropertyRef Name="Post_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task_Type__Task___0B27A5C0">
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+    <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tasks">
+        <PropertyRef Name="Task_ID" />
+      </Principal>
+      <Dependent Role="Task_Type">
+        <PropertyRef Name="Task_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tasks__ID_ROOM__7DCDAAA2">
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+    <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="Rooms_ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="ID_ROOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post_Type" EntityType="Self.Post_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Booked_Rooms].[Rooms_ID] AS [Rooms_ID], 
+    [Booked_Rooms].[Clients_ID] AS [Clients_ID], 
+    [Booked_Rooms].[Begins] AS [Begins], 
+    [Booked_Rooms].[Ends] AS [Ends]
+    FROM [dbo].[Booked_Rooms] AS [Booked_Rooms]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Task_Type" EntityType="Self.Task_Type" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Task_Type].[Task_ID] AS [Task_ID], 
+    [Task_Type].[Post_ID] AS [Post_ID], 
+    [Task_Type].[Type] AS [Type]
+    FROM [dbo].[Task_Type] AS [Task_Type]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Booked_Ro__Clien__22FF2F51" Association="Self.FK__Booked_Ro__Clien__22FF2F51">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booked_Ro__Rooms__220B0B18" Association="Self.FK__Booked_Ro__Rooms__220B0B18">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task_Type__Post___0C1BC9F9" Association="Self.FK__Task_Type__Post___0C1BC9F9">
+      <End Role="Post_Type" EntitySet="Post_Type" />
+      <End Role="Task_Type" EntitySet="Task_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task_Type__Task___0B27A5C0" Association="Self.FK__Task_Type__Task___0B27A5C0">
+      <End Role="Tasks" EntitySet="Tasks" />
+      <End Role="Task_Type" EntitySet="Task_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tasks__ID_ROOM__7DCDAAA2" Association="Self.FK__Tasks__ID_ROOM__7DCDAAA2">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
