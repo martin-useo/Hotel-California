@@ -82,10 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelCal2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="IDataLayer.cs" />
     <Compile Include="Post_Type.cs">
       <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="DataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rooms.cs">
       <DependentUpon>HotelCal2.tt</DependentUpon>

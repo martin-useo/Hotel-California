@@ -8,10 +8,14 @@ using System.Data.Entity;
 
 namespace Hotel_California___Data_manipulation_Layer
 {
-    class Program
+    class DataLayer : IDataLayer
     {
+        public DataLayer()
+        {
 
-        static void Add_Room(Entities_oui dc, int rid, int rpplcnt, string rqlt, string rsize)
+        }
+
+        void Add_Room(Entities_oui dc, int rid, int rpplcnt, string rqlt, string rsize)
         {
             Rooms nr = new Rooms
             {
@@ -25,7 +29,7 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        static void Del_Room(Entities_oui dc, int delid)
+        void Del_Room(Entities_oui dc, int delid)
         {
             Rooms rdel = dc.Rooms.Where(rm => rm.Rooms_ID == delid).FirstOrDefault();
 
@@ -36,7 +40,7 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
 
-        static void Add_Client(Entities_oui dc, string cname, string cpassword)
+        void Add_Client(Entities_oui dc, string cname, string cpassword)
         {
             Clients ncl = new Clients();
 
@@ -53,7 +57,7 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        static int Login(Entities_oui dc, string cname, string cpassword)
+        int Login(Entities_oui dc, string cname, string cpassword)
         {
             int cid = 0;
 
@@ -67,7 +71,7 @@ namespace Hotel_California___Data_manipulation_Layer
             return (cid);
         }
 
-        static void Del_Client(Entities_oui dc, string cname, string cpassword)
+        void Del_Client(Entities_oui dc, string cname, string cpassword)
         {
             int cid = 0;
             cid = Login(dc, cname, cpassword);
@@ -82,7 +86,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         }
 
-        static void Add_Reservation(Entities_oui dc, int rid, string cname, string cpassword, DateTime begins, DateTime ends)
+        void Add_Reservation(Entities_oui dc, int rid, string cname, string cpassword, DateTime begins, DateTime ends)
         {
             Booked_Rooms br = new Booked_Rooms();
 
@@ -98,7 +102,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         }
 
-        static void Del_Reservation(Entities_oui dc, int bid)
+        void Del_Reservation(Entities_oui dc, int bid)
         {
             Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
 
@@ -109,7 +113,7 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
         
-        static void Add_Task(Entities_oui dc, int tid, int rid)
+        void Add_Task(Entities_oui dc, int tid, int rid)
         {
             string tstatus = "new";
             Tasks nt = new Tasks
@@ -123,7 +127,7 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        static void Del_Task(Entities_oui dc, int rid, int tid)
+        void Del_Task(Entities_oui dc, int rid, int tid)
         {
             Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
 
@@ -134,7 +138,7 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
 
-        static void Disp_Rooms(Entities_oui dc)
+        void Disp_Rooms(Entities_oui dc)
         {
             DbSet<Rooms> Rooms = dc.Rooms;
             var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
@@ -145,7 +149,7 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.ReadKey();
         }
 
-        static void Disp_Tasks(Entities_oui dc)
+        void Disp_Tasks(Entities_oui dc)
         {
             DbSet<Tasks> Tasks = dc.Tasks;
             var TaskList = Tasks.OrderBy(tasks => tasks.Task_ID);
@@ -154,10 +158,9 @@ namespace Hotel_California___Data_manipulation_Layer
             foreach (Tasks t in Tasks)
                 Console.WriteLine("{0}{1}{2}");
             Console.ReadKey();
-
         }
 
-        static void Disp_Clients(Entities_oui dc)
+        void Disp_Clients(Entities_oui dc)
         {
             DbSet<Clients> Clients = dc.Clients;
             
@@ -169,8 +172,8 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("======================================");
             Console.ReadKey();
         }
-
-        static void Main(string[] args)
+        /*
+        void Main(string[] args)
         {
             // Database context
             Entities_oui dc = new Entities_oui();
@@ -212,6 +215,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
 
         }
+        */
 
     }
 }
