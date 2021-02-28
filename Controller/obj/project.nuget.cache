@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8CNj9MeZTwgFJp2tZqfLVR3T2gbWeadF3vWnhhEtAdB3fCuJ9Jnoasl3ml17iSQCHIafZnFpy9wWeZ04N2kmaA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mirnes\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mirnes\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
