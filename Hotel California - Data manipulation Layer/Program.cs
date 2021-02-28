@@ -63,7 +63,6 @@ namespace Hotel_California___Data_manipulation_Layer
             {
                 cid = getid.Clients_ID;
             }
-            // Need to implement a query that returns the id of a client giving its name and password
 
             return (cid);
         }
@@ -145,6 +144,7 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("=====================================");
             Console.ReadKey();
         }
+
         static void Disp_Tasks(Entities_oui dc)
         {
             DbSet<Tasks> Tasks = dc.Tasks;
