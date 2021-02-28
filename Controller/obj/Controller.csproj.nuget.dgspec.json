@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj": {}
+    "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj": {
+    "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj",
-        "packagesPath": "C:\\Users\\Bruker 1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\obj\\",
+        "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
+        "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bruker 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
-                "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+              "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+                "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
               }
             }
           }
@@ -61,15 +61,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+    "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj",
+        "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj",
         "projectName": "Hotel California - Data manipulation Layer",
-        "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+        "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
       },
       "frameworks": {
         "net472": {}

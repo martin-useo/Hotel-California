@@ -13,11 +13,11 @@ namespace WindowsFormsApp
 {
     public partial class Form1 : Form
     {
-        IController controller;
+        IController IController;
 
         public Form1(IController _controller)
         {
-            controller = _controller;
+            IController = _controller;
             InitializeComponent();
         }
 
@@ -104,6 +104,13 @@ namespace WindowsFormsApp
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            String roomId = textBoxRoomNumber.Text;
+            String work = comboBoxWorkType.Text;
+            IController.RegisterRoomService(roomId, work);
         }
     }
 }

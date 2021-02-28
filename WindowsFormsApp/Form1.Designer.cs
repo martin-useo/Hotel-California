@@ -57,17 +57,17 @@ namespace WindowsFormsApp
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBoxRoomNumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxWorkType = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -293,72 +293,6 @@ namespace WindowsFormsApp
             this.dataGridView3.Size = new System.Drawing.Size(505, 289);
             this.dataGridView3.TabIndex = 18;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(852, 352);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 29);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Delete worker request";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1198, 256);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 29);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Delete reservation";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(600, 435);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(600, 399);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Room number:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(600, 478);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 20);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Type of work:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Cleaning",
-            "Maintenence",
-            "Service"});
-            this.comboBox2.Location = new System.Drawing.Point(600, 517);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 25;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(600, 579);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(167, 29);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Create worker request";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Room";
@@ -387,16 +321,83 @@ namespace WindowsFormsApp
             this.Note.Name = "Note";
             this.Note.Width = 125;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(852, 352);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(177, 29);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Delete worker request";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1198, 256);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(145, 29);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Delete reservation";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // textBoxRoomNumber
+            // 
+            this.textBoxRoomNumber.Location = new System.Drawing.Point(600, 435);
+            this.textBoxRoomNumber.Name = "textBoxRoomNumber";
+            this.textBoxRoomNumber.Size = new System.Drawing.Size(125, 27);
+            this.textBoxRoomNumber.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(600, 399);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Room number:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(600, 478);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Type of work:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // comboBoxWorkType
+            // 
+            this.comboBoxWorkType.FormattingEnabled = true;
+            this.comboBoxWorkType.Items.AddRange(new object[] {
+            "Cleaning",
+            "Maintenence",
+            "Service"});
+            this.comboBoxWorkType.Location = new System.Drawing.Point(600, 517);
+            this.comboBoxWorkType.Name = "comboBoxWorkType";
+            this.comboBoxWorkType.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxWorkType.TabIndex = 25;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(600, 579);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(167, 29);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Create worker request";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1393, 688);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxWorkType);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxRoomNumber);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView3);
@@ -458,14 +459,14 @@ namespace WindowsFormsApp
         private DataGridView dataGridView3;
         private Button button3;
         private Button button4;
-        private TextBox textBox6;
+        private TextBox textBoxRoomNumber;
         private Label label5;
         private Label label6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Type;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn Note;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxWorkType;
         private Button button5;
     }
 }
