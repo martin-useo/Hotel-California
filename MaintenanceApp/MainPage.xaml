@@ -12,6 +12,45 @@
 		<Button Name="MaintainerButton" Content="Maintainer" Margin="131,41,0,0" VerticalAlignment="Top" Width="219" Height="87" Click="MaintainerButton_Click" ></Button>
 		<Button Name="ServiceButton" Content="Service" Height="83" Margin="1087,44,0,0" VerticalAlignment="Top" Width="233" Click="ServiceButton_Click"/>
 		<Button Name="CleanerButton" Content="Cleaner" Margin="591,41,0,0" VerticalAlignment="Top" Height="75" Width="244" Click="CleanerButton_Click"/>
+        
+        <ListView Name="TaskList" Margin="10,149,0,10" SelectionChanged="TaskList_SelectionChanged" HorizontalAlignment="Left" Width="454"  >
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Height="40" Padding="10" Width="1282">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Room number" Grid.Column="0"/>
+                        <TextBlock Text="Status" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="40" Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <Popup  x:Name="POPup"  Width="300" Height="400">
+            <ListBox Name="lb" Width="200" Height="300"  Background="Gray" SelectionMode="Single" >
+                <x:String>New</x:String>
+                <x:String>In process</x:String>
+                <x:String>Finished</x:String>
+                <TextBox Text="Notes:" Name="Notes" Width="100" Height="100"/>
+                <Button x:Name="Okey" Content="Okey" Click="Okey_Click"/>
+
+            </ListBox>
+        </Popup>
 
     </Grid>
 </Page>
