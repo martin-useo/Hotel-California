@@ -5,11 +5,23 @@
       "Controller/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Hotel California - Data manipulation Layer": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Controller.dll": {}
         },
         "runtime": {
           "bin/placeholder/Controller.dll": {}
+        }
+      },
+      "Hotel California - Data manipulation Layer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
         }
       }
     }
@@ -19,6 +31,11 @@
       "type": "project",
       "path": "../Controller/Controller.csproj",
       "msbuildProject": "../Controller/Controller.csproj"
+    },
+    "Hotel California - Data manipulation Layer/1.0.0": {
+      "type": "project",
+      "path": "../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj",
+      "msbuildProject": "../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace Hotel_California___Data_manipulation_Layer
 {
-    class DataLayer : IDataLayer
+    public class DataLayer : IDataLayer
     {
         Entities_oui dc;
 

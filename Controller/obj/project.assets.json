@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Hotel California - Data manipulation Layer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
+        }
       }
     }
   },
@@ -172,10 +181,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Hotel California - Data manipulation Layer/1.0.0": {
+      "type": "project",
+      "path": "../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj",
+      "msbuildProject": "../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Hotel California - Data manipulation Layer >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -205,7 +220,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

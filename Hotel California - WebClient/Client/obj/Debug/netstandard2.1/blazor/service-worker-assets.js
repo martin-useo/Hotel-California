@@ -65,7 +65,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-RuyRggJF6yOpehSoq1bcTAES2p1EvM72i0jfoswfcBA=",
+      "hash": "sha256-SUOdhaGP741yZBDkEF3MgTIC8aSgC9n51awNuR8Rpmw=",
       "url": "_framework\/_bin\/Hotel_California_-_WebClient.Client.dll"
     },
     {
@@ -217,7 +217,7 @@
       "url": "_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
-      "hash": "sha256-alOEltheIF2j9AduuzZsd9ISkr5dCFsOvnQebKs00v4=",
+      "hash": "sha256-\/FWhE7MYDz6VDkxgWT4S5CwG1ZOAJvMD9a6OTlpODlQ=",
       "url": "_framework\/_bin\/Hotel California - WebClient.Shared.dll"
     },
     {
@@ -277,11 +277,11 @@
       "url": "_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-\/KfUXUvo5iVi1eas2eB6rUC8KiuZMFM6h0wun1nLv30=",
+      "hash": "sha256-MKKTMHC8EcAw1gQFF4OqxHCnuvIIGSFFe+xy9X+IB\/A=",
       "url": "_framework\/_bin\/Hotel_California_-_WebClient.Client.pdb"
     },
     {
-      "hash": "sha256-xhxkVbUbqP\/Ht6QmcJL478ucSV29eUrHThZnXYz+OLM=",
+      "hash": "sha256-QJ64R8kRA4fKzZAuAiKz3BPWACPDWn7rj6pQ+hHDEdQ=",
       "url": "_framework\/_bin\/Hotel California - WebClient.Shared.pdb"
     },
     {
@@ -301,9 +301,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-F6GAfejC+gSHMRg7agnDKAIgmUdMNWVHDJiboKcYHRw=",
+      "hash": "sha256-I6epnF4PcQ9C7etwg5Co3uHqTiEvDUhmPR6CvSRG+Q0=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "6yigChm3"
+  "version": "6MleQ9or"
 };

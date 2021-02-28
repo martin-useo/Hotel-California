@@ -1,10 +1,14 @@
 ﻿using System;
+using Hotel_California___Data_manipulation_Layer;
 
 namespace ControllerNS
 {
     public class Controller : IController
     {
-        public Controller() { }
+        IDataLayer IDataLayer;
+
+        public Controller(IDataLayer IDataLayer) { IDataLayer = new DataLayer(); }
+
         public void CreateReservation(string roomId, string name, string startDate, string endDate)
         {
             throw new NotImplementedException();
@@ -39,7 +43,29 @@ namespace ControllerNS
         }
         public void RegisterRoomService(string roomId, string workerType)
         {
-            throw new NotImplementedException();
+            switch (workerType)
+                {
+                case "Service":
+                    {
+                        IDataLayer.Add_Task(1, int.Parse(roomId));
+                    }
+                    break;
+                case "Cleaner":
+                    {
+                        IDataLayer.Add_Task(2, int.Parse(roomId));
+                    }
+                    break;
+                case "Maintenence":
+                    {
+                        IDataLayer.Add_Task( 3, int.Parse(roomId));
+                    }
+                    break;
+                default:
+                    {
+
+                    }
+                    break;
+            }
         }
         public bool RoomIsAvailable(string startDate, string endDate)
         {
