@@ -188,9 +188,9 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("======================================");
             Console.ReadKey();
         }
-        void Main(string[] args)
+        static void Main()
         {
-        
+
         }
         /*
             // Database context
