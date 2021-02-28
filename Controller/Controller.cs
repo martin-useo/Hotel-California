@@ -12,7 +12,7 @@ namespace ControllerNS
             throw new NotImplementedException();
         }
 
-        public void DeletePersonsReservation(string name)
+        public void DeletePersonsReservations(string name)
         {
             throw new NotImplementedException();
         }
@@ -37,7 +37,7 @@ namespace ControllerNS
             throw new NotImplementedException();
         }
 
-        public void GetPersonsReservation(string name)
+        public void GetPersonsReservations(string name)
         {
             throw new NotImplementedException();
         }
