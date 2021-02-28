@@ -188,9 +188,11 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("======================================");
             Console.ReadKey();
         }
-        /*
         void Main(string[] args)
         {
+        
+        }
+        /*
             // Database context
             Entities_oui dc = new Entities_oui();
 
@@ -227,10 +229,7 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.ReadKey();
 
             Del_Room(dc, 666);
-            Del_Client(dc, cname, cpassword);         
-
-
-        }
+            Del_Client(dc, cname, cpassword);                    
         */
 
     }
