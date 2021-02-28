@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
-      "projectName": "Controller",
-      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
+      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller3.csproj",
+      "projectName": "Controller3",
+      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller3.csproj",
       "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\obj\\",
       "projectStyle": "PackageReference",

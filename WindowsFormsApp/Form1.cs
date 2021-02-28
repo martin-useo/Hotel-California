@@ -13,9 +13,11 @@ namespace WindowsFormsApp
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        IController controller;
+
+        public Form1(IController _controller)
         {
-            IController Controller = new Controller();
+            controller = _controller;
             InitializeComponent();
         }
 

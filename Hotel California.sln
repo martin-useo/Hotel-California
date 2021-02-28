@@ -7,10 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel California - Data man
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{6CBF43B1-DF09-473E-BB8D-3D0D89608FEA}"
 	ProjectSection(ProjectDependencies) = postProject
-		{9028F346-40C6-4321-A213-997C7A86CDCF} = {9028F346-40C6-4321-A213-997C7A86CDCF}
+		{87C699AE-0F35-4CA9-ADA3-40408153884F} = {87C699AE-0F35-4CA9-ADA3-40408153884F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{9028F346-40C6-4321-A213-997C7A86CDCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller2\Controller.csproj", "{87C699AE-0F35-4CA9-ADA3-40408153884F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,10 @@ Global
 		{6CBF43B1-DF09-473E-BB8D-3D0D89608FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBF43B1-DF09-473E-BB8D-3D0D89608FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBF43B1-DF09-473E-BB8D-3D0D89608FEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9028F346-40C6-4321-A213-997C7A86CDCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9028F346-40C6-4321-A213-997C7A86CDCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9028F346-40C6-4321-A213-997C7A86CDCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9028F346-40C6-4321-A213-997C7A86CDCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87C699AE-0F35-4CA9-ADA3-40408153884F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87C699AE-0F35-4CA9-ADA3-40408153884F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87C699AE-0F35-4CA9-ADA3-40408153884F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87C699AE-0F35-4CA9-ADA3-40408153884F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,9 @@
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\bin\Debug\netstandard2.0\Controller2.deps.json
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\bin\Debug\netstandard2.0\Controller2.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\bin\Debug\netstandard2.0\Controller2.pdb
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.csprojAssemblyReference.cache
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.AssemblyInfoInputs.cache
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.AssemblyInfo.cs
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.csproj.CoreCompileInputs.cache
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Controller2\obj\Debug\netstandard2.0\Controller2.pdb
