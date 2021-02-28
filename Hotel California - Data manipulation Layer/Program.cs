@@ -8,9 +8,14 @@ using System.Data.Entity;
 
 namespace Hotel_California___Data_manipulation_Layer
 {
+    public partial class Rooms
+    {
+       
+    }
     class Program
     {
-        public void Add_Room(Entities_oui dc, int rid, int rpplcnt, string rqlt, string rsize)
+
+        static void Add_Room(Entities_oui dc, int rid, int rpplcnt, string rqlt, string rsize)
         {
             Rooms nr = new Rooms
             {
@@ -24,7 +29,7 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        public void Del_Room(Entities_oui dc, int delid)
+        static void Del_Room(Entities_oui dc, int delid)
         {
             Rooms rdel = dc.Rooms.Where(rm => rm.Rooms_ID == delid).FirstOrDefault();
 
@@ -35,7 +40,7 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
 
-        public void Add_Client(Entities_oui dc, string cname, string cpassword)
+        static void Add_Client(Entities_oui dc, string cname, string cpassword)
         {
             Clients ncl = new Clients();
 
@@ -52,22 +57,22 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        public int Login(Entities_oui dc, string cname, string cpassword)
+        static int Login(Entities_oui dc, string cname, string cpassword)
         {
             int cid = 0;
 
-            //Clients getid = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+            Clients getid = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
 
-            //if (getid != null)
-            //{
-            //    cid = Clients.getid;
-            //}
+            if (getid != null)
+            {
+                cid = getid.Clients_ID;
+            }
             // Need to implement a query that returns the id of a client giving its name and password
 
             return (cid);
         }
 
-        public void Del_Client(Entities_oui dc, string cname, string cpassword)
+        static void Del_Client(Entities_oui dc, string cname, string cpassword)
         {
             int cid = 0;
             cid = Login(dc, cname, cpassword);
@@ -82,7 +87,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         }
 
-        public void Add_Reservation(Entities_oui dc, int rid, string cname, string cpassword, DateTime begins, DateTime ends)
+        static void Add_Reservation(Entities_oui dc, int rid, string cname, string cpassword, DateTime begins, DateTime ends)
         {
             Booked_Rooms br = new Booked_Rooms();
 
@@ -99,7 +104,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         }
 
-        public void Del_Reservation(Entities_oui dc, int bid)
+        static void Del_Reservation(Entities_oui dc, int bid)
         {
             Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
 
@@ -110,7 +115,7 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
         
-        public void Add_Task(Entities_oui dc, int tid, int rid, string tstatus)
+        static void Add_Task(Entities_oui dc, int tid, int rid, string tstatus)
         {
             Tasks nt = new Tasks();
             nt.Task_ID = tid;
@@ -121,7 +126,8 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.SaveChanges();
         }
 
-        public void Del_Task(Entities_oui dc, int rid, int tid)
+        static
+            void Del_Task(Entities_oui dc, int rid, int tid)
         {
             Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
 
@@ -163,8 +169,15 @@ namespace Hotel_California___Data_manipulation_Layer
             foreach (Clients c0 in ClientsList)
                 Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
             Console.WriteLine("======================================");
-            Console.ReadKey();       
-            
+            Console.ReadKey();
+
+            int rid = 666;
+            int rpplcnt = 314159276;
+            string rqlt = "******************";
+            string rsize = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXL";
+
+            //Add_Room(dc, rid, rpplcnt, rqlt, rsize);
+            Del_Room(dc, 666);
 
         }
 

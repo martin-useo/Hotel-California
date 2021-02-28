@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mirnes\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruker 1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
+      "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
       "projectName": "WindowsFormsApp",
-      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
-      "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\obj\\",
+      "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
+      "packagesPath": "C:\\Users\\Bruker 1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\WindowsFormsApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bruker 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {
-              "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj"
+            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj"
             }
           }
         }
@@ -86,7 +86,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
