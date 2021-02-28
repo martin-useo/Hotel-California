@@ -14,6 +14,7 @@ namespace Hotel_California___Data_manipulation_Layer
     
     public partial class Booked_Rooms
     {
+        public int Reservation_ID { get; set; }
         public Nullable<int> Rooms_ID { get; set; }
         public Nullable<int> Clients_ID { get; set; }
         public System.DateTime Begins { get; set; }

@@ -62,49 +62,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Booked_Rooms.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
     <Compile Include="Clients.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
-    <Compile Include="HotelCal.Context.cs">
+    <Compile Include="HotelCal2.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelCal.Context.tt</DependentUpon>
+      <DependentUpon>HotelCal2.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="HotelCal.cs">
+    <Compile Include="HotelCal2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
-    <Compile Include="HotelCal.Designer.cs">
+    <Compile Include="HotelCal2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotelCal.edmx</DependentUpon>
+      <DependentUpon>HotelCal2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Post_Type.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rooms.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
     <Compile Include="Tasks.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
     <Compile Include="Task_Type.cs">
-      <DependentUpon>HotelCal.tt</DependentUpon>
+      <DependentUpon>HotelCal2.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="HotelCal.edmx">
+    <EntityDeploy Include="HotelCal2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HotelCal.Designer.cs</LastGenOutput>
+      <LastGenOutput>HotelCal2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="HotelCal.edmx.diagram">
-      <DependentUpon>HotelCal.edmx</DependentUpon>
+    <None Include="HotelCal2.edmx.diagram">
+      <DependentUpon>HotelCal2.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -112,15 +112,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HotelCal.Context.tt">
+    <Content Include="HotelCal2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HotelCal.edmx</DependentUpon>
-      <LastGenOutput>HotelCal.Context.cs</LastGenOutput>
+      <DependentUpon>HotelCal2.edmx</DependentUpon>
+      <LastGenOutput>HotelCal2.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="HotelCal.tt">
+    <Content Include="HotelCal2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HotelCal.edmx</DependentUpon>
-      <LastGenOutput>HotelCal.cs</LastGenOutput>
+      <DependentUpon>HotelCal2.edmx</DependentUpon>
+      <LastGenOutput>HotelCal2.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

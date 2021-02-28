@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Bruker 1\Documents\Visual Studio 2019\Code\Hotel California\Hotel California - Data manipulation Layer\HotelCal.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - Data manipulation Layer\HotelCal2.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

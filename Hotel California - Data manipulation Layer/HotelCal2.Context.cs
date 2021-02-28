@@ -25,11 +25,11 @@ namespace Hotel_California___Data_manipulation_Layer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Booked_Rooms> Booked_Rooms { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Post_Type> Post_Type { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
         public virtual DbSet<Tasks> Tasks { get; set; }
-        public virtual DbSet<Booked_Rooms> Booked_Rooms { get; set; }
         public virtual DbSet<Task_Type> Task_Type { get; set; }
     }
 }
