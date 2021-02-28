@@ -8,10 +8,6 @@ using System.Data.Entity;
 
 namespace Hotel_California___Data_manipulation_Layer
 {
-    public partial class Rooms
-    {
-       
-    }
     class Program
     {
 
@@ -91,8 +87,7 @@ namespace Hotel_California___Data_manipulation_Layer
         {
             Booked_Rooms br = new Booked_Rooms();
 
-            int cid = 0;
-            cid = Login(dc, cname, cpassword);
+            int cid = Login(dc, cname, cpassword);
             br.Clients_ID = cid;
 
             br.Rooms_ID = rid;
@@ -115,19 +110,21 @@ namespace Hotel_California___Data_manipulation_Layer
             }
         }
         
-        static void Add_Task(Entities_oui dc, int tid, int rid, string tstatus)
+        static void Add_Task(Entities_oui dc, int tid, int rid)
         {
-            Tasks nt = new Tasks();
-            nt.Task_ID = tid;
-            nt.ID_ROOM = rid;
-            nt.Status = tstatus;
+            string tstatus = "new";
+            Tasks nt = new Tasks
+            {
+                Task_ID = tid,
+                ID_ROOM = rid,
+                Status = tstatus
+            };
 
             dc.Tasks.Add(nt);
             dc.SaveChanges();
         }
 
-        static
-            void Del_Task(Entities_oui dc, int rid, int tid)
+        static void Del_Task(Entities_oui dc, int rid, int tid)
         {
             Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
 
@@ -136,6 +133,41 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.Tasks.Remove(tdel);
                 dc.SaveChanges();
             }
+        }
+
+        static void Disp_Rooms(Entities_oui dc)
+        {
+            DbSet<Rooms> Rooms = dc.Rooms;
+            var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
+
+            foreach (Rooms r0 in RoomsList)
+                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
+            Console.WriteLine("=====================================");
+            Console.ReadKey();
+        }
+        static void Disp_Tasks(Entities_oui dc)
+        {
+            DbSet<Tasks> Tasks = dc.Tasks;
+            var TaskList = Tasks.OrderBy(tasks => tasks.Task_ID);
+
+            Console.WriteLine("id       type           status");
+            foreach (Tasks t in Tasks)
+                Console.WriteLine("{0}{1}{2}");
+            Console.ReadKey();
+
+        }
+
+        static void Disp_Clients(Entities_oui dc)
+        {
+            DbSet<Clients> Clients = dc.Clients;
+            
+            var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
+
+            Console.WriteLine("id                name             password");
+            foreach (Clients c0 in ClientsList)
+                Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
+            Console.WriteLine("======================================");
+            Console.ReadKey();
         }
 
         static void Main(string[] args)
@@ -151,33 +183,33 @@ namespace Hotel_California___Data_manipulation_Layer
             DbSet<Task_Type> Task_Type = dc.Task_Type;
             DbSet<Post_Type> Post_Type = dc.Post_Type;
 
-    // -------------------------------------------------------------------------------------------------------
+            // -------------------------------------------------------------------------------------------------------
 
-            // Displaying a list of the Rooms along with their properties
-            var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
-
-            foreach (Rooms r0 in RoomsList)
-                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
-            Console.WriteLine("=====================================");
-            Console.ReadKey();
-
-                   
-
-            // Displaying a list of the Clients                  
-            var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
-            Console.WriteLine("id                name             password");
-            foreach (Clients c0 in ClientsList)
-                Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
-            Console.WriteLine("======================================");
-            Console.ReadKey();
-
+            //  /!\TESTING ZONE/!\
+            
+            // Getting the var to create a room
             int rid = 666;
             int rpplcnt = 314159276;
             string rqlt = "******************";
             string rsize = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXL";
 
-            //Add_Room(dc, rid, rpplcnt, rqlt, rsize);
+            // Getting the var to create a client
+            string cname = "JEANPIERRETREBERT";
+            string cpassword = "LIFYVEGZ76873IRU";
+
+            Add_Room(dc, rid, rpplcnt, rqlt, rsize);
+            Add_Client(dc, cname, cpassword);
+
+            Disp_Rooms(dc);
+            Disp_Clients(dc);
+
+            int lol = Login(dc, cname, cpassword);
+            Console.WriteLine(lol);
+            Console.ReadKey();
+
             Del_Room(dc, 666);
+            Del_Client(dc, cname, cpassword);         
+
 
         }
 
