@@ -1,0 +1,15 @@
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.exe
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.deps.json
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.runtimeconfig.json
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.runtimeconfig.dev.json
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.dll
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\bin\Debug\netcoreapp3.1\WindowsFormsApp.pdb
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csprojAssemblyReference.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.Form1.resources
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.AssemblyInfoInputs.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.AssemblyInfo.cs
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.dll
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.pdb
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsApp\obj\Debug\netcoreapp3.1\WindowsFormsApp.genruntimeconfig.cache

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerNS;
 
 namespace WindowsFormsApp
 {
@@ -14,12 +15,31 @@ namespace WindowsFormsApp
     {
         public Form1()
         {
+            IController Controller = new Controller();
             InitializeComponent();
         }
 
-        public void CreateReservation() { }
+        public void CreateReservation() {
+        
+            // Check if room is already reserved
+            // If room is already reserved, then cannot create reservation
 
-        public String ReadReservation() { return ""; }
+        
+        }
+
+        public String ReadReservation() { 
+            
+            // If reservation exists, get it
+
+            // Else reservation doesn't exists
+
+
+            return ""; }
+
+        public String getReservations()
+        {
+            return "";
+        }
 
         public void UpdateReservation() { }
 
@@ -29,7 +49,30 @@ namespace WindowsFormsApp
 
         public void RegisterMaintenanceRequest() { }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void calendarEnd_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void calendarStart_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

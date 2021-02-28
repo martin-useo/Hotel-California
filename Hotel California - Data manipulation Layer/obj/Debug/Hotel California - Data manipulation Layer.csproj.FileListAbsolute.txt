@@ -14,3 +14,19 @@ C:\Users\Bruker 1\Documents\Visual Studio 2019\Code\Hotel California\Hotel Calif
 C:\Users\Bruker 1\Documents\Visual Studio 2019\Code\Hotel California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.csproj.CopyComplete
 C:\Users\Bruker 1\Documents\Visual Studio 2019\Code\Hotel California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.exe
 C:\Users\Bruker 1\Documents\Visual Studio 2019\Code\Hotel California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.pdb
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Hotel California - Data manipulation Layer.exe.config
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Hotel California - Data manipulation Layer.exe
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Hotel California - Data manipulation Layer.pdb
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\EntityFramework.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\EntityFramework.xml
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\bin\Debug\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.csprojAssemblyReference.cache
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.csproj.CoreCompileInputs.cache
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.csproj.CopyComplete
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.exe
+C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - Data manipulation Layer\obj\Debug\Hotel California - Data manipulation Layer.pdb
