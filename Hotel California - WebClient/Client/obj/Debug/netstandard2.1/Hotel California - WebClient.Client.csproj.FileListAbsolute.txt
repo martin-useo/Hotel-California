@@ -4,7 +4,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\service-worker-assets.js
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\service-worker.js
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel_California_-_WebClient.Client.dll
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Net.Http.Json.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Buffers.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\mscorlib.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Threading.Tasks.Extensions.dll
@@ -41,7 +40,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.ComponentModel.DataAnnotations.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel California - WebClient.Shared.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.Primitives.dll
@@ -57,7 +55,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel_California_-_WebClient.Client.pdb
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel California - WebClient.Shared.pdb
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.3.2.0.js
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.timezones.dat
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.wasm
@@ -65,7 +62,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\blazor.boot.json
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\service-worker-assets.js.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel_California_-_WebClient.Client.dll.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Net.Http.Json.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Buffers.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\mscorlib.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.Threading.Tasks.Extensions.dll.gz
@@ -102,7 +98,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\System.ComponentModel.DataAnnotations.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.Logging.Abstractions.dll.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel California - WebClient.Shared.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.DependencyInjection.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.Extensions.Primitives.dll.gz
@@ -118,7 +113,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Microsoft.JSInterop.WebAssembly.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel_California_-_WebClient.Client.pdb.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\_bin\Hotel California - WebClient.Shared.pdb.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.3.2.0.js.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.timezones.dat.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\bin\Debug\netstandard2.1\wwwroot\_framework\wasm\dotnet.wasm.gz
@@ -179,7 +173,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\_Imports.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\blazor\unlinked.output
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\99dseBOagY3mzu5Y8Eqm8gRI_o8QbbCp7R2Ew9bQ_5E=.hash
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\ZxXy75PYbzJxNfAc-SAP1nUYm4gt1jSaOpFnBb9m85M=.hash
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\BaZPMj95_YNe3G4ckTGD6szZFwZeA2MOHn91zTGKDeU=.hash
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\TkH6yxFQlTfY8NfznePrCdYJiEVpM9Dqy4Uu4H9qk10=.hash
@@ -237,7 +230,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\blazor\blazor.boot.json
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\service-worker-assets.js.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel_California_-_WebClient.Client.dll.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Net.Http.Json.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Buffers.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\mscorlib.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Threading.Tasks.Extensions.dll.gz
@@ -274,7 +266,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.ComponentModel.DataAnnotations.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.Logging.Abstractions.dll.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel California - WebClient.Shared.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.DependencyInjection.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.Primitives.dll.gz
@@ -290,7 +281,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.WebAssembly.dll.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel_California_-_WebClient.Client.pdb.gz
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel California - WebClient.Shared.pdb.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.3.2.0.js.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.timezones.dat.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.wasm.gz
@@ -298,7 +288,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\blazor.boot.json.gz
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\service-worker-assets.js.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel_California_-_WebClient.Client.dll.br
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Net.Http.Json.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Buffers.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\mscorlib.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.Threading.Tasks.Extensions.dll.br
@@ -335,7 +324,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\System.ComponentModel.DataAnnotations.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.Logging.Abstractions.dll.br
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel California - WebClient.Shared.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.AspNetCore.Components.WebAssembly.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.DependencyInjection.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.Extensions.Primitives.dll.br
@@ -351,7 +339,6 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Microsoft.JSInterop.WebAssembly.dll.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel_California_-_WebClient.Client.pdb.br
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\_bin\Hotel California - WebClient.Shared.pdb.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.3.2.0.js.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.timezones.dat.br
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\compressed\_framework\wasm\dotnet.wasm.br
@@ -366,16 +353,12 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Hotel_California_-_WebClient.Client.pdb
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\blazor\serviceworkers\wwwroot\service-worker.js
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\blazor\service-worker-assets.js
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Login or Register.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Welcome.razor.g.cs
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Login or Register.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Welcome.razor.g.cs
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\-FWhE7MYDz6VDkxgWT4S5CwG1ZOAJvMD9a6OTlpODlQ=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\QJ64R8kRA4fKzZAuAiKz3BPWACPDWn7rj6pQ_hHDEdQ=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\h_3F4bTRxlUoXtu_Bga3YEY4UmDb6LPqP6CG8tp2VsQ=.hash
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Register.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Register.razor.g.cs
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\SUOdhaGP741yZBDkEF3MgTIC8aSgC9n51awNuR8Rpmw=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\MKKTMHC8EcAw1gQFF4OqxHCnuvIIGSFFe_xy9X_IB-A=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\I6epnF4PcQ9C7etwg5Co3uHqTiEvDUhmPR6CvSRG_Q0=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\-YbWEyrCUDsObDPgb0QEv_qMLERcWcMTT8EQi6oTLJQ=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\ao7Kw9VBnWdiKWnSLuZZNRn7yMKNkaDDOoObbEqxvPg=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\VouN9ApPIwzZRiUF128dZRxsm5ljuIBRmgeJp_I2m2g=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\Q0OERYA6P_OnEKoCRzQv6zNHKoRrQKo4CSbhwYfQiB8=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\ShzR2AqNtE5DXFl5kQttJ_sJsanVADZDByYTrurim7c=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\8HpKd0WwcbIR8C-idFVrhDiVd2Yyd4P_eNhJfHlso3k=.hash
