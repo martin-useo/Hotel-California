@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Controller2\Controller.csproj" />
+    <ProjectReference Include="..\Controller\Controller.csproj" />
   </ItemGroup>
 
 </Project>

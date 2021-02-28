@@ -17,8 +17,8 @@
   "libraries": {
     "Controller/1.0.0": {
       "type": "project",
-      "path": "../Controller2/Controller.csproj",
-      "msbuildProject": "../Controller2/Controller.csproj"
+      "path": "../Controller/Controller.csproj",
+      "msbuildProject": "../Controller/Controller.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj": {
-              "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj"
+            "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj"
             }
           }
         }

@@ -4,14 +4,14 @@
     "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj": {
+    "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj",
+        "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
         "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\obj\\",
+        "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +85,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj": {
-                "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller2\\Controller.csproj"
+              "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj"
               }
             }
           }
