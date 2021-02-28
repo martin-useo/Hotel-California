@@ -7,7 +7,7 @@ namespace ControllerNS
     {
         IDataLayer IDataLayer;
 
-        public Controller(IDataLayer IDataLayer) { IDataLayer = new DataLayer(); }
+        public Controller() { IDataLayer = new DataLayer(); }
 
         public void CreateReservation(string roomId, string name, string startDate, string endDate)
         {
