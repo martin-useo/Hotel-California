@@ -168,9 +168,9 @@ namespace Hotel_California___Data_manipulation_Layer
 
                     // Displaying a list of the Clients                  
                     var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
-
+                    Console.WriteLine("id                name             password");
                     foreach (Clients c0 in ClientsList)
-                        Console.WriteLine("id {0} name {1} passw {2}", c0.Clients_ID, c0.Name, c0.Password);
+                        Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
                     Console.WriteLine("======================================");
                     Console.ReadKey();
 
