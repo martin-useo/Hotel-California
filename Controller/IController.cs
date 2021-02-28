@@ -18,11 +18,6 @@ namespace ControllerNS
         void RegisterRoomService(String roomId, String workerType);
         void GetWorkerRequests();
 
-
-
         bool RoomIsAvailable(String startDate, String endDate);
-
-
-
     }
 }
