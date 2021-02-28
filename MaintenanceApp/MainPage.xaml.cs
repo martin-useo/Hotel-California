@@ -27,5 +27,29 @@ namespace MaintenanceApp
             this.InitializeComponent();
         }
 
+        private void MaintainerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ServiceButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CleanerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Okey_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
