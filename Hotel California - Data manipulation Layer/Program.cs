@@ -145,26 +145,25 @@ namespace Hotel_California___Data_manipulation_Layer
             DbSet<Task_Type> Task_Type = dc.Task_Type;
             DbSet<Post_Type> Post_Type = dc.Post_Type;
 
-            // -------------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------------
 
-                    // Displaying a list of the Rooms along with their properties
-                    var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
+            // Displaying a list of the Rooms along with their properties
+            var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
 
-                    foreach (Rooms r0 in RoomsList)
-                        Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
-                    Console.WriteLine("=====================================");
-                    Console.ReadKey();
+            foreach (Rooms r0 in RoomsList)
+                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
+            Console.WriteLine("=====================================");
+            Console.ReadKey();
 
                    
 
-                    // Displaying a list of the Clients                  
-                    var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
-                    Console.WriteLine("id                name             password");
-                    foreach (Clients c0 in ClientsList)
-                        Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
-                    Console.WriteLine("======================================");
-                    Console.ReadKey();
-           
+            // Displaying a list of the Clients                  
+            var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
+            Console.WriteLine("id                name             password");
+            foreach (Clients c0 in ClientsList)
+                Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
+            Console.WriteLine("======================================");
+            Console.ReadKey();       
             
 
         }
