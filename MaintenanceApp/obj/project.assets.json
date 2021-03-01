@@ -8151,24 +8151,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruker 1\\.nuget\\packages\\": {},
+    "C:\\Users\\Mirnes\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\MaintenanceApp\\MaintenanceApp.csproj",
+      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\MaintenanceApp\\MaintenanceApp.csproj",
       "projectName": "MaintenanceApp",
-      "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\MaintenanceApp\\MaintenanceApp.csproj",
-      "packagesPath": "C:\\Users\\Bruker 1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\MaintenanceApp\\obj\\",
+      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\MaintenanceApp\\MaintenanceApp.csproj",
+      "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\MaintenanceApp\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Bruker 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

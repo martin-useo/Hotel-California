@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel California - WebClien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotel California - WebClient.Shared", "Hotel California - WebClient\Shared\Hotel California - WebClient.Shared.csproj", "{0D23D69E-B98A-4D94-B698-86AD61AF64AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{1AF6472A-1E86-47FE-B04C-782E4726CF1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsFormsApp2", "WindowsFormsApp\WindowsFormsApp2.csproj", "{1AF6472A-1E86-47FE-B04C-782E4726CF1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{551903A9-1B3E-42FE-B401-F2B0377B3D37}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Co
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintenanceApp", "MaintenanceApp\MaintenanceApp.csproj", "{35302773-2CFB-46C3-BB9D-9A2FB8F777B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppFramework", "WindowsFormsAppFramework\WindowsFormsAppFramework.csproj", "{865DD23F-C202-4FD8-95B1-0B9E5EB94337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +182,26 @@ Global
 		{35302773-2CFB-46C3-BB9D-9A2FB8F777B7}.Release|x86.ActiveCfg = Release|x86
 		{35302773-2CFB-46C3-BB9D-9A2FB8F777B7}.Release|x86.Build.0 = Release|x86
 		{35302773-2CFB-46C3-BB9D-9A2FB8F777B7}.Release|x86.Deploy.0 = Release|x86
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|ARM.Build.0 = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|x64.Build.0 = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Debug|x86.Build.0 = Debug|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|ARM.ActiveCfg = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|ARM.Build.0 = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|ARM64.Build.0 = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|x64.ActiveCfg = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|x64.Build.0 = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|x86.ActiveCfg = Release|Any CPU
+		{865DD23F-C202-4FD8-95B1-0B9E5EB94337}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

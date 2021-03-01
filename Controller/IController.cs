@@ -17,6 +17,7 @@ namespace ControllerNS
 
         void RegisterRoomService(String roomId, String workerType);
         void GetWorkerRequests();
+        void DeleteTask(String rid, String tid);
 
         bool RoomIsAvailable(String startDate, String endDate);
     }

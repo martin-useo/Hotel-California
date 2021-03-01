@@ -49,9 +49,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
-      "projectName": "WindowsFormsApp",
-      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp.csproj",
+      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp2.csproj",
+      "projectName": "WindowsFormsApp2",
+      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\WindowsFormsApp2.csproj",
       "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\WindowsFormsApp\\obj\\",
       "projectStyle": "PackageReference",

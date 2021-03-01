@@ -1,0 +1,5 @@
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csprojAssemblyReference.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsApp.Form1.resources
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.Properties.Resources.resources
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csproj.GenerateResource.cache
+C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csproj.CoreCompileInputs.cache
