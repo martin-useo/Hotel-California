@@ -10,18 +10,14 @@ namespace ControllerNS
         void GetAvailableRooms(String startDate, String endDate);
 
         void GetAllReservations();
-        bool RoomIsAvailable(String startDate, String endDate);
         void CreateReservation(String roomId, String name, String startDate, String endDate);
-        void GetPersonsReservation(String name);
+        void GetPersonsReservations(String name);
         void DeleteReservation(String roomNr);
-        void DeletePersonsReservation(String name);
+        void DeletePersonsReservations(String name);
 
         void RegisterRoomService(String roomId, String workerType);
         void GetWorkerRequests();
 
-
-
-
-
+        bool RoomIsAvailable(String startDate, String endDate);
     }
 }

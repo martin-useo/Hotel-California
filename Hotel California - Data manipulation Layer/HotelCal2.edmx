@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Booked_Rooms">
+          <Key>
+            <PropertyRef Name="Reservation_ID" />
+          </Key>
+          <Property Name="Reservation_ID" Type="int" Nullable="false" />
+          <Property Name="Rooms_ID" Type="int" />
+          <Property Name="Clients_ID" Type="int" />
+          <Property Name="Begins" Type="date" Nullable="false" />
+          <Property Name="Ends" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Clients_ID" />
+          </Key>
+          <Property Name="Clients_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Post_Type">
+          <Key>
+            <PropertyRef Name="Post_ID" />
+          </Key>
+          <Property Name="Post_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="Rooms_ID" />
+          </Key>
+          <Property Name="Rooms_ID" Type="int" Nullable="false" />
+          <Property Name="People_Count" Type="int" Nullable="false" />
+          <Property Name="Quality" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="Task_Type">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Task_ID" Type="int" />
+          <Property Name="Post_ID" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="Task_ID" />
+          </Key>
+          <Property Name="Task_ID" Type="int" Nullable="false" />
+          <Property Name="ID_ROOM" Type="int" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Booked_Ro__Clien__37FA4C37">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Clients_ID" />
+            </Principal>
+            <Dependent Role="Booked_Rooms">
+              <PropertyRef Name="Clients_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booked_Ro__Rooms__370627FE">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Principal>
+            <Dependent Role="Booked_Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Task_Type__Post___0C1BC9F9">
+          <End Role="Post_Type" Type="Self.Post_Type" Multiplicity="0..1" />
+          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post_Type">
+              <PropertyRef Name="Post_ID" />
+            </Principal>
+            <Dependent Role="Task_Type">
+              <PropertyRef Name="Post_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Task_Type__Task___0B27A5C0">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="Task_ID" />
+            </Principal>
+            <Dependent Role="Task_Type">
+              <PropertyRef Name="Task_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tasks__ID_ROOM__7DCDAAA2">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="ID_ROOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post_Type" EntityType="Self.Post_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task_Type" EntityType="Self.Task_Type" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Task_Type].[Task_ID] AS [Task_ID], 
+    [Task_Type].[Post_ID] AS [Post_ID], 
+    [Task_Type].[Type] AS [Type]
+    FROM [dbo].[Task_Type] AS [Task_Type]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Booked_Ro__Clien__37FA4C37" Association="Self.FK__Booked_Ro__Clien__37FA4C37">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booked_Ro__Rooms__370627FE" Association="Self.FK__Booked_Ro__Rooms__370627FE">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Task_Type__Post___0C1BC9F9" Association="Self.FK__Task_Type__Post___0C1BC9F9">
+            <End Role="Post_Type" EntitySet="Post_Type" />
+            <End Role="Task_Type" EntitySet="Task_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Task_Type__Task___0B27A5C0" Association="Self.FK__Task_Type__Task___0B27A5C0">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="Task_Type" EntitySet="Task_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tasks__ID_ROOM__7DCDAAA2" Association="Self.FK__Tasks__ID_ROOM__7DCDAAA2">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Booked_Rooms">
+          <Key>
+            <PropertyRef Name="Reservation_ID" />
+          </Key>
+          <Property Name="Reservation_ID" Type="Int32" Nullable="false" />
+          <Property Name="Rooms_ID" Type="Int32" />
+          <Property Name="Clients_ID" Type="Int32" />
+          <Property Name="Begins" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Ends" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK__Booked_Ro__Clien__37FA4C37" FromRole="Booked_Rooms" ToRole="Clients" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Booked_Ro__Rooms__370627FE" FromRole="Booked_Rooms" ToRole="Rooms" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Clients_ID" />
+          </Key>
+          <Property Name="Clients_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Booked_Rooms" Relationship="Self.FK__Booked_Ro__Clien__37FA4C37" FromRole="Clients" ToRole="Booked_Rooms" />
+        </EntityType>
+        <EntityType Name="Post_Type">
+          <Key>
+            <PropertyRef Name="Post_ID" />
+          </Key>
+          <Property Name="Post_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Task_Type" Relationship="Self.FK__Task_Type__Post___0C1BC9F9" FromRole="Post_Type" ToRole="Task_Type" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="Rooms_ID" />
+          </Key>
+          <Property Name="Rooms_ID" Type="Int32" Nullable="false" />
+          <Property Name="People_Count" Type="Int32" Nullable="false" />
+          <Property Name="Quality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Booked_Rooms" Relationship="Self.FK__Booked_Ro__Rooms__370627FE" FromRole="Rooms" ToRole="Booked_Rooms" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__ID_ROOM__7DCDAAA2" FromRole="Rooms" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="Task_ID" />
+          </Key>
+          <Property Name="Task_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_ROOM" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__ID_ROOM__7DCDAAA2" FromRole="Tasks" ToRole="Rooms" />
+          <NavigationProperty Name="Task_Type" Relationship="Self.FK__Task_Type__Task___0B27A5C0" FromRole="Tasks" ToRole="Task_Type" />
+        </EntityType>
+        <EntityType Name="Task_Type">
+          <Key>
+            <PropertyRef Name="Type" />
+          </Key>
+          <Property Name="Task_ID" Type="Int32" />
+          <Property Name="Post_ID" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Post_Type" Relationship="Self.FK__Task_Type__Post___0C1BC9F9" FromRole="Task_Type" ToRole="Post_Type" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK__Task_Type__Task___0B27A5C0" FromRole="Task_Type" ToRole="Tasks" />
+        </EntityType>
+        <Association Name="FK__Booked_Ro__Clien__37FA4C37">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+          <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Clients_ID" />
+            </Principal>
+            <Dependent Role="Booked_Rooms">
+              <PropertyRef Name="Clients_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Booked_Ro__Rooms__370627FE">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Booked_Rooms" Type="Self.Booked_Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Principal>
+            <Dependent Role="Booked_Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Task_Type__Post___0C1BC9F9">
+          <End Role="Post_Type" Type="Self.Post_Type" Multiplicity="0..1" />
+          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post_Type">
+              <PropertyRef Name="Post_ID" />
+            </Principal>
+            <Dependent Role="Task_Type">
+              <PropertyRef Name="Post_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tasks__ID_ROOM__7DCDAAA2">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="Rooms_ID" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="ID_ROOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Task_Type__Task___0B27A5C0">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="Task_ID" />
+            </Principal>
+            <Dependent Role="Task_Type">
+              <PropertyRef Name="Task_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities_oui" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Post_Type" EntityType="Self.Post_Type" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+          <EntitySet Name="Task_Type" EntityType="Self.Task_Type" />
+          <AssociationSet Name="FK__Booked_Ro__Clien__37FA4C37" Association="Self.FK__Booked_Ro__Clien__37FA4C37">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Booked_Ro__Rooms__370627FE" Association="Self.FK__Booked_Ro__Rooms__370627FE">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Task_Type__Post___0C1BC9F9" Association="Self.FK__Task_Type__Post___0C1BC9F9">
+            <End Role="Post_Type" EntitySet="Post_Type" />
+            <End Role="Task_Type" EntitySet="Task_Type" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tasks__ID_ROOM__7DCDAAA2" Association="Self.FK__Tasks__ID_ROOM__7DCDAAA2">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Task_Type__Task___0B27A5C0" Association="Self.FK__Task_Type__Task___0B27A5C0">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="Task_Type" EntitySet="Task_Type" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_oui">
+          <EntitySetMapping Name="Booked_Rooms">
+            <EntityTypeMapping TypeName="Model.Booked_Rooms">
+              <MappingFragment StoreEntitySet="Booked_Rooms">
+                <ScalarProperty Name="Reservation_ID" ColumnName="Reservation_ID" />
+                <ScalarProperty Name="Rooms_ID" ColumnName="Rooms_ID" />
+                <ScalarProperty Name="Clients_ID" ColumnName="Clients_ID" />
+                <ScalarProperty Name="Begins" ColumnName="Begins" />
+                <ScalarProperty Name="Ends" ColumnName="Ends" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="Model.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Clients_ID" ColumnName="Clients_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post_Type">
+            <EntityTypeMapping TypeName="Model.Post_Type">
+              <MappingFragment StoreEntitySet="Post_Type">
+                <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="Model.Rooms">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="Rooms_ID" ColumnName="Rooms_ID" />
+                <ScalarProperty Name="People_Count" ColumnName="People_Count" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="Model.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
+                <ScalarProperty Name="ID_ROOM" ColumnName="ID_ROOM" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task_Type">
+            <EntityTypeMapping TypeName="Model.Task_Type">
+              <MappingFragment StoreEntitySet="Task_Type">
+                <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
+                <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

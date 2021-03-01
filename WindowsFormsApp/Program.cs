@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ControllerNS;
 
 namespace WindowsFormsApp
 {
@@ -17,7 +18,9 @@ namespace WindowsFormsApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            IController IController = new Controller();
+            Application.Run(new Form1(IController));
         }
     }
 }

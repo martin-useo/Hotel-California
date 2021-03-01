@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "n0vtnF9BzyO8dqW3S1EVKBdKX4jKKk8FGT57fbkWBcrz5cUp+muttUHjXXVsaIKQMcTLaMhN1S598elkkNDveg==",
+  "dgSpecHash": "tsbOfkJq9TkYQo0526KvSIN9b7ReQ/djydlwjZujBU1+9j16nlgYt4d4EPnyNMfwEkKtmbP8EAICTZtGJsxKZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mirnes\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mirnes\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
