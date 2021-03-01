@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\ZEdaA2ld3-Mcx-8Wix6itspNBOTFnJeNv8m5tZsf4Vk=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\otbVgjBK9agaqivX0-L1GFU8IDd4c2lcfpcNtQVdDsM=.hash",
       "Source": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Hotel_California_-_WebClient.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Hotel_California_-_WebClient.Client.dll.gz"
     },
@@ -256,7 +256,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\YFNgR2aKSQiCq-go7BG_SSPA3CaUis8cYPPXVGtYkzg=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\e-dJb73Ufq7VJ8h6cQfYiYpL7Eqs9fEpvaUR2p5DX48=.hash",
       "Source": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Hotel_California_-_WebClient.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Hotel_California_-_WebClient.Client.pdb.gz"
     },
@@ -281,12 +281,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\vQ2yCfL8TI1AR5NctWbljSEuoeomlR7Zk2msfcDfiBs=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\a13xZ2bPjoFu1uSm-qYVelMpvo36Soq7EwcBPTjapFc=.hash",
       "Source": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Liru7G5cJI8C0k2nlWXoHxEvyOxY3Z2uo0L9iDF2VpY=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\XO9kQLHMIDKMTo2-Vv4RN4bmO0ZUmDU95DL008ScOeE=.hash",
       "Source": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
     }

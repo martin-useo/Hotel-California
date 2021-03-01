@@ -5,6 +5,12 @@ html, body {
     height: 100%; 
 }
 
+.box{
+    margin: auto;
+    border: 5px ridge orange; 
+    padding: unset;
+}
+
 .background {
     background-image: url(bootstrap/679478.jpg);
     height: 100%;
