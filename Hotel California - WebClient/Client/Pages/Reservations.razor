@@ -1,0 +1,26 @@
+﻿@page "/Reservations"
+
+<h1>Find Your Reservations here</h1>
+
+
+@*{
+    List<Customer> custs;
+    custs = new List<Customer>()
+{
+    new Customer {custId = 1, FName = "Peter", LName = "Vogel"},
+    new Customer {custId = 2, FName = "Jan", LName = "Vogel"},
+    new Customer {custId = 3, FName = "Jason", LName = "van de Velde"}
+  };
+}*@
+<h1>Customer List</h1>
+
+<table>
+    @*@foreach (Customer cust in custs)*@
+    {
+        <tr>
+            <td>C'est la fête</td>
+            <td>On s'éclate</td>
+            <td>Et on attend</td>
+        </tr>
+    }
+</table>

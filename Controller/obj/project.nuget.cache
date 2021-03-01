@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "tsbOfkJq9TkYQo0526KvSIN9b7ReQ/djydlwjZujBU1+9j16nlgYt4d4EPnyNMfwEkKtmbP8EAICTZtGJsxKZQ==",
+  "dgSpecHash": "HMsqLM6TUvBJsV8oEa428ZXmyYsi4n8YuqYf2hCoAO2knuDWDfGMIhMJyLUOzznz3bgmlbzqjCBEyX9r/Otxdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Controller\\Controller.csproj",
+  "projectFilePath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Controller\\Controller.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Mirnes\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Mirnes\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Bruker 1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Bruker 1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

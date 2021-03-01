@@ -83,7 +83,7 @@ using Hotel_California___WebClient.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Shared\NavMenu.razor"
+#line 38 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
