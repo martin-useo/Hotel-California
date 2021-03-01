@@ -69,7 +69,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-eUH32dr8HHyZRkilOaoFtK9vQBUnlvncOkLUhHHFPxs=",
+      "hash": "sha256-ZEdaA2ld3\/Mcx\/8Wix6itspNBOTFnJeNv8m5tZsf4Vk=",
       "url": "_framework\/_bin\/Hotel_California_-_WebClient.Client.dll"
     },
     {
@@ -273,7 +273,7 @@
       "url": "_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-+P7hSZxbrWBOWRhLGJq3g40OvEAaDA1vr3ZHNKQiOkQ=",
+      "hash": "sha256-YFNgR2aKSQiCq\/go7BG+SSPA3CaUis8cYPPXVGtYkzg=",
       "url": "_framework\/_bin\/Hotel_California_-_WebClient.Client.pdb"
     },
     {
@@ -293,9 +293,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-CKOGoogQkSsuh\/w3XBV6pg02375IUYVm0nK5W1L5oEA=",
+      "hash": "sha256-vQ2yCfL8TI1AR5NctWbljSEuoeomlR7Zk2msfcDfiBs=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "Si5FFnKy"
+  "version": "WNQ4Vlxk"
 };
