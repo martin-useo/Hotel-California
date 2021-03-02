@@ -363,8 +363,7 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Reservations.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Booking.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Reservations.razor.g.cs
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\uRWO91CO-OyIhZxAKgciYFaFz2tMb08Aoc0finScRlA=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\8u8uGdnPJ5pGgLdvPHgRg2RHy7QTbNmPsjkyVmSDxCw=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\6rYs9L-xISZ_iuPMlRkkhzDu1j2pm6_wJ6GDfGR3dBY=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\7cpewdbFRAk6Q8M1AsDCaGGPVGNisoT0RDWm6QUlDZA=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\p4t9bxRDpgQtyoZjRh6qlrkcmcVgx6G5i24zllomNDA=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\o40im8o3XW4JGsMDRRqLy36ZogcQxbBxOA0956P0oMc=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\nCWGB9qdUhEekJZuGoBFVy56RyxQqpt_O59ntKgLa6s=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\iML1egCIzQYNoKcBHatYPC9gXa7xfAiwxdSZGozuz2c=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\abbKRTUL_vusyESMhIgjrd0dd5N_Yrj-jDvehn65oTA=.hash

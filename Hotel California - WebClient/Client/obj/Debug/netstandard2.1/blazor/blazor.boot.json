@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "Hotel_California_-_WebClient.Client.dll": "sha256-8u8uGdnPJ5pGgLdvPHgRg2RHy7QTbNmPsjkyVmSDxCw=",
+      "Hotel_California_-_WebClient.Client.dll": "sha256-o40im8o3XW4JGsMDRRqLy36ZogcQxbBxOA0956P0oMc=",
       "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-Bs1Wrmh4ex9dTEIT0yCRF52N\/wOmsBDt457BHr0\/ssM=",
       "netstandard.dll": "sha256-\/zcPVM75OAY+joGVM8yIC1gO1SFYWP1CFERgQ8PJkfA=",
       "System.Xml.Linq.dll": "sha256-IPbQMdJxZXdk8HTlaPyXdQ6Zb82iZLphnM74yO4EURQ=",
@@ -59,7 +59,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-czNf3btAeBW\/vvID5LAfgcsNZ+GM3ssVuPaMflcg0rs="
     },
     "pdb": {
-      "Hotel_California_-_WebClient.Client.pdb": "sha256-6rYs9L\/xISZ+iuPMlRkkhzDu1j2pm6+wJ6GDfGR3dBY="
+      "Hotel_California_-_WebClient.Client.pdb": "sha256-nCWGB9qdUhEekJZuGoBFVy56RyxQqpt+O59ntKgLa6s="
     },
     "runtime": {
       "dotnet.3.2.0.js": "sha256-mPoqx7XczFHBWk3gRNn0hc9ekG1OvkKY4XiKRY5Mj5U=",

@@ -17,3 +17,22 @@ C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug
 C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.pdb
 C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Mirnes\source\repos\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\WindowsFormsAppFramework.exe.config
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\WindowsFormsAppFramework.exe
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\WindowsFormsAppFramework.pdb
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.dll
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\Hotel California - Data manipulation Layer.exe
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\Hotel California - Data manipulation Layer.pdb
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\Hotel California - Data manipulation Layer.dll.config
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\Hotel California - Data manipulation Layer.exe.config
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.xml
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csprojAssemblyReference.cache
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsApp.Form1.resources
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.Properties.Resources.resources
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csproj.GenerateResource.cache
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csproj.CoreCompileInputs.cache
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.csproj.CopyComplete
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.exe
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\WindowsFormsAppFramework\obj\Debug\WindowsFormsAppFramework.pdb

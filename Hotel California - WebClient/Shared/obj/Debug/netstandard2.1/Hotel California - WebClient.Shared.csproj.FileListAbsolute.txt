@@ -15,3 +15,4 @@ C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Share
 C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.csproj.CoreCompileInputs.cache
 C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.dll
 C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.pdb
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.csprojAssemblyReference.cache
