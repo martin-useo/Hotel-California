@@ -363,8 +363,8 @@ C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Reservations.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Booking.razor.g.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\Razor\Pages\Reservations.razor.g.cs
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\vfvGS0EqfGVUZChpOfgnTWnBbcuP9_fiBoX0OfZvlDs=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\otbVgjBK9agaqivX0-L1GFU8IDd4c2lcfpcNtQVdDsM=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\e-dJb73Ufq7VJ8h6cQfYiYpL7Eqs9fEpvaUR2p5DX48=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\a13xZ2bPjoFu1uSm-qYVelMpvo36Soq7EwcBPTjapFc=.hash
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\XO9kQLHMIDKMTo2-Vv4RN4bmO0ZUmDU95DL008ScOeE=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\P2Tkp8Ror8BRlYkR0zGz52XECsjXR04-kdhqzAZ9Jus=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\H8cQZHyuhDR4idqbSModoz-VKgEgx0eKp129RFIlxbg=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\8DOSYlcLQwRiX803VI6TfbDTl6WLfyxuffA9WM317OQ=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\MERW-kGcYqZtq5PIzIyonTKgEDOU1UjOADk82IVrXn8=.hash
+C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\obj\Debug\netstandard2.1\integrity\UiaDB7YK5f7212_93YCoc8OjzmN5J_FSuA3RBWPqFIc=.hash

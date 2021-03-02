@@ -3,3 +3,72 @@
 <div>
     <h1>This is the Booking section</h1>
 </div>
+
+
+<div>
+    <h3>Step 1</h3>
+    Choose the dates of booking for your room
+    Start date
+    <input type="date" id="begin" />
+    End date
+    <input type="date" id="end" />
+    <input type="button" id="confirms1" class="button" value="Confirm">
+</div>
+
+<div>
+    <h3>Step 2</h3>
+    Get the right room for you
+
+
+</div>
+
+<div>
+    <h3>Step 3</h3>
+    Please identify yourself :
+    Name
+    <input type="text" id="cname" />
+    Password
+    <input type="password" id="cpassword" />
+    <input type="button" id="confirms2" class="button" value="Confirm" />
+</div>
+
+<div>
+    <h3>Step 4</h3>
+    Choose from the list of Rooms available
+
+    <div class="flexcontainer">
+        <div class="flexchildren">
+            How many people are you ?
+            <input type="checkbox" value="1" id="pplcnt1"/>
+            <input type="checkbox" value="2" id="pplcnt2"/>
+            <input type="checkbox" value="4" id="pplcnt4"/>
+            <input type="checkbox" value="6" id="pplcnt6"/>
+            <input type="text" value="more" id="pplcntmore"/>
+        </div>
+
+        <div class="flexchildren">
+            How much money do you have to throw away ?
+            <input type="checkbox" value="A little (*)" id="qlt1" />
+            <input type="checkbox" value="A decent amount (**)" id="qlt2" />
+            <input type="checkbox" value="Way too much (***)" id="qlt3" />
+        </div>
+
+        <div class="flexchildren">
+            How big do you want your room ?
+            <input type="checkbox" value="Small" id="pplcnt1" />
+            <input type="checkbox" value="Medium" id="pplcnt2" />
+            <input type="checkbox" value="Large" id="pplcnt4" />
+        </div>
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+
+    public DateTime begin { get; set; }
+    public DateTime end { get; set; }
+    public string cname { get; set; }
+    public string cpassword { get; set; }
+
+}

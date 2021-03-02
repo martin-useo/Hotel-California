@@ -7,8 +7,15 @@
 
 <div>
     Name
-    <input type="text" />
+    <input type="text" id="cname" />
     Password
-    <input type="password" />
-    <input type="button" />
+    <input type="password" id="cpassword"/>
+    <input type="button" id="confirm" class="button" value="Confirm" />
 </div>
+
+
+@code {
+    [Parameter]
+    public string cname { get; set; }
+    public string cpassword { get; set; }
+}

@@ -188,9 +188,34 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("======================================");
             Console.ReadKey();
         }
-        static void Main()
+        static void Main(string[] args)
         {
+            DataLayer dl = new DataLayer();
 
+            //  /!\TESTING ZONE/!\
+
+            // Getting the var to create a room
+            int rid = 669;
+            int rpplcnt = 314159276;
+            string rqlt = "******************";
+            string rsize = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXL";
+
+            // Getting the var to create a client
+            string cname = "JEANPIERRETREBERT";
+            string cpassword = "LIFYVEGZ76873IRU";
+
+            dl.Add_Room(rid, rpplcnt, rqlt, rsize);
+            dl.Add_Client(cname, cpassword);
+
+            dl.Disp_Rooms();
+            dl.Disp_Clients();
+
+            int lol = dl.Login(cname, cpassword);
+            Console.WriteLine(lol);
+            Console.ReadKey();
+
+            dl.Del_Room(666);
+            dl.Del_Client(cname, cpassword);
         }
         /*
             // Database context
@@ -206,30 +231,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
             // -------------------------------------------------------------------------------------------------------
 
-            //  /!\TESTING ZONE/!\
-            
-            // Getting the var to create a room
-            int rid = 666;
-            int rpplcnt = 314159276;
-            string rqlt = "******************";
-            string rsize = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXL";
-
-            // Getting the var to create a client
-            string cname = "JEANPIERRETREBERT";
-            string cpassword = "LIFYVEGZ76873IRU";
-
-            Add_Room(dc, rid, rpplcnt, rqlt, rsize);
-            Add_Client(dc, cname, cpassword);
-
-            Disp_Rooms(dc);
-            Disp_Clients(dc);
-
-            int lol = Login(dc, cname, cpassword);
-            Console.WriteLine(lol);
-            Console.ReadKey();
-
-            Del_Room(dc, 666);
-            Del_Client(dc, cname, cpassword);                    
+                             
         */
 
     }

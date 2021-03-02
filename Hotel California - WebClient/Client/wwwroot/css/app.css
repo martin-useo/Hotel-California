@@ -5,18 +5,60 @@ html, body {
     height: 100%; 
 }
 
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    background-image: linear-gradient(120deg, rgb(221, 130, 4) 0%, #3a0647 70%);
+}
+
+.flexcontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexchildren{
+    flex-grow: 1;
+    border-radius: 15px;
+    border: 2px solid orange;
+}
+
 .box{
+    border-radius: 20px;
     margin: auto;
     border: 5px ridge orange; 
-    padding: unset;
+    padding: 10px;
 }
 
 .background {
     background-image: url(bootstrap/679478.jpg);
+    width: 90%;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.button {
+    width: 100px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 3px solid #FFFFFF;
+    background-color: darkorange;
+    transition: all 0.3s linear;
 }
 
 a, .btn-link {
@@ -62,7 +104,7 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, rgb(221, 130, 4) 0%, #3a0647 70%);
 }
 
     .sidebar .top-row {
