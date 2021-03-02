@@ -58,10 +58,9 @@ namespace Hotel_California___Data_manipulation_Layer
         public List<Rooms> Get_All_Rooms()
         {
             List<Rooms> roomList = new List<Rooms>();
+            var roomSet = dc.Rooms.OrderBy(rooms => rooms.Rooms_ID);
 
-            var RoomsList = dc.Rooms.OrderBy(rooms => rooms.Rooms_ID);
-
-            foreach (Rooms r in RoomsList)
+            foreach (Rooms r in roomSet)
                 roomList.Add(r);
 
             return roomList;
@@ -163,13 +162,15 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.SaveChanges();
             }
         }
-        // TODO
         public List<Tasks> Get_All_Tasks()
         {
-            List<Tasks> tasks = new List<Tasks>();
+            List<Tasks> taskList = new List<Tasks>();
+            var taskSet = dc.Tasks.OrderBy(tasks => tasks.Task_ID);
 
+            foreach (Tasks t in taskSet)
+                taskList.Add(t);
 
-            return tasks;
+            return taskList;
         }
 
 

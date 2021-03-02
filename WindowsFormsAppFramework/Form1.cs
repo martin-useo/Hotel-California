@@ -122,7 +122,7 @@ namespace WindowsFormsApp
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonCreateTask_Click(object sender, EventArgs e)
         {
             int roomId = int.Parse(textBoxRoomNumberWork.Text);
             String workerType = comboBoxWorkType.Text;
@@ -206,6 +206,16 @@ namespace WindowsFormsApp
                     int roomId = (int)viewCell.Value;
                     IDataLayer.Del_Reservation(roomId);
                 }
+            }
+        }
+
+        private void buttonGetTasks_Click(object sender, EventArgs e)
+        {
+            List<Tasks> tasklist = IDataLayer.Get_All_Tasks();
+
+            foreach (Tasks task in tasklist) {
+                String[] row = { task.Task_ID.ToString(), task.ID_ROOM.ToString(), "", task.Status, "" };
+                dataGridViewTasks.Rows.Add(row);
             }
         }
     }
