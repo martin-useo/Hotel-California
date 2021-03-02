@@ -15,9 +15,9 @@ namespace WindowsFormsApp
     {
         IDataLayer IDataLayer;
 
-        public Form1(IDataLayer _controller)
+        public Form1(IDataLayer _dataLayer)
         {
-            IDataLayer = _controller;
+            IDataLayer = _dataLayer;
             InitializeComponent();
         }
 
@@ -125,8 +125,29 @@ namespace WindowsFormsApp
         private void button5_Click(object sender, EventArgs e)
         {
             int roomId = int.Parse(textBoxRoomNumberWork.Text);
-            int work = int.Parse(comboBoxWorkType.Text);
-            IDataLayer.Add_Task(roomId, work);
+            String workerType = comboBoxWorkType.Text;
+
+            switch (workerType)
+            {
+                case "Service":
+                    {
+                        IDataLayer.Add_Task(1, roomId);
+                    }
+                    break;
+                case "Cleaner":
+                    {
+                        IDataLayer.Add_Task(2, roomId);
+                    }
+                    break;
+                case "Maintenence":
+                    {
+                        IDataLayer.Add_Task(3, roomId);
+                    }
+                    break;
+                default:
+                    {}
+                    break;
+            }
         }
 
         private void buttonReservationCreate_Click(object sender, EventArgs e)
