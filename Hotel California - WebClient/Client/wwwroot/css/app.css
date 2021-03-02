@@ -13,15 +13,44 @@ html, body {
     background-image: linear-gradient(120deg, rgb(221, 130, 4) 0%, #3a0647 70%);
 }
 
+.flexcolcontainer2{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.flexcolcontainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 5px;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
 .flexcontainer{
     display: flex;
     flex-direction: row;
 }
 
-.flexchildren{
+.flexchildren {
     flex-grow: 1;
-    border-radius: 15px;
-    border: 2px solid orange;
+    
+    margin: 5px;
+    padding: 4px;
+
+/*    border: 2px solid orange;
+    border-radius: 10px;*/
+    
+    text-align: left;
+    align-content: center;
+    break-inside: auto;
+}
+
+.flexgrandchildren{
+    flex-grow: 1;
+
+    align-content: center
 }
 
 .box{
@@ -41,23 +70,13 @@ html, body {
 }
 
 .button {
-    width: 100px;
-    margin-top: 20px;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    padding-top: 10px;
-    padding-right: 5px;
-    padding-bottom: 10px;
-    padding-left: 5px;
+
     text-align: center;
     vertical-align: middle;
     border-radius: 20px;
-    text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     border: 3px solid #FFFFFF;
-    background-color: darkorange;
     transition: all 0.3s linear;
 }
 
@@ -156,11 +175,11 @@ app {
 
 .content {
     padding-top: 1.1rem;
-    background-image: url(../wwwroot/css/bootstrap/679478.jpg);
+/*    background-image: url(../wwwroot/css/bootstrap/679478.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .navbar-toggler {

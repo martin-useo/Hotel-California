@@ -4,63 +4,141 @@
     <h1>This is the Booking section</h1>
 </div>
 
-
-<div>
+<br />
+<div id="Step 1">
     <h3>Step 1</h3>
-    Choose the dates of booking for your room
-    Start date
-    <input type="date" id="begin" />
-    End date
-    <input type="date" id="end" />
-    <input type="button" id="confirms1" class="button" value="Confirm">
+    Choose the dates of booking for your room<br />
+    
+    <div class="flexcontainer">
+
+        <div class="flexchildren">
+
+            Start date<br />
+            <input type="date" id="begin" /><br />
+            <br />
+
+            End date<br />
+            <input type="date" id="end" /><br />
+            <br />
+            <input type="button" id="confirm_dates" class="button" value="Confirm">
+        </div>
+    </div>
 </div>
 
-<div>
+
+
+<br />
+<div id="Step 2">
     <h3>Step 2</h3>
-    Get the right room for you
+    Get the right room for you<br />
+
+    <div class="flexcolcontainer2">
+
+        <div class="flexcontainer">
+
+            <div class="flexcolcontainer">
+
+                <div class="flexchildren">
+                    How many people are you ?<br />
+                </div>
+
+                <div class="flexcontainer">
+
+                    <div class="flexchildren">
+                        1 <br />
+                        2 <br />
+                        4 <br />
+                        6 <br />
+                        More ? <br />
+                    </div>
+                    <div class="flexchildren">
+                        <input type="checkbox" id="pplcnt1" /><br />
+                        <input type="checkbox" id="pplcnt2" /><br />
+                        <input type="checkbox" id="pplcnt4" /><br />
+                        <input type="checkbox" id="pplcnt6" /><br />
+                        <input type="text" id="pplcntmore" />
+                    </div>
+                </div>
+            </div>
 
 
+            <div class="flexcolcontainer">
+
+                <div class="flexchildren">
+                    How much money do you have to throw away ?<br />
+                </div>
+
+                <div class="flexcontainer">
+
+                    <div class="flexchildren">
+
+                        A little (*) <br />
+                        A decent amount (**) <br />
+                        Way too much (***) <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="flexchildren">
+                        <input type="checkbox" id="qlt*" /><br />
+                        <input type="checkbox" id="qlt**" /><br />
+                        <input type="checkbox" id="qlt***" /><br />
+                    </div>
+                </div>
+            </div>
+
+            <div class="flexcolcontainer">
+
+                <div class="flexchildren">
+                    How big do you want your room ?<br />
+                </div>
+                <div class="flexcontainer">
+                    <div class="flexchildren">
+
+                        Small <br />
+                        Medium <br />
+                        Large <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="flexchildren">
+                        <input type="checkbox" id="sizeS" /><br />
+                        <input type="checkbox" id="sizeM" /><br />
+                        <input type="checkbox" id="sizeL" /><br />
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <input type="button" class="button" value="Confirm" id="confirm_room_properties" />
+    </div>
 </div>
 
+
+<br />
 <div>
     <h3>Step 3</h3>
-    Please identify yourself :
-    Name
-    <input type="text" id="cname" />
-    Password
-    <input type="password" id="cpassword" />
-    <input type="button" id="confirms2" class="button" value="Confirm" />
+    Please identify yourself :<br />
+
+    <div class="flexcontainer">
+
+        <div class="flexchildren">
+            Name :<br />
+            <input type="text" id="cname" /><br />
+            <br />
+            Password :<br />
+            <input type="password" id="cpassword" /><br />
+            <br />
+            <input type="button" id="confirm_login" class="button" value="Confirm" />
+        </div>
+    </div>
 </div>
 
+
+<br />
 <div>
     <h3>Step 4</h3>
     Choose from the list of Rooms available
 
-    <div class="flexcontainer">
-        <div class="flexchildren">
-            How many people are you ?
-            <input type="checkbox" value="1" id="pplcnt1"/>
-            <input type="checkbox" value="2" id="pplcnt2"/>
-            <input type="checkbox" value="4" id="pplcnt4"/>
-            <input type="checkbox" value="6" id="pplcnt6"/>
-            <input type="text" value="more" id="pplcntmore"/>
-        </div>
-
-        <div class="flexchildren">
-            How much money do you have to throw away ?
-            <input type="checkbox" value="A little (*)" id="qlt1" />
-            <input type="checkbox" value="A decent amount (**)" id="qlt2" />
-            <input type="checkbox" value="Way too much (***)" id="qlt3" />
-        </div>
-
-        <div class="flexchildren">
-            How big do you want your room ?
-            <input type="checkbox" value="Small" id="pplcnt1" />
-            <input type="checkbox" value="Medium" id="pplcnt2" />
-            <input type="checkbox" value="Large" id="pplcnt4" />
-        </div>
-    </div>
-
+    
 </div>
 
 @code {

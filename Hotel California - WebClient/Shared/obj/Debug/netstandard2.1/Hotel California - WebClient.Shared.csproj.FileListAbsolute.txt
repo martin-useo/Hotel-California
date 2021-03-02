@@ -1,7 +1,6 @@
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\bin\Debug\netstandard2.1\Hotel California - WebClient.Shared.deps.json
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\bin\Debug\netstandard2.1\Hotel California - WebClient.Shared.dll
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\bin\Debug\netstandard2.1\Hotel California - WebClient.Shared.pdb
-C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.csprojAssemblyReference.cache
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.AssemblyInfoInputs.cache
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.AssemblyInfo.cs
 C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Shared\obj\Debug\netstandard2.1\Hotel California - WebClient.Shared.csproj.CoreCompileInputs.cache

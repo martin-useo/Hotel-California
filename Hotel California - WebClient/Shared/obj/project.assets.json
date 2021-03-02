@@ -8,19 +8,19 @@
     ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Mirnes\\.nuget\\packages\\": {}
+    "C:\\Users\\Bruker 1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj",
       "projectName": "Hotel California - WebClient.Shared",
-      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj",
-      "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Shared\\obj\\",
+      "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj",
+      "packagesPath": "C:\\Users\\Bruker 1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bruker 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -10,63 +10,63 @@ namespace Hotel_California___WebClient.Client.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 1 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 2 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 3 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 4 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 5 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 6 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 7 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 8 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Hotel_California___WebClient.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Mirnes\source\repos\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
+#line 9 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\_Imports.razor"
 using Hotel_California___WebClient.Client.Shared;
 
 #line default
@@ -79,8 +79,10 @@ using Hotel_California___WebClient.Client.Shared;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "sidebar");
-            __builder.OpenComponent<Hotel_California___WebClient.Client.Shared.NavMenu>(2);
+            __builder.AddMarkupContent(2, "\r\n    ");
+            __builder.OpenComponent<Hotel_California___WebClient.Client.Shared.NavMenu>(3);
             __builder.CloseComponent();
+            __builder.AddMarkupContent(4, "\r\n");
             __builder.CloseElement();
             __builder.AddMarkupContent(5, "\r\n\r\n");
             __builder.OpenElement(6, "div");

@@ -84,7 +84,7 @@ using Hotel_California___WebClient.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Pages\Reservations.razor"
+#line 47 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Pages\Reservations.razor"
        
     [Parameter]
     public string cname { get; set; }

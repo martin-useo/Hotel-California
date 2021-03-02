@@ -1,16 +1,23 @@
 ﻿@page "/Register"
 
-<div class="box">
 <h1>Here, you can register as a new Client</h1>
-<h6>If you already have registered, you can go book your rooms</h6>
-</div>
+<h4>If you already have registered, you can go <a href="Booking">book your rooms</a></h4>
 
-<div>
-    Name
-    <input type="text" id="cname" />
-    Password
-    <input type="password" id="cpassword"/>
-    <input type="button" id="confirm" class="button" value="Confirm" />
+<br />
+<div class="flexcontainer">
+
+    <div class="flexchildren">
+        Name :<br />
+        <input type="text" id="cname" /><br />
+        <br />
+        Password :<br />
+        <input type="password" id="cpassword" /><br />
+        <br />
+        Confirm Password :<br />
+        <input type="password" id="confirmcpassword" /><br />
+        <br />
+        <input type="button" id="confirm" class="button" value="Confirm" />
+    </div>
 </div>
 
 
@@ -18,4 +25,5 @@
     [Parameter]
     public string cname { get; set; }
     public string cpassword { get; set; }
+    public string confirmcpassword { get; set; }
 }
