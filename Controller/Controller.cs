@@ -5,9 +5,11 @@ namespace ControllerNS
 {
     public class Controller : IController
     {
+        //Commented out until the System.Data.Sqlclient error is resolved
         IDataLayer IDataLayer;
-
         public Controller() { IDataLayer = new DataLayer(); }
+
+        //public Controller() {}
 
         public void CreateReservation(string roomId, string name, string startDate, string endDate)
         {
@@ -21,6 +23,12 @@ namespace ControllerNS
         {
             throw new NotImplementedException();
         }
+
+        public void DeleteTask(string rid, string tid)
+        {
+            throw new NotImplementedException();
+        }
+
         public void GetAllReservations()
         {
             throw new NotImplementedException();
@@ -43,6 +51,7 @@ namespace ControllerNS
         }
         public void RegisterRoomService(string roomId, string workerType)
         {
+            /* Commented out until database errors are sorted out
             switch (workerType)
                 {
                 case "Service":
@@ -65,7 +74,9 @@ namespace ControllerNS
 
                     }
                     break;
+            
             }
+            */
         }
         public bool RoomIsAvailable(string startDate, string endDate)
         {

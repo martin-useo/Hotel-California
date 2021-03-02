@@ -91,9 +91,25 @@ namespace WindowsFormsApp
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonDeleteTask_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection selectedRows = dataGridViewTasks.SelectedRows;
+            System.Collections.IEnumerator en = selectedRows.GetEnumerator();
 
+            while (en.MoveNext())
+            {
+                DataGridViewRow current = (DataGridViewRow)en.Current;
+                DataGridViewCellCollection cells = current.Cells;
+                DataGridViewCell taskCell = cells[0];
+                DataGridViewCell roomCell = cells[1];
+
+                if (!(taskCell is null) && !(roomCell is null))
+                {
+                    String taskId = (String)taskCell.Value;
+                    String roomId = (String)roomCell.Value;
+                    IController.DeleteTask(taskId, roomId);
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -108,9 +124,66 @@ namespace WindowsFormsApp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            String roomId = textBoxRoomNumber.Text;
+            String roomId = textBoxRoomNumberWork.Text;
             String work = comboBoxWorkType.Text;
             IController.RegisterRoomService(roomId, work);
+        }
+
+        private void buttonReservationCreate_Click(object sender, EventArgs e)
+        {
+            bool correctFormat = true;
+            String roomId = textBoxReservationRoomNumber.Text;
+            String name = textBoxReservationName.Text;
+            String startDate = textBoxReservationStartDate.Text;
+            String endDate = textBoxReservationEndDate.Text;
+
+            if(roomId is null)
+            {
+                textBoxReservationRoomNumber.Text = "Please enter room number";
+                correctFormat = false;
+            }
+            if (name is null)
+            {
+                textBoxReservationName.Text = "Please enter name";
+                correctFormat = false;
+            }
+            if (startDate is null)
+            {
+                textBoxReservationStartDate.Text = "Please enter date";
+                correctFormat = false;
+            }
+            if (roomId is null)
+            {
+                textBoxReservationEndDate.Text = "Please enter date";
+                correctFormat = false;
+            }
+
+
+
+            if (correctFormat)
+            {
+                IController.CreateReservation(roomId, name, startDate, endDate);
+            } 
+            
+        }
+
+        private void buttonReservationDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection selectedRows = dataGridViewReservations.SelectedRows;
+            System.Collections.IEnumerator en = selectedRows.GetEnumerator();
+
+            while (en.MoveNext())
+            {
+                DataGridViewRow current = (DataGridViewRow)en.Current;
+                DataGridViewCellCollection cells = current.Cells;
+                DataGridViewCell viewCell = cells[0];
+
+                if (!(viewCell is null))
+                {
+                    String roomId = (String)viewCell.Value;
+                    IController.DeleteReservation(roomId);
+                }
+            }
         }
     }
 }

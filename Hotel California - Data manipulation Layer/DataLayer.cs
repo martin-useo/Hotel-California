@@ -23,14 +23,15 @@ namespace Hotel_California___Data_manipulation_Layer
         {
             dc = new Entities_oui();
 
+            /*
             Rooms = dc.Rooms;
             Clients = dc.Clients;
             Booked_Rooms = dc.Booked_Rooms;
             Tasks = dc.Tasks;
             Task_Type = dc.Task_Type;
             Post_Type = dc.Post_Type;
+            */
         }
-
         public void Add_Room(int rid, int rpplcnt, string rqlt, string rsize)
         {
             Rooms nr = new Rooms
@@ -44,7 +45,6 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.Rooms.Add(nr);
             dc.SaveChanges();
         }
-
         public void Del_Room(int delid)
         {
             Rooms rdel = dc.Rooms.Where(rm => rm.Rooms_ID == delid).FirstOrDefault();
@@ -54,6 +54,58 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.Rooms.Remove(rdel);
                 dc.SaveChanges();
             }
+        }
+        public List<Rooms> Get_All_Rooms()
+        {
+            List<Rooms> roomList = new List<Rooms>();
+            var roomSet = dc.Rooms.OrderBy(rooms => rooms.Rooms_ID);
+
+            foreach (Rooms r in roomSet)
+                roomList.Add(r);
+
+            return roomList;
+        }
+        // TODO
+        public List<Rooms> Get_All_Available_Rooms(DateTime beings, DateTime ends)
+        {
+            List<Rooms> rooms = new List<Rooms>();
+
+
+            return rooms;
+        }
+         
+        public void Add_Reservation( int rid, string cname, string cpassword, DateTime begins, DateTime ends)
+        {
+            Booked_Rooms br = new Booked_Rooms();
+
+            int cid = Login(cname, cpassword);
+            br.Clients_ID = cid;
+
+            br.Rooms_ID = rid;
+            br.Begins = begins;
+            br.Ends = ends;
+
+            dc.Booked_Rooms.Add(br);
+            dc.SaveChanges();
+
+        }
+        public void Del_Reservation( int bid)
+        {
+            Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
+
+            if (bdel != null)
+            {
+                dc.Booked_Rooms.Remove(bdel);
+                dc.SaveChanges();
+            }
+        }
+        // TODO
+        public List<Booked_Rooms> Get_All_Reservations()
+        {
+            List<Booked_Rooms> rooms = new List<Booked_Rooms>();
+
+
+            return rooms;
         }
 
         public void Add_Client( string cname, string cpassword)
@@ -72,6 +124,89 @@ namespace Hotel_California___Data_manipulation_Layer
             dc.Clients.Add(ncl);
             dc.SaveChanges();
         }
+        public void Del_Client( string cname, string cpassword)
+        {
+            int cid = 0;
+            cid = Login(cname, cpassword);
+
+            Clients cdel = dc.Clients.Where(rm => rm.Clients_ID == cid).FirstOrDefault();
+
+            if (cdel != null)
+            {
+                dc.Clients.Remove(cdel);
+                dc.SaveChanges();
+            }
+
+        }
+        
+        public void Add_Task( int tid, int rid)
+        {
+            string tstatus = "new";
+            Tasks nt = new Tasks
+            {
+                Task_ID = tid,
+                ID_ROOM = rid,
+                Status = tstatus
+            };
+
+            dc.Tasks.Add(nt);
+            dc.SaveChanges();
+        }
+        public void Del_Task( int rid, int tid)
+        {
+            Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
+            
+            if (tdel != null)
+            {
+                dc.Tasks.Remove(tdel);
+                dc.SaveChanges();
+            }
+        }
+        public List<Tasks> Get_All_Tasks()
+        {
+            List<Tasks> taskList = new List<Tasks>();
+            var taskSet = dc.Tasks.OrderBy(tasks => tasks.Task_ID);
+
+            foreach (Tasks t in taskSet)
+                taskList.Add(t);
+
+            return taskList;
+        }
+
+
+        public void Disp_Rooms()
+        {
+            DbSet<Rooms> Rooms = dc.Rooms;
+            var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
+
+            foreach (Rooms r0 in RoomsList)
+                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
+            Console.WriteLine("=====================================");
+            Console.ReadKey();
+        }
+        public void Disp_Tasks()
+        {
+            DbSet<Tasks> Tasks = dc.Tasks;
+            var TaskList = Tasks.OrderBy(tasks => tasks.Task_ID);
+
+            Console.WriteLine("id       type           status");
+            foreach (Tasks t in Tasks)
+                Console.WriteLine("{0}{1}{2}");
+            Console.ReadKey();
+        }
+        public void Disp_Clients()
+        {
+            DbSet<Clients> Clients = dc.Clients;
+            
+            var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
+
+            Console.WriteLine("id                name             password");
+            foreach (Clients c0 in ClientsList)
+                Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
+            Console.WriteLine("======================================");
+            Console.ReadKey();
+        }
+
 
         public int Login( string cname, string cpassword)
         {
@@ -87,108 +222,7 @@ namespace Hotel_California___Data_manipulation_Layer
             return (cid);
         }
 
-        public void Del_Client( string cname, string cpassword)
-        {
-            int cid = 0;
-            cid = Login(cname, cpassword);
-
-            Clients cdel = dc.Clients.Where(rm => rm.Clients_ID == cid).FirstOrDefault();
-
-            if (cdel != null)
-            {
-                dc.Clients.Remove(cdel);
-                dc.SaveChanges();
-            }
-
-        }
-
-        public void Add_Reservation( int rid, string cname, string cpassword, DateTime begins, DateTime ends)
-        {
-            Booked_Rooms br = new Booked_Rooms();
-
-            int cid = Login(cname, cpassword);
-            br.Clients_ID = cid;
-
-            br.Rooms_ID = rid;
-            br.Begins = begins;
-            br.Ends = ends;
-
-            dc.Booked_Rooms.Add(br);
-            dc.SaveChanges();
-
-        }
-
-        public void Del_Reservation( int bid)
-        {
-            Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
-
-            if (bdel != null)
-            {
-                dc.Booked_Rooms.Remove(bdel);
-                dc.SaveChanges();
-            }
-        }
-
-        public void Add_Task( int tid, int rid)
-        {
-            string tstatus = "new";
-            Tasks nt = new Tasks
-            {
-                Task_ID = tid,
-                ID_ROOM = rid,
-                Status = tstatus
-            };
-
-            dc.Tasks.Add(nt);
-            dc.SaveChanges();
-        }
-
-        public void Del_Task( int rid, int tid)
-        {
-            Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
-            
-            if (tdel != null)
-            {
-                dc.Tasks.Remove(tdel);
-                dc.SaveChanges();
-            }
-        }
-
-        public void Disp_Rooms()
-        {
-            DbSet<Rooms> Rooms = dc.Rooms;
-            var RoomsList = Rooms.OrderBy(rooms => rooms.Rooms_ID);
-
-            foreach (Rooms r0 in RoomsList)
-                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
-            Console.WriteLine("=====================================");
-            Console.ReadKey();
-        }
-
-        public void Disp_Tasks()
-        {
-            DbSet<Tasks> Tasks = dc.Tasks;
-            var TaskList = Tasks.OrderBy(tasks => tasks.Task_ID);
-
-            Console.WriteLine("id       type           status");
-            foreach (Tasks t in Tasks)
-                Console.WriteLine("{0}{1}{2}");
-            Console.ReadKey();
-        }
-
-        public void Disp_Clients()
-        {
-            DbSet<Clients> Clients = dc.Clients;
-            
-            var ClientsList = Clients.OrderBy(cli => cli.Clients_ID);
-
-            Console.WriteLine("id                name             password");
-            foreach (Clients c0 in ClientsList)
-                Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
-            Console.WriteLine("======================================");
-            Console.ReadKey();
-        }
-        static void Main(string[] args)
+        static void Main()
         {
             DataLayer dl = new DataLayer();
 
