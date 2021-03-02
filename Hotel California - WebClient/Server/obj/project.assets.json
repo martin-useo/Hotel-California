@@ -957,19 +957,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruker 1\\.nuget\\packages\\": {}
+    "C:\\Users\\Mirnes\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Server\\Hotel California - WebClient.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Server\\Hotel California - WebClient.Server.csproj",
       "projectName": "Hotel_California_-_WebClient.Server",
-      "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Server\\Hotel California - WebClient.Server.csproj",
-      "packagesPath": "C:\\Users\\Bruker 1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Server\\obj\\",
+      "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Server\\Hotel California - WebClient.Server.csproj",
+      "packagesPath": "C:\\Users\\Mirnes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bruker 1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mirnes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -983,11 +983,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj": {
-              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj"
+            "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj": {
+              "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj"
             },
-            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj": {
-              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj"
+            "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj": {
+              "projectPath": "C:\\Users\\Mirnes\\source\\repos\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj"
             }
           }
         }
@@ -1025,7 +1025,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
