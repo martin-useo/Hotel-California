@@ -16,13 +16,11 @@ namespace Hotel_California___Data_manipulation_Layer
         DbSet<Clients> Clients;
         DbSet<Booked_Rooms> Booked_Rooms;
         DbSet<Tasks> Tasks;
-        DbSet<Task_Type> Task_Type;
-        DbSet<Post_Type> Post_Type;
+        int taskID, postID;
 
         public DataLayer()
         {
             dc = new Entities_oui();
-
             /*
             Rooms = dc.Rooms;
             Clients = dc.Clients;
@@ -175,17 +173,25 @@ namespace Hotel_California___Data_manipulation_Layer
 
         }
         
-        public void Add_Task( int tid, int rid)
+        public void Add_Task( String taskType, int rid)
         {
-            string tstatus = "new";
-            Tasks nt = new Tasks
-            {
-                Task_ID = tid,
-                ID_ROOM = rid,
-                Status = tstatus
-            };
-
             List<Tasks> tasks = Get_All_Tasks();
+            int newTaskID = 0;
+            foreach (Tasks t in tasks)
+            {
+                if (t.Task_ID > newTaskID)
+                {
+                    newTaskID = t.Task_ID + 1;
+                }
+            }
+
+            Tasks nt = new Tasks();
+            nt.Task_ID = newTaskID;
+            nt.ID_ROOM = rid;
+            nt.Status = "new";
+            nt.Task_Type = taskType;
+            nt.Note = "";
+
             bool pkTaken = false;
             foreach (Tasks t in tasks)
             {
