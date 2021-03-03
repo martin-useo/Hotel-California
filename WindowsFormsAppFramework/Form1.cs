@@ -13,11 +13,12 @@ namespace WindowsFormsApp
 {
     public partial class Form1 : Form
     {
-        IDataLayer IDataLayer;
+        IDataLayer idl;
+        String clientPassword = "hunter8";
 
         public Form1(IDataLayer _dataLayer)
         {
-            IDataLayer = _dataLayer;
+            idl = _dataLayer;
             InitializeComponent();
         }
 
@@ -65,17 +66,6 @@ namespace WindowsFormsApp
         {
 
         }
-
-        private void calendarEnd_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void calendarStart_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -107,7 +97,7 @@ namespace WindowsFormsApp
                 {
                     int taskId = (int)taskCell.Value;
                     int roomId = (int)roomCell.Value;
-                    IDataLayer.Del_Task(taskId, roomId);
+                    idl.Del_Task(taskId, roomId);
                 }
             }
         }
@@ -131,17 +121,17 @@ namespace WindowsFormsApp
             {
                 case "Service":
                     {
-                        IDataLayer.Add_Task(1, roomId);
+                        idl.Add_Task(1, roomId);
                     }
                     break;
                 case "Cleaner":
                     {
-                        IDataLayer.Add_Task(2, roomId);
+                        idl.Add_Task(2, roomId);
                     }
                     break;
                 case "Maintenence":
                     {
-                        IDataLayer.Add_Task(3, roomId);
+                        idl.Add_Task(3, roomId);
                     }
                     break;
                 default:
@@ -155,8 +145,8 @@ namespace WindowsFormsApp
             bool correctFormat = true;
             String roomId = textBoxReservationRoomNumber.Text;
             String name = textBoxReservationName.Text;
-            String startDate = textBoxReservationStartDate.Text;
-            String endDate = textBoxReservationEndDate.Text;
+            DateTime startDate = calendarStart.SelectionRange.Start;
+            DateTime endDate = calendarStart.SelectionRange.End;
 
             if(roomId is null)
             {
@@ -168,26 +158,11 @@ namespace WindowsFormsApp
                 textBoxReservationName.Text = "Please enter name";
                 correctFormat = false;
             }
-            if (startDate is null)
-            {
-                textBoxReservationStartDate.Text = "Please enter date";
-                correctFormat = false;
-            }
-            if (roomId is null)
-            {
-                textBoxReservationEndDate.Text = "Please enter date";
-                correctFormat = false;
-            }
-
-
 
             if (correctFormat)
             {
-                // TODO
-                // IDataLayer want int reservation id. Surely it should be the database that creates the id?
-                //IDataLayer.Add_Reservation(roomId, name, startDate, endDate);
+                idl.Add_Reservation(Int32.Parse(roomId), name, clientPassword, startDate, endDate);
             } 
-            
         }
 
         private void buttonReservationDelete_Click(object sender, EventArgs e)
@@ -204,19 +179,61 @@ namespace WindowsFormsApp
                 if (!(viewCell is null))
                 {
                     int roomId = (int)viewCell.Value;
-                    IDataLayer.Del_Reservation(roomId);
+                    idl.Del_Reservation(roomId);
                 }
             }
         }
-
         private void buttonGetTasks_Click(object sender, EventArgs e)
         {
-            List<Tasks> tasklist = IDataLayer.Get_All_Tasks();
+            List<Tasks> tasklist = idl.Get_All_Tasks();
 
             foreach (Tasks task in tasklist) {
                 String[] row = { task.Task_ID.ToString(), task.ID_ROOM.ToString(), "", task.Status, "" };
                 dataGridViewTasks.Rows.Add(row);
             }
+        }
+        private void comboBoxViewRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = (ComboBox)sender;
+            String selected = cb.SelectedItem.ToString();
+            ComboBox.ObjectCollection items = cb.Items;
+
+            if (selected == items[0].ToString())        // View rooms in available date range
+            {
+                DateTime startDate = calendarStart.SelectionRange.Start;
+                DateTime endDate = calendarStart.SelectionRange.End;
+                List<Rooms> rooms = idl.Get_All_Available_Rooms(startDate, endDate);
+
+                foreach (Rooms r in rooms)
+                {
+                    String[] row = { r.Rooms_ID.ToString(), r.People_Count.ToString(), r.Size, r.Quality };
+                    dataGridViewRooms.Rows.Add(row);
+                }
+            }
+            else if (selected == items[1].ToString())   // View all rooms
+            {
+                List<Rooms> rooms = idl.Get_All_Rooms();
+
+                foreach (Rooms r in rooms)
+                {
+                    String[] row = {r.Rooms_ID.ToString(), r.People_Count.ToString(), r.Size, r.Quality};
+                    dataGridViewRooms.Rows.Add(row);
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Something went wrong");
+            }
+        }
+
+        private void textBoxReservationRoomNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxReservationName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
