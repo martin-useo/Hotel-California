@@ -18,7 +18,7 @@ namespace WindowsFormsApp
             //Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             IDataLayer IDataLayer = new DataLayer();
             Application.Run(new Form1(IDataLayer));
         }
