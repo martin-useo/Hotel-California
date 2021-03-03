@@ -33,6 +33,10 @@ namespace WindowsFormsApp
         private void InitializeComponent()
         {
             this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
+            this.RoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.People = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxViewRooms = new System.Windows.Forms.ComboBox();
             this.calendarStart = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
@@ -66,10 +70,6 @@ namespace WindowsFormsApp
             this.buttonCreateTask = new System.Windows.Forms.Button();
             this.buttonReservationCreate = new System.Windows.Forms.Button();
             this.buttonGetTasks = new System.Windows.Forms.Button();
-            this.RoomNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.People = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTasks)).BeginInit();
@@ -91,7 +91,34 @@ namespace WindowsFormsApp
             this.dataGridViewRooms.RowTemplate.Height = 29;
             this.dataGridViewRooms.Size = new System.Drawing.Size(733, 593);
             this.dataGridViewRooms.TabIndex = 0;
-            this.dataGridViewRooms.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // RoomNr
+            // 
+            this.RoomNr.HeaderText = "RoomNr";
+            this.RoomNr.MinimumWidth = 6;
+            this.RoomNr.Name = "RoomNr";
+            this.RoomNr.Width = 125;
+            // 
+            // People
+            // 
+            this.People.HeaderText = "People";
+            this.People.MinimumWidth = 6;
+            this.People.Name = "People";
+            this.People.Width = 125;
+            // 
+            // Size
+            // 
+            this.Size.HeaderText = "Size";
+            this.Size.MinimumWidth = 6;
+            this.Size.Name = "Size";
+            this.Size.Width = 125;
+            // 
+            // Quality
+            // 
+            this.Quality.HeaderText = "Quality";
+            this.Quality.MinimumWidth = 6;
+            this.Quality.Name = "Quality";
+            this.Quality.Width = 125;
             // 
             // comboBoxViewRooms
             // 
@@ -164,7 +191,6 @@ namespace WindowsFormsApp
             this.textBoxReservationSearch.Name = "textBoxReservationSearch";
             this.textBoxReservationSearch.Size = new System.Drawing.Size(102, 22);
             this.textBoxReservationSearch.TabIndex = 7;
-            this.textBoxReservationSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // buttonReservationSearch
             // 
@@ -175,16 +201,18 @@ namespace WindowsFormsApp
             this.buttonReservationSearch.TabIndex = 8;
             this.buttonReservationSearch.Text = "Search person";
             this.buttonReservationSearch.UseVisualStyleBackColor = true;
+            this.buttonReservationSearch.Click += new System.EventHandler(this.buttonReservationSearch_Click);
             // 
             // buttonReservationShowAll
             // 
-            this.buttonReservationShowAll.Location = new System.Drawing.Point(1479, 205);
+            this.buttonReservationShowAll.Location = new System.Drawing.Point(1493, 205);
             this.buttonReservationShowAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonReservationShowAll.Name = "buttonReservationShowAll";
             this.buttonReservationShowAll.Size = new System.Drawing.Size(157, 23);
             this.buttonReservationShowAll.TabIndex = 9;
             this.buttonReservationShowAll.Text = "Show all reservations";
             this.buttonReservationShowAll.UseVisualStyleBackColor = true;
+            this.buttonReservationShowAll.Click += new System.EventHandler(this.buttonReservationShowAll_Click);
             // 
             // textBoxReservationRoomNumber
             // 
@@ -193,7 +221,6 @@ namespace WindowsFormsApp
             this.textBoxReservationRoomNumber.Name = "textBoxReservationRoomNumber";
             this.textBoxReservationRoomNumber.Size = new System.Drawing.Size(125, 22);
             this.textBoxReservationRoomNumber.TabIndex = 10;
-            this.textBoxReservationRoomNumber.TextChanged += new System.EventHandler(this.textBoxReservationRoomNumber_TextChanged);
             // 
             // textBoxReservationName
             // 
@@ -202,7 +229,6 @@ namespace WindowsFormsApp
             this.textBoxReservationName.Name = "textBoxReservationName";
             this.textBoxReservationName.Size = new System.Drawing.Size(125, 22);
             this.textBoxReservationName.TabIndex = 11;
-            this.textBoxReservationName.TextChanged += new System.EventHandler(this.textBoxReservationName_TextChanged);
             // 
             // label1
             // 
@@ -212,7 +238,6 @@ namespace WindowsFormsApp
             this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Room number:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -256,7 +281,6 @@ namespace WindowsFormsApp
             this.label4.Size = new System.Drawing.Size(135, 17);
             this.label4.TabIndex = 17;
             this.label4.Text = "End date of booking";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataGridViewTasks
             // 
@@ -403,34 +427,6 @@ namespace WindowsFormsApp
             this.buttonGetTasks.Text = "Get tasks";
             this.buttonGetTasks.UseVisualStyleBackColor = true;
             this.buttonGetTasks.Click += new System.EventHandler(this.buttonGetTasks_Click);
-            // 
-            // RoomNr
-            // 
-            this.RoomNr.HeaderText = "RoomNr";
-            this.RoomNr.MinimumWidth = 6;
-            this.RoomNr.Name = "RoomNr";
-            this.RoomNr.Width = 125;
-            // 
-            // People
-            // 
-            this.People.HeaderText = "People";
-            this.People.MinimumWidth = 6;
-            this.People.Name = "People";
-            this.People.Width = 125;
-            // 
-            // Size
-            // 
-            this.Size.HeaderText = "Size";
-            this.Size.MinimumWidth = 6;
-            this.Size.Name = "Size";
-            this.Size.Width = 125;
-            // 
-            // Quality
-            // 
-            this.Quality.HeaderText = "Quality";
-            this.Quality.MinimumWidth = 6;
-            this.Quality.Name = "Quality";
-            this.Quality.Width = 125;
             // 
             // Form1
             // 

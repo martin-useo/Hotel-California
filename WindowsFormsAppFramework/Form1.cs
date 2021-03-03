@@ -22,65 +22,7 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        public void CreateReservation() {
-        
-            // Check if room is already reserved
-            // If room is already reserved, then cannot create reservation
-
-        
-        }
-
-        public String ReadReservation() { 
-            
-            // If reservation exists, get it
-
-            // Else reservation doesn't exists
-
-
-            return ""; }
-
-        public String getReservations()
-        {
-            return "";
-        }
-
-        public void UpdateReservation() { }
-
-        public void DeleteReservation() { }
-
-        public void RegisterRoomService() { }
-
-        public void RegisterMaintenanceRequest() { }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void buttonDeleteTask_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows = dataGridViewTasks.SelectedRows;
@@ -137,7 +79,6 @@ namespace WindowsFormsApp
                 textBoxReservationName.Text = "Please enter name";
                 correctFormat = false;
             }
-
             if (correctFormat)
             {
                 idl.Add_Reservation(Int32.Parse(roomId), name, clientPassword, startDate, endDate);
@@ -205,14 +146,23 @@ namespace WindowsFormsApp
             }
         }
 
-        private void textBoxReservationRoomNumber_TextChanged(object sender, EventArgs e)
+        private void buttonReservationShowAll_Click(object sender, EventArgs e)
         {
-
+            List<Booked_Rooms> b = idl.Get_All_Reservations();
+            if  (!(b == null))
+            {
+                foreach (Booked_Rooms book in b)
+                        dataGridViewReservations.Rows.Add(book);
+            }
         }
 
-        private void textBoxReservationName_TextChanged(object sender, EventArgs e)
+        private void buttonReservationSearch_Click(object sender, EventArgs e)
         {
+            string searchBox = textBoxReservationSearch.Text;
 
+            if  (searchbox == ) { 
+            
+            }
         }
     }
 }
