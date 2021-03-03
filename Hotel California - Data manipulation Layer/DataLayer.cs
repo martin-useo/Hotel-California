@@ -42,8 +42,21 @@ namespace Hotel_California___Data_manipulation_Layer
                 Size = rsize
             };
 
-            dc.Rooms.Add(nr);
-            dc.SaveChanges();
+            List<Rooms> rooms = Get_All_Rooms();
+            bool pkTaken = false;
+            foreach (Rooms r in rooms)
+            {
+                if (r.Rooms_ID == nr.Rooms_ID)
+                {
+                    pkTaken = true;
+                }
+            }
+
+            if (!pkTaken)
+            {
+                dc.Rooms.Add(nr);
+                dc.SaveChanges();
+            }
         }
         public void Del_Room(int delid)
         {
@@ -73,22 +86,42 @@ namespace Hotel_California___Data_manipulation_Layer
 
             return rooms;
         }
-         
         public void Add_Reservation( int rid, string cname, string cpassword, DateTime begins, DateTime ends)
         {
             Booked_Rooms br = new Booked_Rooms();
-
             int cid = Login(cname, cpassword);
             br.Clients_ID = cid;
-
             br.Rooms_ID = rid;
             br.Begins = begins;
             br.Ends = ends;
 
-            dc.Booked_Rooms.Add(br);
-            dc.SaveChanges();
+            List<Booked_Rooms> reservations = Get_All_Reservations();
+            bool pkTaken = false;
+            foreach (Booked_Rooms r in reservations)
+            {
+                if (r.Reservation_ID == br.Reservation_ID)
+                {
+                    pkTaken = true;
+                }
+            }
 
+            List<Rooms> rooms = Get_All_Rooms();
+            bool roomExists = false;
+            foreach (Rooms r in rooms)
+            {
+                if (r.Rooms_ID == br.Rooms_ID)
+                {
+                    roomExists = true;
+                }
+            }
+
+            if (!pkTaken && roomExists)
+            {
+                dc.Booked_Rooms.Add(br);
+                dc.SaveChanges();
+            }
         }
+
         public void Del_Reservation( int bid)
         {
             Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
@@ -121,8 +154,11 @@ namespace Hotel_California___Data_manipulation_Layer
             ncl.Name = cname;
             ncl.Password = cpassword;
 
+            // TODO check if client already exists before adding
             dc.Clients.Add(ncl);
             dc.SaveChanges();
+
+
         }
         public void Del_Client( string cname, string cpassword)
         {
@@ -149,8 +185,21 @@ namespace Hotel_California___Data_manipulation_Layer
                 Status = tstatus
             };
 
-            dc.Tasks.Add(nt);
-            dc.SaveChanges();
+            List<Tasks> tasks = Get_All_Tasks();
+            bool pkTaken = false;
+            foreach (Tasks t in tasks)
+            {
+                if (t.Task_ID == nt.Task_ID)
+                {
+                    pkTaken = true;
+                }
+            }
+
+            if (!pkTaken)
+            {
+                dc.Tasks.Add(nt);
+                dc.SaveChanges();
+            }
         }
         public void Del_Task( int rid, int tid)
         {
@@ -224,6 +273,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         static void Main()
         {
+            /*
             DataLayer dl = new DataLayer();
 
             //  /!\TESTING ZONE/!\
@@ -250,6 +300,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
             dl.Del_Room(666);
             dl.Del_Client(cname, cpassword);
+            */
         }
         /*
             // Database context
