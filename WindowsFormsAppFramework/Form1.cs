@@ -21,7 +21,6 @@ namespace WindowsFormsApp
             idl = _dataLayer;
             InitializeComponent();
         }
-
         public void CreateReservation() {
         
             // Check if room is already reserved
@@ -29,7 +28,6 @@ namespace WindowsFormsApp
 
         
         }
-
         public String ReadReservation() { 
             
             // If reservation exists, get it
@@ -38,49 +36,30 @@ namespace WindowsFormsApp
 
 
             return ""; }
-
         public String getReservations()
         {
             return "";
         }
-
         public void UpdateReservation() { }
-
         public void DeleteReservation() { }
-
         public void RegisterRoomService() { }
-
         public void RegisterMaintenanceRequest() { }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
-
         private void buttonDeleteTask_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows = dataGridViewTasks.SelectedRows;
@@ -101,31 +80,23 @@ namespace WindowsFormsApp
                 }
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCreateTask_Click(object sender, EventArgs e)
         {
             int roomId = int.Parse(textBoxRoomNumberWork.Text);
             String taskType = comboBoxWorkType.Text;
             idl.Add_Task(taskType, roomId);
         }
-
         private void buttonReservationCreate_Click(object sender, EventArgs e)
         {
             bool correctFormat = true;
             String roomId = textBoxReservationRoomNumber.Text;
             String name = textBoxReservationName.Text;
-            DateTime startDate = calendarStart.SelectionRange.Start;
-            DateTime endDate = calendarStart.SelectionRange.End;
+            DateTime startDate = calendar.SelectionRange.Start;
+            DateTime endDate = calendar.SelectionRange.End;
 
             if(roomId is null)
             {
@@ -143,7 +114,6 @@ namespace WindowsFormsApp
                 idl.Add_Reservation(Int32.Parse(roomId), name, clientPassword, startDate, endDate);
             } 
         }
-
         private void buttonReservationDelete_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows = dataGridViewReservations.SelectedRows;
@@ -179,8 +149,8 @@ namespace WindowsFormsApp
 
             if (selected == items[0].ToString())        // View rooms in available date range
             {
-                DateTime startDate = calendarStart.SelectionRange.Start;
-                DateTime endDate = calendarStart.SelectionRange.End;
+                DateTime startDate = calendar.SelectionRange.Start;
+                DateTime endDate = calendar.SelectionRange.End;
                 List<Rooms> rooms = idl.Get_All_Available_Rooms(startDate, endDate);
 
                 foreach (Rooms r in rooms)
@@ -204,15 +174,26 @@ namespace WindowsFormsApp
                 throw new InvalidOperationException("Something went wrong");
             }
         }
-
         private void textBoxReservationRoomNumber_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBoxReservationName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void calendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            // Show the start and end dates in the text box.
+            textBoxReservationStartDate.Text = e.Start.ToShortDateString();
+            textBoxReservationEndDate.Text = e.End.ToShortDateString();
+        }
+        private void calendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            // Show the start and end dates in the text box.
+            textBoxReservationStartDate.Text = e.Start.ToShortDateString();
+            textBoxReservationEndDate.Text = e.End.ToShortDateString();
         }
     }
 }

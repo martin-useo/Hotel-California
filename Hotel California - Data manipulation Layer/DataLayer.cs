@@ -87,12 +87,12 @@ namespace Hotel_California___Data_manipulation_Layer
         public void Add_Reservation( int rid, string cname, string cpassword, DateTime begins, DateTime ends)
         {
             Booked_Rooms br = new Booked_Rooms();
-            int cid = Login(cname, cpassword);
-            br.Clients_ID = cid;
+            br.Clients_ID = Login(cname, cpassword);
             br.Rooms_ID = rid;
             br.Begins = begins;
             br.Ends = ends;
 
+            int reservationId = 0;
             List<Booked_Rooms> reservations = Get_All_Reservations();
             bool pkTaken = false;
             foreach (Booked_Rooms r in reservations)
@@ -101,7 +101,13 @@ namespace Hotel_California___Data_manipulation_Layer
                 {
                     pkTaken = true;
                 }
+                if (r.Reservation_ID > br.Reservation_ID)
+                {
+                    reservationId = r.Reservation_ID + 1;
+                }
             }
+            br.Reservation_ID = reservationId;
+
 
             List<Rooms> rooms = Get_All_Rooms();
             bool roomExists = false;
@@ -143,20 +149,18 @@ namespace Hotel_California___Data_manipulation_Layer
         {
             Clients ncl = new Clients();
 
-            var rand = new Random();
-
-            // Need to implement a way of checking if the combination of name/password already exists
-            // Also need a way of checking if the ID isn't already taken
-
-            ncl.Clients_ID = rand.Next();
+            Clients clientHighestId = dc.Clients.OrderBy(x => x.Clients_ID).FirstOrDefault();
+            ncl.Clients_ID = clientHighestId.Clients_ID + 1;
             ncl.Name = cname;
             ncl.Password = cpassword;
 
             // TODO check if client already exists before adding
+            Clients client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+            if (client == null)
+            {
             dc.Clients.Add(ncl);
             dc.SaveChanges();
-
-
+            }
         }
         public void Del_Client( string cname, string cpassword)
         {
@@ -175,31 +179,28 @@ namespace Hotel_California___Data_manipulation_Layer
         
         public void Add_Task( String taskType, int rid)
         {
+            Tasks nt = new Tasks();
             List<Tasks> tasks = Get_All_Tasks();
             int newTaskID = 0;
+            bool pkTaken = false;
+
             foreach (Tasks t in tasks)
             {
                 if (t.Task_ID > newTaskID)
                 {
                     newTaskID = t.Task_ID + 1;
                 }
-            }
-
-            Tasks nt = new Tasks();
-            nt.Task_ID = newTaskID;
-            nt.ID_ROOM = rid;
-            nt.Status = "new";
-            nt.Task_Type = taskType;
-            nt.Note = "";
-
-            bool pkTaken = false;
-            foreach (Tasks t in tasks)
-            {
                 if (t.Task_ID == nt.Task_ID)
                 {
                     pkTaken = true;
                 }
             }
+            
+            nt.Task_ID = newTaskID;
+            nt.ID_ROOM = rid;
+            nt.Status = "new";
+            nt.Task_Type = taskType;
+            nt.Task_Note = "";
 
             if (!pkTaken)
             {
@@ -267,11 +268,17 @@ namespace Hotel_California___Data_manipulation_Layer
         {
             int cid = 0;
 
-            Clients getid = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+            Clients client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
 
-            if (getid != null)
+            if (client != null)
             {
-                cid = getid.Clients_ID;
+                cid = client.Clients_ID;
+            }
+            else
+            {
+                Add_Client(cname, cpassword);
+                client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+                cid = client.Clients_ID;
             }
 
             return (cid);
@@ -307,6 +314,7 @@ namespace Hotel_California___Data_manipulation_Layer
             dl.Del_Room(666);
             dl.Del_Client(cname, cpassword);
             */
+            Console.ReadKey();
         }
         /*
             // Database context
@@ -324,7 +332,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
                              
         */
-
+        
     }
 }
 
