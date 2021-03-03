@@ -7,16 +7,20 @@
 <div class="flexcontainer">
 
     <div class="flexchildren">
+
         Name :<br />
         <input type="text" id="cname" /><br />
         <br />
+
         Password :<br />
-        <input type="password" id="cpassword" /><br />
+        <input type="@TxtType" id="cpassword" />    show password  <input type="checkbox" @onchange="ShowPassword" /><br />
         <br />
+
         Confirm Password :<br />
-        <input type="password" id="confirmcpassword" /><br />
+        <input class="@check" type="@TxtType" id="confirmcpassword"/><br />
         <br />
-        <input type="button" id="confirm" class="button" value="Confirm" />
+
+        <input type="button" class="button" value="Confirm" @onclick="Update" /><br />
     </div>
 </div>
 
@@ -26,4 +30,33 @@
     public string cname { get; set; }
     public string cpassword { get; set; }
     public string confirmcpassword { get; set; }
+
+    public string check = "normal";
+    public string TxtType = "password";
+
+    public void Update(MouseEventArgs e)
+    {
+        // Checking if the passwords match
+        if (@cpassword == @confirmcpassword)
+        {
+            this.check = "normal";
+        }
+        else
+        {
+            this.check = "abnormal";
+        }
+
+    }
+
+    public void ShowPassword()
+    {
+        if (this.TxtType == "password")
+        {
+            this.TxtType = "text";
+        }
+        else
+        {
+            this.TxtType = "password";
+        }
+    }
 }

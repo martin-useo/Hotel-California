@@ -84,12 +84,41 @@ using Hotel_California___WebClient.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Pages\Register.razor"
+#line 28 "C:\Users\Bruker 1\Documents\GitHub\Hotel-California\Hotel California - WebClient\Client\Pages\Register.razor"
        
     [Parameter]
     public string cname { get; set; }
     public string cpassword { get; set; }
     public string confirmcpassword { get; set; }
+
+    public string check = "normal";
+    public string TxtType = "password";
+
+    public void Update(MouseEventArgs e)
+    {
+        // Checking if the passwords match
+        if (@cpassword == @confirmcpassword)
+        {
+            this.check = "normal";
+        }
+        else
+        {
+            this.check = "abnormal";
+        }
+
+    }
+
+    public void ShowPassword()
+    {
+        if (this.TxtType == "password")
+        {
+            this.TxtType = "text";
+        }
+        else
+        {
+            this.TxtType = "password";
+        }
+    }
 
 #line default
 #line hidden
