@@ -13,10 +13,10 @@ namespace Hotel_California___Data_manipulation_Layer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities_oui2 : DbContext
+    public partial class Entities_oui3 : DbContext
     {
-        public Entities_oui2()
-            : base("name=Entities_oui2")
+        public Entities_oui3()
+            : base("name=Entities_oui3")
         {
         }
     

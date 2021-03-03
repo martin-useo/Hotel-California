@@ -39,6 +39,7 @@
           <Property Name="Task_ID" Type="int" Nullable="false" />
           <Property Name="ID_ROOM" Type="int" />
           <Property Name="Task_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Task_Note" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK__Booked_Ro__Clien__37FA4C37">
@@ -65,7 +66,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tasks__ID_ROOM__4830B400">
+        <Association Name="FK__Tasks__ID_ROOM__4DE98D56">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -90,7 +91,7 @@
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tasks__ID_ROOM__4830B400" Association="Self.FK__Tasks__ID_ROOM__4830B400">
+          <AssociationSet Name="FK__Tasks__ID_ROOM__4DE98D56" Association="Self.FK__Tasks__ID_ROOM__4DE98D56">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
@@ -130,7 +131,7 @@
           <Property Name="Quality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Booked_Rooms" Relationship="Self.FK__Booked_Ro__Rooms__370627FE" FromRole="Rooms" ToRole="Booked_Rooms" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__ID_ROOM__4830B400" FromRole="Rooms" ToRole="Tasks" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__ID_ROOM__4DE98D56" FromRole="Rooms" ToRole="Tasks" />
         </EntityType>
         <EntityType Name="Tasks">
           <Key>
@@ -139,8 +140,9 @@
           <Property Name="Task_ID" Type="Int32" Nullable="false" />
           <Property Name="ID_ROOM" Type="Int32" />
           <Property Name="Task_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Task_Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__ID_ROOM__4830B400" FromRole="Tasks" ToRole="Rooms" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__ID_ROOM__4DE98D56" FromRole="Tasks" ToRole="Rooms" />
         </EntityType>
         <Association Name="FK__Booked_Ro__Clien__37FA4C37">
           <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
@@ -166,7 +168,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tasks__ID_ROOM__4830B400">
+        <Association Name="FK__Tasks__ID_ROOM__4DE98D56">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -178,7 +180,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities_oui2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities_oui3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" />
           <EntitySet Name="Clients" EntityType="Self.Clients" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" />
@@ -191,7 +193,7 @@
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tasks__ID_ROOM__4830B400" Association="Self.FK__Tasks__ID_ROOM__4830B400">
+          <AssociationSet Name="FK__Tasks__ID_ROOM__4DE98D56" Association="Self.FK__Tasks__ID_ROOM__4DE98D56">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
@@ -201,7 +203,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_oui2">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_oui3">
           <EntitySetMapping Name="Booked_Rooms">
             <EntityTypeMapping TypeName="Model.Booked_Rooms">
               <MappingFragment StoreEntitySet="Booked_Rooms">
@@ -238,6 +240,7 @@
                 <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
                 <ScalarProperty Name="ID_ROOM" ColumnName="ID_ROOM" />
                 <ScalarProperty Name="Task_Type" ColumnName="Task_Type" />
+                <ScalarProperty Name="Task_Note" ColumnName="Task_Note" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -17,6 +17,7 @@ namespace Hotel_California___Data_manipulation_Layer
         public int Task_ID { get; set; }
         public Nullable<int> ID_ROOM { get; set; }
         public string Task_Type { get; set; }
+        public string Task_Note { get; set; }
         public string Status { get; set; }
     
         public virtual Rooms Rooms { get; set; }
