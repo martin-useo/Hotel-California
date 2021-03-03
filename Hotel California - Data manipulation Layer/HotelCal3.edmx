@@ -23,13 +23,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Post_Type">
-          <Key>
-            <PropertyRef Name="Post_ID" />
-          </Key>
-          <Property Name="Post_ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Rooms">
           <Key>
             <PropertyRef Name="Rooms_ID" />
@@ -39,22 +32,13 @@
           <Property Name="Quality" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Erreurs d√©tect√©es durant la g√©n√©ration¬†:
-avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√© primaire d√©finie. La cl√© a √©t√© d√©duite et la d√©finition a √©t√© cr√©√©e en tant que table/vue en lecture seule.-->
-        <EntityType Name="Task_Type">
-          <Key>
-            <PropertyRef Name="Type" />
-          </Key>
-          <Property Name="Task_ID" Type="int" />
-          <Property Name="Post_ID" Type="int" />
-          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Tasks">
           <Key>
             <PropertyRef Name="Task_ID" />
           </Key>
           <Property Name="Task_ID" Type="int" Nullable="false" />
           <Property Name="ID_ROOM" Type="int" />
+          <Property Name="Task_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK__Booked_Ro__Clien__37FA4C37">
@@ -81,31 +65,7 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Task_Type__Post___0C1BC9F9">
-          <End Role="Post_Type" Type="Self.Post_Type" Multiplicity="0..1" />
-          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Post_Type">
-              <PropertyRef Name="Post_ID" />
-            </Principal>
-            <Dependent Role="Task_Type">
-              <PropertyRef Name="Post_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Task_Type__Task___0B27A5C0">
-          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
-          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tasks">
-              <PropertyRef Name="Task_ID" />
-            </Principal>
-            <Dependent Role="Task_Type">
-              <PropertyRef Name="Task_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tasks__ID_ROOM__7DCDAAA2">
+        <Association Name="FK__Tasks__ID_ROOM__4830B400">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -120,16 +80,8 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Post_Type" EntityType="Self.Post_Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Task_Type" EntityType="Self.Task_Type" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Task_Type].[Task_ID] AS [Task_ID], 
-    [Task_Type].[Post_ID] AS [Post_ID], 
-    [Task_Type].[Type] AS [Type]
-    FROM [dbo].[Task_Type] AS [Task_Type]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Booked_Ro__Clien__37FA4C37" Association="Self.FK__Booked_Ro__Clien__37FA4C37">
             <End Role="Clients" EntitySet="Clients" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
@@ -138,15 +90,7 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
           </AssociationSet>
-          <AssociationSet Name="FK__Task_Type__Post___0C1BC9F9" Association="Self.FK__Task_Type__Post___0C1BC9F9">
-            <End Role="Post_Type" EntitySet="Post_Type" />
-            <End Role="Task_Type" EntitySet="Task_Type" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Task_Type__Task___0B27A5C0" Association="Self.FK__Task_Type__Task___0B27A5C0">
-            <End Role="Tasks" EntitySet="Tasks" />
-            <End Role="Task_Type" EntitySet="Task_Type" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tasks__ID_ROOM__7DCDAAA2" Association="Self.FK__Tasks__ID_ROOM__7DCDAAA2">
+          <AssociationSet Name="FK__Tasks__ID_ROOM__4830B400" Association="Self.FK__Tasks__ID_ROOM__4830B400">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
@@ -177,14 +121,6 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Booked_Rooms" Relationship="Self.FK__Booked_Ro__Clien__37FA4C37" FromRole="Clients" ToRole="Booked_Rooms" />
         </EntityType>
-        <EntityType Name="Post_Type">
-          <Key>
-            <PropertyRef Name="Post_ID" />
-          </Key>
-          <Property Name="Post_ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Task_Type" Relationship="Self.FK__Task_Type__Post___0C1BC9F9" FromRole="Post_Type" ToRole="Task_Type" />
-        </EntityType>
         <EntityType Name="Rooms">
           <Key>
             <PropertyRef Name="Rooms_ID" />
@@ -194,7 +130,7 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
           <Property Name="Quality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Booked_Rooms" Relationship="Self.FK__Booked_Ro__Rooms__370627FE" FromRole="Rooms" ToRole="Booked_Rooms" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__ID_ROOM__7DCDAAA2" FromRole="Rooms" ToRole="Tasks" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__ID_ROOM__4830B400" FromRole="Rooms" ToRole="Tasks" />
         </EntityType>
         <EntityType Name="Tasks">
           <Key>
@@ -202,19 +138,9 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
           </Key>
           <Property Name="Task_ID" Type="Int32" Nullable="false" />
           <Property Name="ID_ROOM" Type="Int32" />
+          <Property Name="Task_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__ID_ROOM__7DCDAAA2" FromRole="Tasks" ToRole="Rooms" />
-          <NavigationProperty Name="Task_Type" Relationship="Self.FK__Task_Type__Task___0B27A5C0" FromRole="Tasks" ToRole="Task_Type" />
-        </EntityType>
-        <EntityType Name="Task_Type">
-          <Key>
-            <PropertyRef Name="Type" />
-          </Key>
-          <Property Name="Task_ID" Type="Int32" />
-          <Property Name="Post_ID" Type="Int32" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Post_Type" Relationship="Self.FK__Task_Type__Post___0C1BC9F9" FromRole="Task_Type" ToRole="Post_Type" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK__Task_Type__Task___0B27A5C0" FromRole="Task_Type" ToRole="Tasks" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK__Tasks__ID_ROOM__4830B400" FromRole="Tasks" ToRole="Rooms" />
         </EntityType>
         <Association Name="FK__Booked_Ro__Clien__37FA4C37">
           <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
@@ -240,19 +166,7 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Task_Type__Post___0C1BC9F9">
-          <End Role="Post_Type" Type="Self.Post_Type" Multiplicity="0..1" />
-          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Post_Type">
-              <PropertyRef Name="Post_ID" />
-            </Principal>
-            <Dependent Role="Task_Type">
-              <PropertyRef Name="Post_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tasks__ID_ROOM__7DCDAAA2">
+        <Association Name="FK__Tasks__ID_ROOM__4830B400">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -264,25 +178,11 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Task_Type__Task___0B27A5C0">
-          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
-          <End Role="Task_Type" Type="Self.Task_Type" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tasks">
-              <PropertyRef Name="Task_ID" />
-            </Principal>
-            <Dependent Role="Task_Type">
-              <PropertyRef Name="Task_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="Entities_oui" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities_oui2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Booked_Rooms" EntityType="Self.Booked_Rooms" />
           <EntitySet Name="Clients" EntityType="Self.Clients" />
-          <EntitySet Name="Post_Type" EntityType="Self.Post_Type" />
           <EntitySet Name="Rooms" EntityType="Self.Rooms" />
           <EntitySet Name="Tasks" EntityType="Self.Tasks" />
-          <EntitySet Name="Task_Type" EntityType="Self.Task_Type" />
           <AssociationSet Name="FK__Booked_Ro__Clien__37FA4C37" Association="Self.FK__Booked_Ro__Clien__37FA4C37">
             <End Role="Clients" EntitySet="Clients" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
@@ -291,17 +191,9 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Booked_Rooms" EntitySet="Booked_Rooms" />
           </AssociationSet>
-          <AssociationSet Name="FK__Task_Type__Post___0C1BC9F9" Association="Self.FK__Task_Type__Post___0C1BC9F9">
-            <End Role="Post_Type" EntitySet="Post_Type" />
-            <End Role="Task_Type" EntitySet="Task_Type" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tasks__ID_ROOM__7DCDAAA2" Association="Self.FK__Tasks__ID_ROOM__7DCDAAA2">
+          <AssociationSet Name="FK__Tasks__ID_ROOM__4830B400" Association="Self.FK__Tasks__ID_ROOM__4830B400">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Tasks" EntitySet="Tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Task_Type__Task___0B27A5C0" Association="Self.FK__Task_Type__Task___0B27A5C0">
-            <End Role="Tasks" EntitySet="Tasks" />
-            <End Role="Task_Type" EntitySet="Task_Type" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -309,7 +201,7 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_oui">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_oui2">
           <EntitySetMapping Name="Booked_Rooms">
             <EntityTypeMapping TypeName="Model.Booked_Rooms">
               <MappingFragment StoreEntitySet="Booked_Rooms">
@@ -330,14 +222,6 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Post_Type">
-            <EntityTypeMapping TypeName="Model.Post_Type">
-              <MappingFragment StoreEntitySet="Post_Type">
-                <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="Model.Rooms">
               <MappingFragment StoreEntitySet="Rooms">
@@ -353,16 +237,8 @@ avertissement 6002: La table/vue 'Hotel-California.dbo.Task_Type' n'a pas de cl√
               <MappingFragment StoreEntitySet="Tasks">
                 <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
                 <ScalarProperty Name="ID_ROOM" ColumnName="ID_ROOM" />
+                <ScalarProperty Name="Task_Type" ColumnName="Task_Type" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Task_Type">
-            <EntityTypeMapping TypeName="Model.Task_Type">
-              <MappingFragment StoreEntitySet="Task_Type">
-                <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
-                <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

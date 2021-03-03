@@ -10,7 +10,7 @@ namespace Hotel_California___Data_manipulation_Layer
 {
     public class DataLayer : IDataLayer
     {
-        Entities_oui dc;
+        Entities_oui2 dc;
 
         DbSet<Rooms> Rooms;
         DbSet<Clients> Clients;
@@ -20,7 +20,7 @@ namespace Hotel_California___Data_manipulation_Layer
 
         public DataLayer()
         {
-            dc = new Entities_oui();
+            dc = new Entities_oui2();
             /*
             Rooms = dc.Rooms;
             Clients = dc.Clients;

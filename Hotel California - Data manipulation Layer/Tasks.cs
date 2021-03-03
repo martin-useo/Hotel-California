@@ -14,18 +14,11 @@ namespace Hotel_California___Data_manipulation_Layer
     
     public partial class Tasks
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tasks()
-        {
-            this.Task_Type = new HashSet<Task_Type>();
-        }
-    
         public int Task_ID { get; set; }
         public Nullable<int> ID_ROOM { get; set; }
+        public string Task_Type { get; set; }
         public string Status { get; set; }
     
         public virtual Rooms Rooms { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Task_Type> Task_Type { get; set; }
     }
 }
