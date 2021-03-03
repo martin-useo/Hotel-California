@@ -48,6 +48,10 @@ namespace WindowsFormsApp
             int roomId = int.Parse(textBoxRoomNumberWork.Text);
             String taskType = comboBoxWorkType.Text;
             idl.Add_Task(taskType, roomId);
+            textBoxRoomNumberWork.Text = "";
+            buttonGetTasks_Click(sender, e);
+
+
         }
 
         private void buttonReservationCreate_Click(object sender, EventArgs e)
@@ -73,6 +77,7 @@ namespace WindowsFormsApp
                 idl.Add_Reservation(Int32.Parse(roomId), name, clientPassword, startDate, endDate);
             }
             textBoxReservationEndDate.Text=textBoxReservationStartDate.Text=textBoxReservationName.Text = textBoxReservationRoomNumber.Text = "";
+            buttonReservationShowAll_Click(sender,  e);
         }
 
         private void buttonReservationDelete_Click(object sender, EventArgs e)
@@ -95,12 +100,18 @@ namespace WindowsFormsApp
         }
         private void buttonGetTasks_Click(object sender, EventArgs e)
         {
+            if (!(dataGridViewTasks.Rows == null))
+            {
+                dataGridViewTasks.Rows.Clear();
+            }
+
             List<Tasks> tasklist = idl.Get_All_Tasks();
 
             foreach (Tasks task in tasklist) {
-                String[] row = { task.Task_ID.ToString(), task.ID_ROOM.ToString(), "", task.Status, "" };
+                String[] row = { task.Task_ID.ToString(), task.ID_ROOM.ToString(), task.Task_Type, task.Status,task.Task_Note };
                 dataGridViewTasks.Rows.Add(row);
             }
+            
         }
         private void comboBoxViewRooms_SelectedIndexChanged(object sender, EventArgs e)
         {

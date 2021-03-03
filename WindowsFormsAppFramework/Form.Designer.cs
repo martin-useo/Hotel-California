@@ -275,7 +275,7 @@ namespace WindowsFormsApp
             this.dataGridViewTasks.Name = "dataGridViewTasks";
             this.dataGridViewTasks.RowHeadersWidth = 51;
             this.dataGridViewTasks.RowTemplate.Height = 29;
-            this.dataGridViewTasks.Size = new System.Drawing.Size(846, 550);
+            this.dataGridViewTasks.Size = new System.Drawing.Size(867, 550);
             this.dataGridViewTasks.TabIndex = 18;
             // 
             // TaskId
