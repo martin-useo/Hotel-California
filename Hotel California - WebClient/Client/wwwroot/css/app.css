@@ -53,6 +53,14 @@ html, body {
     align-content: center
 }
 
+.normal{
+
+}
+
+.abnormal{
+    border: 3px thick red,
+}
+
 .box{
     border-radius: 20px;
     margin: auto;
