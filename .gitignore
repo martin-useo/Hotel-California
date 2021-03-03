@@ -18,6 +18,9 @@ debug/
 */bin/*
 */obj/
 */obj/*
+*/bin
+*/obj
+
 
 
 Hotel California - WebClient\Client\bin
