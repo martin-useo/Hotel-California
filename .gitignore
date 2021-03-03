@@ -12,6 +12,7 @@
 *.cache
 */debug/
 */debug/*
+*debug*
 debug/
 */debug*
 Hotel-California/
