@@ -143,7 +143,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.SaveChanges();
             }
         }
-        // TODO
         public List<Booked_Rooms> Get_All_Reservations()
         {
             List<Booked_Rooms> reservationList = new List<Booked_Rooms>();
@@ -189,27 +188,26 @@ namespace Hotel_California___Data_manipulation_Layer
         public void Add_Task( String taskType, int rid)
         {
             Tasks nt = new Tasks();
-            List<Tasks> tasks = Get_All_Tasks();
-            int newTaskID = 0;
-            bool pkTaken = false;
-
-            foreach (Tasks t in tasks)
-            {
-                if (t.Task_ID > newTaskID)
-                {
-                    newTaskID = t.Task_ID + 1;
-                }
-                if (t.Task_ID == nt.Task_ID)
-                {
-                    pkTaken = true;
-                }
-            }
-            
-            nt.Task_ID = newTaskID;
             nt.ID_ROOM = rid;
             nt.Status = "new";
             nt.Task_Type = taskType;
             nt.Task_Note = "";
+
+            int newTaskID = 0;
+            bool pkTaken = false;
+            List<Tasks> tasks = Get_All_Tasks();
+            foreach (Tasks t in tasks)
+            {
+                if (t.Task_ID >= newTaskID)
+                {
+                    newTaskID = t.Task_ID + 1;
+                }
+                if (t.ID_ROOM == nt.ID_ROOM && t.Task_Type == nt.Task_Type)
+                {
+                    pkTaken = true;
+                }
+            }
+            nt.Task_ID = newTaskID;
 
             if (!pkTaken)
             {
@@ -217,10 +215,20 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.SaveChanges();
             }
         }
-        public void Del_Task( int rid, int tid)
+        public void Del_Task(int tid)
         {
-            Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).Where(rm => rm.ID_ROOM == rid).FirstOrDefault();
+            Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).FirstOrDefault();
             
+            if (tdel != null)
+            {
+                dc.Tasks.Remove(tdel);
+                dc.SaveChanges();
+            }
+        }
+        public void Del_Task(int rid, String taskType)
+        {
+            Tasks tdel = dc.Tasks.Where(t => t.ID_ROOM == rid && t.Task_Type == taskType).FirstOrDefault();
+
             if (tdel != null)
             {
                 dc.Tasks.Remove(tdel);
@@ -253,9 +261,8 @@ namespace Hotel_California___Data_manipulation_Layer
             DbSet<Tasks> Tasks = dc.Tasks;
             var TaskList = Tasks.OrderBy(tasks => tasks.Task_ID);
 
-            Console.WriteLine("id       type           status");
             foreach (Tasks t in Tasks)
-                Console.WriteLine("{0}{1}{2}");
+                Console.WriteLine("{0} {1} {2} {3} {4}", t.Task_ID, t.ID_ROOM, t.Task_Type, t.Task_Note, t.Status);
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
         public void Disp_Clients()
@@ -340,8 +347,21 @@ namespace Hotel_California___Data_manipulation_Layer
             dl.Add_Reservation(100, cname, cpassword, begins, ends);
             dl.Add_Reservation(101, cname, cpassword, begins, ends);
             dl.Add_Reservation(1000, cname, cpassword, begins, ends);
-            dl.Disp_Reservations();
 
+            dl.Add_Task("Cleaner", 100);
+            List<Tasks> taskList = dl.Get_All_Tasks();
+
+            foreach (Tasks t in taskList)
+            {
+                if (t.ID_ROOM == 100)
+                {
+                    t.Task_Note = "Note: Please clean room";
+                }
+            }
+
+            dl.Disp_Tasks();
+            dl.Del_Task(100, "Cleaner");
+            dl.Disp_Tasks();
             Console.ReadKey();
         }
     }
