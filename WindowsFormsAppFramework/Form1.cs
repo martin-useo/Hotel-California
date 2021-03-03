@@ -115,29 +115,8 @@ namespace WindowsFormsApp
         private void buttonCreateTask_Click(object sender, EventArgs e)
         {
             int roomId = int.Parse(textBoxRoomNumberWork.Text);
-            String workerType = comboBoxWorkType.Text;
-
-            switch (workerType)
-            {
-                case "Service":
-                    {
-                        idl.Add_Task(1, roomId);
-                    }
-                    break;
-                case "Cleaner":
-                    {
-                        idl.Add_Task(2, roomId);
-                    }
-                    break;
-                case "Maintenence":
-                    {
-                        idl.Add_Task(3, roomId);
-                    }
-                    break;
-                default:
-                    {}
-                    break;
-            }
+            String taskType = comboBoxWorkType.Text;
+            idl.Add_Task(taskType, roomId);
         }
 
         private void buttonReservationCreate_Click(object sender, EventArgs e)

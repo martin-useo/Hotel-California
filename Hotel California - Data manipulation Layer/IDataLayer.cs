@@ -20,7 +20,7 @@ namespace Hotel_California___Data_manipulation_Layer
         void Del_Client(string cname, string cpassword);
         //Clients Get_All_Clients();
         // Tasks  ///////////////////////////////////////////////////////////
-        void Add_Task(int tid, int rid);
+        void Add_Task(String taskType, int rid);
         void Del_Task(int rid, int tid);
         List<Tasks> Get_All_Tasks();
         // Other ////////////////////////////////////////////////////////////
