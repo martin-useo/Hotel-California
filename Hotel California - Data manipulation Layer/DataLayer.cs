@@ -79,13 +79,37 @@ namespace Hotel_California___Data_manipulation_Layer
 
             return roomList;
         }
-        // TODO
-        public List<Rooms> Get_All_Available_Rooms(DateTime beings, DateTime ends)
+        public List<Rooms> Get_All_Available_Rooms(DateTime begins, DateTime ends)
         {
-            List<Rooms> rooms = new List<Rooms>();
-
-
+            List<Rooms> rooms = Get_All_Rooms();
+            foreach (Rooms r in rooms)
+            {
+                ICollection<Booked_Rooms> reservations = r.Booked_Rooms;
+                foreach (Booked_Rooms br in reservations)
+                {
+                    if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
+                    {
+                        if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
+                        {
+                            rooms.Remove(r);
+                        }
+                    }
+                }
+            }
             return rooms;
+        }
+        private Rooms Get_Room(int rid)
+        {
+            Rooms room = new Rooms();
+            List<Rooms> roomsList = Get_All_Rooms();
+            foreach (Rooms r in roomsList)
+            {
+                if (r.Rooms_ID == rid)
+                {
+                    room = r;
+                }
+            }
+            return room;
         }
         public void Add_Reservation(int rid, string cname, string cpassword, DateTime begins, DateTime ends)
         {
@@ -95,43 +119,45 @@ namespace Hotel_California___Data_manipulation_Layer
             if (br.Clients_ID == -1 || (0 < DateTime.Compare(begins, ends))){}  // If client login fails or dates don't make sense: Do not create reservation
             else
             {
-            br.Rooms_ID = rid;
-            br.Begins = begins;
-            br.Ends = ends;
+                br.Rooms_ID = rid;
+                br.Begins = begins;
+                br.Ends = ends;
 
-            int reservationId = 0;
-            bool pkTaken = false;
-            List<Booked_Rooms> reservations = Get_All_Reservations();
-            foreach (Booked_Rooms r in reservations)
-            {
-                if (r.Rooms_ID == br.Rooms_ID)  // If room is already reserved
+                int reservationId = 0;
+                bool pkTaken = false;
+                List<Booked_Rooms> reservations = Get_All_Reservations();
+                foreach (Booked_Rooms r in reservations)
                 {
-                    pkTaken = true;
+                    if (r.Rooms_ID == br.Rooms_ID)  // If room is already reserved
+                    {
+                        pkTaken = true;
+                    }
+                    if (r.Reservation_ID >= br.Reservation_ID)   // Get new unique number for reservation id
+                    {
+                        reservationId = r.Reservation_ID + 1;
+                    }
                 }
-                if (r.Reservation_ID >= br.Reservation_ID)   // Get new unique number for reservation id
+                br.Reservation_ID = reservationId;
+
+
+                List<Rooms> rooms = Get_All_Rooms();
+                bool roomExists = false;
+                foreach (Rooms r in rooms)      // To create reservation a valid room must be entered
                 {
-                    reservationId = r.Reservation_ID + 1;
+                    if (r.Rooms_ID == br.Rooms_ID)
+                    {
+                        roomExists = true;
+                    }
+                }
+
+                if (!pkTaken && roomExists)     // Only add if room exists and is available
+                {
+                    Rooms r = Get_Room(rid);
+                    r.Booked_Rooms = (ICollection<Booked_Rooms>)br;     // Add reservation to the room object
+                    dc.Booked_Rooms.Add(br);
+                    dc.SaveChanges();
                 }
             }
-            br.Reservation_ID = reservationId;
-
-
-            List<Rooms> rooms = Get_All_Rooms();
-            bool roomExists = false;
-            foreach (Rooms r in rooms)      // To create reservation a valid room must be entered
-            {
-                if (r.Rooms_ID == br.Rooms_ID)
-                {
-                    roomExists = true;
-                }
-            }
-
-            if (!pkTaken && roomExists)     // Only add if room exists and is available
-            {
-                dc.Booked_Rooms.Add(br);
-                dc.SaveChanges();
-            }
-        }
         }
         public void Del_Reservation( int bid)
         {
@@ -139,6 +165,10 @@ namespace Hotel_California___Data_manipulation_Layer
 
             if (bdel != null)
             {
+                ICollection<Booked_Rooms> br = bdel.Rooms.Booked_Rooms;     // Get reservations of room of bdel
+                br.Remove(bdel);                                            // Remove bdel from rooms reservation collection
+                bdel.Rooms.Booked_Rooms = br;                               // Update the collection with the new version
+
                 dc.Booked_Rooms.Remove(bdel);
                 dc.SaveChanges();
             }
