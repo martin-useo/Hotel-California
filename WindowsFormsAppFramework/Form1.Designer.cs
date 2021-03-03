@@ -38,7 +38,7 @@ namespace WindowsFormsApp
             this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxViewRooms = new System.Windows.Forms.ComboBox();
-            this.calendarStart = new System.Windows.Forms.MonthCalendar();
+            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,6 +120,34 @@ namespace WindowsFormsApp
             this.Quality.Name = "Quality";
             this.Quality.Width = 125;
             // 
+            // RoomNr
+            // 
+            this.RoomNr.HeaderText = "RoomNr";
+            this.RoomNr.MinimumWidth = 6;
+            this.RoomNr.Name = "RoomNr";
+            this.RoomNr.Width = 125;
+            // 
+            // People
+            // 
+            this.People.HeaderText = "People";
+            this.People.MinimumWidth = 6;
+            this.People.Name = "People";
+            this.People.Width = 125;
+            // 
+            // Size
+            // 
+            this.Size.HeaderText = "Size";
+            this.Size.MinimumWidth = 6;
+            this.Size.Name = "Size";
+            this.Size.Width = 125;
+            // 
+            // Quality
+            // 
+            this.Quality.HeaderText = "Quality";
+            this.Quality.MinimumWidth = 6;
+            this.Quality.Name = "Quality";
+            this.Quality.Width = 125;
+            // 
             // comboBoxViewRooms
             // 
             this.comboBoxViewRooms.FormattingEnabled = true;
@@ -133,12 +161,14 @@ namespace WindowsFormsApp
             this.comboBoxViewRooms.TabIndex = 3;
             this.comboBoxViewRooms.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewRooms_SelectedIndexChanged);
             // 
-            // calendarStart
+            // calendar
             // 
-            this.calendarStart.Location = new System.Drawing.Point(18, 14);
-            this.calendarStart.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.calendarStart.Name = "calendarStart";
-            this.calendarStart.TabIndex = 4;
+            this.calendar.Location = new System.Drawing.Point(18, 14);
+            this.calendar.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.calendar.Name = "calendar";
+            this.calendar.TabIndex = 4;
+            this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
+            this.calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateSelected);
             // 
             // dataGridViewReservations
             // 
@@ -381,7 +411,6 @@ namespace WindowsFormsApp
             this.label6.Size = new System.Drawing.Size(93, 17);
             this.label6.TabIndex = 24;
             this.label6.Text = "Type of work:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBoxWorkType
             // 
@@ -455,7 +484,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.buttonReservationSearch);
             this.Controls.Add(this.textBoxReservationSearch);
             this.Controls.Add(this.dataGridViewReservations);
-            this.Controls.Add(this.calendarStart);
+            this.Controls.Add(this.calendar);
             this.Controls.Add(this.comboBoxViewRooms);
             this.Controls.Add(this.dataGridViewRooms);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -476,7 +505,7 @@ namespace WindowsFormsApp
 
         private System.Windows.Forms.DataGridView dataGridViewRooms;
         private System.Windows.Forms.ComboBox comboBoxViewRooms;
-        private System.Windows.Forms.MonthCalendar calendarStart;
+        private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.DataGridView dataGridViewReservations;
         private System.Windows.Forms.TextBox textBoxReservationSearch;
         private System.Windows.Forms.Button buttonReservationSearch;

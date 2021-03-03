@@ -21,7 +21,13 @@ namespace Hotel_California___Data_manipulation_Layer
         //Clients Get_All_Clients();
         // Tasks  ///////////////////////////////////////////////////////////
         void Add_Task(String taskType, int rid);
-        void Del_Task(int rid, int tid);
+        void Del_Task(int tid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="roomid"> Id of the room of the tasks you want to delete</param>
+        /// <param name="taskType"> Task type in String format: One of the following: "Cleaner", "Maintenence" or "Room Service"</param>
+        void Del_Task(int roomid, String taskType);
         List<Tasks> Get_All_Tasks();
         // Other ////////////////////////////////////////////////////////////
         int Login(string cname, string cpassword);
