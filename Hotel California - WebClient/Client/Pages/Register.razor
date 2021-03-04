@@ -9,16 +9,17 @@
     <div class="flexchildren">
 
         Name :<br />
-        <input type="text" id="cname" /><br />
+        <input type="text" @bind="name_input" /><br />
         <br />
 
         Password :<br />
-        <input type="@TxtType" id="cpassword" />    show password  <input type="checkbox" @onchange="ShowPassword" /><br />
+        <input type="@TxtType" @bind="password_input" />    show password  <input type="checkbox" @onchange="ShowPassword" /><br />
         <br />
 
         Confirm Password :<br />
-        <input class="@check" type="@TxtType" id="confirmcpassword"/><br />
+        <input class="@check" type="@TxtType" @bind="confirmpass_input"/><br />
         <br />
+        @error_message
 
         <input type="button" class="button" value="Confirm" @onclick="Update" /><br />
     </div>
@@ -38,27 +39,40 @@
     //---------------------------------------------------------------------------------------------------------------------------+
 
     [Parameter]
-    public string cname { get; set; }
-    public string cpassword { get; set; }
-    public string confirmcpassword { get; set; }
+    public string name_input { get; set; }
+    public string password_input { get; set; }
+    public string confirmpass_input { get; set; }
 
+    public string cname;
+    public string cpassword;
+
+    public string error_message;
     public string check = "normal";
     public string TxtType = "password";
 
     public void Update(MouseEventArgs e)
     {
-        // Checking if the passwords match
-        //if (@cpassword == @confirmcpassword)
-        //{
-        //    this.check = "normal";
-        //}
-        //else
-        //{
-        //    this.check = "abnormal";
-        //}
 
+        //Checking if the passwords match
+
+        if (password_input == confirmpass_input)
+        {
+            error_message = "";
+
+            // Second test to make sure the name/pass combo is not taken
+            // Clients client = dc.Clients.Where(gid => gid.Name == cname && gid.Password == cpassword).FirstOrDefault();
+            cname = name_input;
+            cpassword = password_input;
+
+            // NEED TO CALL THE CLIENT_ADD METHOD
+        }
+        else
+        {
+            error_message = "Passwords are not matching";
+        }
     }
 
+    // Hide/show pass function
     public void ShowPassword()
     {
         if (this.TxtType == "password")

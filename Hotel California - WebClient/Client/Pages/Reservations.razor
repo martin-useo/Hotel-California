@@ -22,23 +22,33 @@
 
 <br />
 <h2>Reservation list</h2>
+<input type="button" class="button" value="Display" @onclick="Display_Reservations" />
 
 <table>
     <tbody>
-        <tr>
-            <th scope="col">&nbsp;</th>
-            <th scope="col">&nbsp;</th>
-            <th scope="col">&nbsp;</th>
+        @* Room ID *@
+        <tr title="Room number">
+            
         </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+
+        @* Room people count *@
+        <tr title="Room capacity">
+            
         </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+
+        @* Room quality in * *@
+        <tr title="Room quality">
+            
+        </tr>
+
+        @* Room size (S M L) *@
+        <tr title="Room size">
+            
+        </tr>
+
+        @* Date range of the reservation *@
+        <tr title="Dates of booking">
+            
         </tr>
     </tbody>
 </table>
@@ -55,4 +65,9 @@
     [Parameter]
     public string cname { get; set; }
     public string cpassword { get; set; }
+
+    public void Display_Reservations(MouseEventArgs e)
+    {
+
+    }
 }
