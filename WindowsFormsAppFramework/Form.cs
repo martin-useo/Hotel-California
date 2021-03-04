@@ -37,11 +37,11 @@ namespace WindowsFormsApp
 
                 if (!(taskCell is null) && !(roomCell is null))
                 {
-                    int taskId = (int)taskCell.Value;
-                    int roomId = (int)roomCell.Value;
+                    int taskId = int.Parse((string)taskCell.Value);
                     idl.Del_Task(taskId);
                 }
             }
+            buttonGetTasks_Click(sender, e);
         }
         private void buttonCreateTask_Click(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace WindowsFormsApp
             String roomId = textBoxReservationRoomNumber.Text;
             String name = textBoxReservationName.Text;
             DateTime startDate = DateTime.Parse(textBoxReservationStartDate.Text);
-            DateTime endDate = DateTime.Parse(textBoxReservationEndDate.Text);//calendar.SelectionRange.End
+            DateTime endDate = DateTime.Parse(textBoxReservationEndDate.Text);
 
             if (roomId is null)
             {
@@ -82,21 +82,39 @@ namespace WindowsFormsApp
 
         private void buttonReservationDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection selectedRows = dataGridViewReservations.SelectedRows;
-            System.Collections.IEnumerator en = selectedRows.GetEnumerator();
+            DataGridViewSelectedRowCollection selectedRows = dataGridViewReservations.SelectedRows;          
 
-            while (en.MoveNext())
-            {
-                DataGridViewRow current = (DataGridViewRow)en.Current;
-                DataGridViewCellCollection cells = current.Cells;
-                DataGridViewCell viewCell = cells[0];
+            //DataGridView
+             System.Collections.IEnumerator en = selectedRows.GetEnumerator();
 
-                if (!(viewCell is null))
-                {
-                    int roomId = (int)viewCell.Value;
-                    idl.Del_Reservation(roomId);
-                }
-            }
+             while (en.MoveNext())
+             {
+                 DataGridViewRow current = (DataGridViewRow)en.Current;
+                 DataGridViewCellCollection cells = current.Cells;
+                 DataGridViewCell viewRoomId = cells[0];
+                DataGridViewCell viewPerson = cells[1];
+                DataGridViewCell beginDate = cells[2];
+                DataGridViewCell endDate = cells[3];
+                
+                if (!(viewRoomId is null))
+                 {
+                    int roomId = (int)viewRoomId.Value;
+                    int person = (int)viewPerson.Value;
+                    DateTime begin = (DateTime)beginDate.Value;
+                    DateTime end = (DateTime)endDate.Value;
+
+                    List<Booked_Rooms> b = idl.Get_All_Reservations();
+                    foreach (Booked_Rooms book in b)
+                    { 
+                        if((book.Rooms_ID == roomId) && (book.Clients_ID == person) && (book.Begins == begin) && (book.Ends == end)){
+                            idl.Del_Reservation(book.Reservation_ID);
+                        }
+                    }                       
+
+                    
+                 }
+             }
+            buttonReservationShowAll_Click(sender, e);
         }
         private void buttonGetTasks_Click(object sender, EventArgs e)
         {
@@ -115,14 +133,15 @@ namespace WindowsFormsApp
         }
         private void comboBoxViewRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dataGridViewRooms.Rows.Clear();
             ComboBox cb = (ComboBox)sender;
             String selected = cb.SelectedItem.ToString();
             ComboBox.ObjectCollection items = cb.Items;
 
             if (selected == items[0].ToString())        // View rooms in available date range
             {
-                DateTime startDate = calendar.SelectionRange.Start;
-                DateTime endDate = calendar.SelectionRange.End;
+                DateTime startDate = calendarStart.SelectionRange.Start;
+                DateTime endDate = calendarEnd.SelectionRange.End;
                 List<Rooms> rooms = idl.Get_All_Available_Rooms(startDate, endDate);
 
                 foreach (Rooms r in rooms)
@@ -162,6 +181,19 @@ namespace WindowsFormsApp
                 foreach (Booked_Rooms book in b)
                     dataGridViewReservations.Rows.Add(book.Rooms_ID, book.Clients_ID, book.Begins, book.Ends);
             }
+        }
+
+        private void FirstDateSelected(object sender, DateRangeEventArgs e)
+        {
+            textBoxReservationStartDate.Text = calendarStart.SelectionRange.Start.ToString();
+       
+
+
+        }
+
+        private void LastDateSelected(object sender, DateRangeEventArgs e)
+        {
+            textBoxReservationEndDate.Text = calendarEnd.SelectionRange.Start.ToString();
         }
     }
 }

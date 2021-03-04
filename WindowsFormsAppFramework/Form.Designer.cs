@@ -38,7 +38,7 @@ namespace WindowsFormsApp
             this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxViewRooms = new System.Windows.Forms.ComboBox();
-            this.calendar = new System.Windows.Forms.MonthCalendar();
+            this.calendarStart = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Person = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +68,9 @@ namespace WindowsFormsApp
             this.buttonCreateTask = new System.Windows.Forms.Button();
             this.buttonReservationCreate = new System.Windows.Forms.Button();
             this.buttonGetTasks = new System.Windows.Forms.Button();
+            this.calendarEnd = new System.Windows.Forms.MonthCalendar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTasks)).BeginInit();
@@ -131,12 +134,14 @@ namespace WindowsFormsApp
             this.comboBoxViewRooms.TabIndex = 3;
             this.comboBoxViewRooms.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewRooms_SelectedIndexChanged);
             // 
-            // calendar
+            // calendarStart
             // 
-            this.calendar.Location = new System.Drawing.Point(181, 15);
-            this.calendar.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.calendar.Name = "calendar";
-            this.calendar.TabIndex = 4;
+            this.calendarStart.Location = new System.Drawing.Point(132, 15);
+            this.calendarStart.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.calendarStart.MaxSelectionCount = 1;
+            this.calendarStart.Name = "calendarStart";
+            this.calendarStart.TabIndex = 4;
+            this.calendarStart.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.FirstDateSelected);
             // 
             // dataGridViewReservations
             // 
@@ -151,6 +156,7 @@ namespace WindowsFormsApp
             this.dataGridViewReservations.Name = "dataGridViewReservations";
             this.dataGridViewReservations.RowHeadersWidth = 51;
             this.dataGridViewReservations.RowTemplate.Height = 29;
+            this.dataGridViewReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewReservations.Size = new System.Drawing.Size(725, 172);
             this.dataGridViewReservations.TabIndex = 6;
             // 
@@ -275,6 +281,7 @@ namespace WindowsFormsApp
             this.dataGridViewTasks.Name = "dataGridViewTasks";
             this.dataGridViewTasks.RowHeadersWidth = 51;
             this.dataGridViewTasks.RowTemplate.Height = 29;
+            this.dataGridViewTasks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTasks.Size = new System.Drawing.Size(867, 550);
             this.dataGridViewTasks.TabIndex = 18;
             // 
@@ -315,7 +322,7 @@ namespace WindowsFormsApp
             // 
             // buttonDeleteTask
             // 
-            this.buttonDeleteTask.Location = new System.Drawing.Point(809, 527);
+            this.buttonDeleteTask.Location = new System.Drawing.Point(809, 604);
             this.buttonDeleteTask.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDeleteTask.Name = "buttonDeleteTask";
             this.buttonDeleteTask.Size = new System.Drawing.Size(96, 29);
@@ -398,7 +405,7 @@ namespace WindowsFormsApp
             // 
             // buttonGetTasks
             // 
-            this.buttonGetTasks.Location = new System.Drawing.Point(809, 590);
+            this.buttonGetTasks.Location = new System.Drawing.Point(809, 532);
             this.buttonGetTasks.Name = "buttonGetTasks";
             this.buttonGetTasks.Size = new System.Drawing.Size(96, 29);
             this.buttonGetTasks.TabIndex = 28;
@@ -406,11 +413,41 @@ namespace WindowsFormsApp
             this.buttonGetTasks.UseVisualStyleBackColor = true;
             this.buttonGetTasks.Click += new System.EventHandler(this.buttonGetTasks_Click);
             // 
+            // calendarEnd
+            // 
+            this.calendarEnd.Location = new System.Drawing.Point(468, 15);
+            this.calendarEnd.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.calendarEnd.MaxSelectionCount = 1;
+            this.calendarEnd.Name = "calendarEnd";
+            this.calendarEnd.TabIndex = 29;
+            this.calendarEnd.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.LastDateSelected);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(65, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "First day:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(402, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 17);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Last day:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1862, 962);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.calendarEnd);
             this.Controls.Add(this.buttonGetTasks);
             this.Controls.Add(this.buttonReservationCreate);
             this.Controls.Add(this.buttonCreateTask);
@@ -431,7 +468,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.textBoxReservationRoomNumber);
             this.Controls.Add(this.buttonReservationShowAll);
             this.Controls.Add(this.dataGridViewReservations);
-            this.Controls.Add(this.calendar);
+            this.Controls.Add(this.calendarStart);
             this.Controls.Add(this.comboBoxViewRooms);
             this.Controls.Add(this.dataGridViewRooms);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -451,7 +488,7 @@ namespace WindowsFormsApp
 
         private System.Windows.Forms.DataGridView dataGridViewRooms;
         private System.Windows.Forms.ComboBox comboBoxViewRooms;
-        private System.Windows.Forms.MonthCalendar calendar;
+        private System.Windows.Forms.MonthCalendar calendarStart;
         private System.Windows.Forms.DataGridView dataGridViewReservations;
         private System.Windows.Forms.Button buttonReservationShowAll;
         private TextBox textBoxReservationRoomNumber;
@@ -485,6 +522,9 @@ namespace WindowsFormsApp
         private DataGridViewTextBoxColumn People;
         private DataGridViewTextBoxColumn Size;
         private DataGridViewTextBoxColumn Quality;
+        private MonthCalendar calendarEnd;
+        private Label label7;
+        private Label label8;
     }
 }
 
