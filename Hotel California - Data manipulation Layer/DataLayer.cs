@@ -82,6 +82,7 @@ namespace Hotel_California___Data_manipulation_Layer
         public List<Rooms> Get_All_Available_Rooms(DateTime begins, DateTime ends)
         {
             List<Rooms> rooms = Get_All_Rooms();
+            List<Rooms> availableRooms = Get_All_Rooms();
             foreach (Rooms r in rooms)
             {
                 ICollection<Booked_Rooms> reservations = r.Booked_Rooms;
@@ -91,12 +92,12 @@ namespace Hotel_California___Data_manipulation_Layer
                     {
                         if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
                         {
-                            rooms.Remove(r);
+                            availableRooms.Remove(r);
                         }
                     }
                 }
             }
-            return rooms;
+            return availableRooms;
         }
         private Rooms Get_Room(int rid)
         {
@@ -286,6 +287,16 @@ namespace Hotel_California___Data_manipulation_Layer
                 Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
+
+        public void Disp_Available_Rooms(DateTime begins, DateTime ends)
+        {
+            List<Rooms> roomsList = Get_All_Available_Rooms(begins, ends);
+
+            foreach (Rooms r0 in roomsList)
+                Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
+            Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
+        }
+
         public void Disp_Tasks()
         {
             DbSet<Tasks> Tasks = dc.Tasks;
@@ -371,27 +382,14 @@ namespace Hotel_California___Data_manipulation_Layer
             string cname = "Mirnes";
             string cpassword = "123";
             dl.Add_Client(cname, cpassword);
-            dl.Add_Room(100, 2, "***", "S");
             DateTime begins = new DateTime(2021, 2, 10);
             DateTime ends = new DateTime(2021, 2, 17);
-            dl.Add_Reservation(100, cname, cpassword, begins, ends);
-            dl.Add_Reservation(101, cname, cpassword, begins, ends);
-            dl.Add_Reservation(1000, cname, cpassword, begins, ends);
+            dl.Add_Room(222, 2, "***", "S");
+            dl.Add_Reservation(222, cname, cpassword, begins, ends);
+            dl.Disp_Rooms();
+            dl.Disp_Available_Rooms(begins, ends);
+            
 
-            dl.Add_Task("Cleaner", 100);
-            List<Tasks> taskList = dl.Get_All_Tasks();
-
-            foreach (Tasks t in taskList)
-            {
-                if (t.ID_ROOM == 100)
-                {
-                    t.Task_Note = "Note: Please clean room";
-                }
-            }
-
-            dl.Disp_Tasks();
-            dl.Del_Task(100, "Cleaner");
-            dl.Disp_Tasks();
             Console.ReadKey();
         }
     }
