@@ -9,6 +9,12 @@ namespace Hotel_California___Data_manipulation_Layer
         void Add_Room(int rid, int rpplcnt, string rqlt, string rsize);
         void Del_Room(int delid);
         List<Rooms> Get_All_Rooms();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="begins"> Probably works with all DateTime formats</param>
+        /// <param name="ends"> Probably works with all DateTime formats</param>
+        /// <returns> Returns all rooms that are available in the time span. </returns>
         List<Rooms> Get_All_Available_Rooms(DateTime begins, DateTime ends);
 
         ////////////////////////////////////                   Reservations          ///////////////////////////////////////////////////////////

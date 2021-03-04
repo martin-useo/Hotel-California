@@ -85,14 +85,17 @@ namespace Hotel_California___Data_manipulation_Layer
             List<Rooms> availableRooms = Get_All_Rooms();
             foreach (Rooms r in rooms)
             {
-                ICollection<Booked_Rooms> reservations = r.Booked_Rooms;
-                foreach (Booked_Rooms br in reservations)
-                {
-                    if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
+                List<Booked_Rooms> reservations = Get_Rooms_Reservations(r.Rooms_ID);
+                if (reservations != null) 
+                { 
+                    foreach (Booked_Rooms br in reservations)
                     {
-                        if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
+                        if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
                         {
-                            availableRooms.Remove(r);
+                            if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
+                            {
+                                availableRooms.Remove(r);
+                            }
                         }
                     }
                 }
@@ -153,8 +156,6 @@ namespace Hotel_California___Data_manipulation_Layer
 
                 if (!pkTaken && roomExists)     // Only add if room exists and is available
                 {
-                    Rooms r = Get_Room(rid);
-                    r.Booked_Rooms = (ICollection<Booked_Rooms>)br;     // Add reservation to the room object
                     dc.Booked_Rooms.Add(br);
                     dc.SaveChanges();
                 }
@@ -166,10 +167,6 @@ namespace Hotel_California___Data_manipulation_Layer
 
             if (bdel != null)
             {
-                ICollection<Booked_Rooms> br = bdel.Rooms.Booked_Rooms;     // Get reservations of room of bdel
-                br.Remove(bdel);                                            // Remove bdel from rooms reservation collection
-                bdel.Rooms.Booked_Rooms = br;                               // Update the collection with the new version
-
                 dc.Booked_Rooms.Remove(bdel);
                 dc.SaveChanges();
             }
@@ -182,6 +179,18 @@ namespace Hotel_California___Data_manipulation_Layer
                 reservationList.Add(r);
 
             return reservationList;
+        }
+
+        public List<Booked_Rooms> Get_Rooms_Reservations(int roomid)
+        {
+            List<Booked_Rooms> reservations = new List<Booked_Rooms>();
+
+            IQueryable <Booked_Rooms> rQuery = dc.Booked_Rooms.Where(r => r.Rooms_ID == roomid);
+            foreach (Booked_Rooms r in rQuery)
+            {
+                reservations.Add(r);
+            }
+            return reservations;
         }
 
         public void Add_Client( string cname, string cpassword)
@@ -331,7 +340,6 @@ namespace Hotel_California___Data_manipulation_Layer
         public int Login( string cname, string cpassword)
         {
             int cid = -1;
-
             Clients client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
 
             if (client != null)
@@ -344,7 +352,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
                 cid = client.Clients_ID;
             }
-
             return (cid);
         }
 
