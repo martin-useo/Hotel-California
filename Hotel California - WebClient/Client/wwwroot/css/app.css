@@ -50,7 +50,7 @@ html, body {
 .flexgrandchildren{
     flex-grow: 1;
 
-    align-content: center
+    align-content: center;
 }
 
 .normal{
@@ -58,7 +58,8 @@ html, body {
 }
 
 .abnormal{
-    border: 3px thick red,
+    border: 3px thick red;
+
 }
 
 .box{

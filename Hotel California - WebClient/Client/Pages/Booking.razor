@@ -169,15 +169,28 @@
 
 
     // Step 2
+    public string check = "unchecked";
+
     public int pplcnt1 = 1;
     public int pplcnt2 = 2;
     public int pplcnt4 = 4;
     public int pplcnt6 = 6;
     List<int> pplcnt = new List<int>();
 
-    public void one()
+    private void one()
     {
-        //if (this. == "password")
+        if (this.check == "check")
+        {
+            this.check = "checked";
+            pplcnt.Add(1);
+        }
+
+        else
+        {
+            this.check = "unchecked";
+        }
+
+        //if (this.TxtType == "password")
         //{
         //    this.TxtType = "text";
         //}
