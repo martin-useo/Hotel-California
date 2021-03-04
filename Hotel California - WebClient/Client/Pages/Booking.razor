@@ -7,7 +7,7 @@
 <br />
 <div id="Step 1">
     <h3>Step 1</h3>
-    Choose the dates of booking for your room<br />
+    Choose the dates of booking for your room :<br />
 
     <div class="flexcontainer">
 
@@ -20,7 +20,7 @@
             End date<br />
             <input type="date" id="end" /><br />
             <br />
-            <input type="button" id="confirm_dates" class="button" value="Confirm">
+            <input type="button" class="button" value="Confirm" @onclick="DateConfirm"/>
         </div>
     </div>
 </div>
@@ -30,7 +30,7 @@
 <br />
 <div id="Step 2">
     <h3>Step 2</h3>
-    Get the right room for you<br />
+    Select the properties of the room you want to see :<br />
 
     <div class="flexcolcontainer2">
 
@@ -49,14 +49,13 @@
                         2 <br />
                         4 <br />
                         6 <br />
-                        More ? <br />
+                          <br />
                     </div>
                     <div class="flexchildren">
-                        <input type="checkbox" id="pplcnt1" /><br />
-                        <input type="checkbox" id="pplcnt2" /><br />
-                        <input type="checkbox" id="pplcnt4" /><br />
-                        <input type="checkbox" id="pplcnt6" /><br />
-                        <input type="text" id="pplcntmore" />
+                        <input type="checkbox" id="pplcnt1" @onchange="one" /><br />
+                        <input type="checkbox" id="pplcnt2" @onchange="two" /><br />
+                        <input type="checkbox" id="pplcnt4" @onchange="four" /><br />
+                        <input type="checkbox" id="pplcnt6" @onchange="six" /><br />
                     </div>
                 </div>
             </div>
@@ -76,12 +75,11 @@
                         A decent amount (**) <br />
                         Way too much (***) <br />
                         <br />
-                        <br />
                     </div>
                     <div class="flexchildren">
-                        <input type="checkbox" id="qlt*" /><br />
-                        <input type="checkbox" id="qlt**" /><br />
-                        <input type="checkbox" id="qlt***" /><br />
+                        <input type="checkbox" id="qlt1" /><br />
+                        <input type="checkbox" id="qlt2" /><br />
+                        <input type="checkbox" id="qlt3" /><br />
                     </div>
                 </div>
             </div>
@@ -98,17 +96,16 @@
                         Medium <br />
                         Large <br />
                         <br />
-                        <br />
                     </div>
                     <div class="flexchildren">
-                        <input type="checkbox" id="sizeS" /><br />
-                        <input type="checkbox" id="sizeM" /><br />
-                        <input type="checkbox" id="sizeL" /><br />
+                        <input type="checkbox" id="sizeS" @onchange="S" /><br />
+                        <input type="checkbox" id="sizeM" @onchange="M" /><br />
+                        <input type="checkbox" id="sizeL" @onchange="L" /><br />
                     </div>
                 </div>
             </div>
         </div>
-        <input type="button" class="button" value="Confirm" id="confirm_room_properties" />
+        <input type="button" class="button" value="Confirm" id="confirm_room_properties" @onclick="PropertiesConfirm" />
     </div>
 </div>
 
@@ -128,7 +125,7 @@
             Password :<br />
             <input type="password" id="cpassword" /><br />
             <br />
-            <input type="button" id="confirm_login" class="button" value="Confirm" />
+            <input type="button" id="confirm_login" class="button" value="Confirm" @onclick="LoginConfirm" />
         </div>
     </div>
 </div>
@@ -138,8 +135,13 @@
 <br />
 <div>
     <h3>Step 4</h3>
-    Choose from the list of Rooms available
+    Choose from the list of Rooms available for the properties you selected : <input type="button" id="confirm_query" class="button" value="Search" @onclick="SearchConfirm" />
+    <br />
 
+    <table>
+
+
+    </table>
 
 </div>
 
@@ -156,9 +158,99 @@
 
     [Parameter]
 
+    // Step 1
     public DateTime begin { get; set; }
     public DateTime end { get; set; }
+
+    public void DateConfirm(MouseEventArgs e)
+    {
+
+    }
+
+
+    // Step 2
+    public int pplcnt1 = 1;
+    public int pplcnt2 = 2;
+    public int pplcnt4 = 4;
+    public int pplcnt6 = 6;
+    List<int> pplcnt = new List<int>();
+
+    public void one()
+    {
+        //if (this. == "password")
+        //{
+        //    this.TxtType = "text";
+        //}
+        //else
+        //{
+        //    this.TxtType = "password";
+        //}
+    }
+
+    public void two()
+    {
+
+    }
+
+    public void four()
+    {
+
+    }
+
+    public void six()
+    {
+
+    }
+
+    public string qlt1 = "*";
+    public string qlt2 = "**";
+    public string qlt3 = "***";
+    List<string> qlt = new List<string>();
+
+
+
+    public string sizeS = "S";
+    public string sizeM = "M";
+    public string sizeL = "L";
+    List<string> size = new List<string>();
+
+    public void S()
+    {
+
+    }
+
+    public void M()
+    {
+
+    }
+
+    public void L()
+    {
+
+    }
+
+
+    public void PropertiesConfirm(MouseEventArgs e)
+    {
+
+    }
+
+
+
+
+    // Step 3
     public string cname { get; set; }
     public string cpassword { get; set; }
 
+    public void LoginConfirm(MouseEventArgs e)
+    {
+
+    }
+
+
+    // Step 4
+    public void SearchConfirm(MouseEventArgs e)
+    {
+
+    }
 }

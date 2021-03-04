@@ -664,16 +664,6 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
-      },
-      "Hotel California - WebClient.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Hotel California - WebClient.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Hotel California - WebClient.Shared.dll": {}
-        }
       }
     }
   },
@@ -2475,17 +2465,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Hotel California - WebClient.Shared/1.0.0": {
-      "type": "project",
-      "path": "../Shared/Hotel California - WebClient.Shared.csproj",
-      "msbuildProject": "../Shared/Hotel California - WebClient.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "EntityFramework >= 6.4.4",
-      "Hotel California - WebClient.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.Build >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 3.2.1",
@@ -2518,11 +2502,7 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {
-            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj": {
-              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Shared\\Hotel California - WebClient.Shared.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
