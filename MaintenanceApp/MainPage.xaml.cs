@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 // Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,21 +25,28 @@ namespace MaintenanceApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
- 
+        String connectionString =
+            "data source=hotel-california.database.windows.net;" +
+            "initial catalog=Hotel-California;" +
+            "persist security info=True;" +
+            "user id=eagle;" +
+            "password=Kv!gSci4KsrXp6D;";
+        public static List<Task>  tasks = new List<Task>();
+
         public MainPage()
         {
             this.InitializeComponent();
-        
-    }
-
+        }
         private void MaintainerButton_Click(object sender, RoutedEventArgs e)
         {
+            GetTasks(connectionString);
+
             while (TaskList.Items.Count != 0)
             {
                 TaskList.Items.RemoveAt(0);
                 ServiceList.Items.RemoveAt(0);
             }
-
+            /*
             List<Task> Tasks = new List<Task>();
             Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
             Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
@@ -53,26 +63,21 @@ namespace MaintenanceApp
             Task_Types.Add(new Task_Type() { Task_ID = 5, Post_ID = 2, Type = "Service" });
             Task_Types.Add(new Task_Type() { Task_ID = 6, Post_ID = 3, Type = "Maintance" });
           
-
+            */
             TaskList.SelectedIndex = 0;
-
-            foreach (Task_Type t in Task_Types)
+            foreach (Task t in tasks)
             {
-                if (t.Post_ID == 3)
+                if (t.Task_Type == "Maintenance")
                 {
-                    foreach (Task task in Tasks)
-                    {
-                        if (task.Task_ID == t.Task_ID)
-                        {
-                            TaskList.Items.Add(task.Task_ID);
-                            ServiceList.Items.Add(task.Status);
-                        }
-                    }
+                    TaskList.Items.Add(t.Room_ID);
+                    ServiceList.Items.Add(t.Status);
                 }
             }
+
+            // Cleaning
+            // Maintenance 
+            // Service
         }
-
-
         private void ServiceButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -82,7 +87,7 @@ namespace MaintenanceApp
                 ServiceList.Items.RemoveAt(0);
             }
 
-            
+            /*
             List<Task> Tasks = new List<Task>();
             Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
             Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
@@ -120,8 +125,8 @@ namespace MaintenanceApp
                     }
                 }
             }
+            */
         }
-
         private void CleanerButton_Click(object sender, RoutedEventArgs e)
         {
             while (TaskList.Items.Count != 0)
@@ -129,7 +134,7 @@ namespace MaintenanceApp
                 TaskList.Items.RemoveAt(0);
                 ServiceList.Items.RemoveAt(0);
             }
-
+            /*
             List<Task> Tasks = new List<Task>();
             Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
             Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
@@ -162,8 +167,8 @@ namespace MaintenanceApp
                     }
                 }
             }
+            */
         }
-
         private void Okey_Click(object sender, RoutedEventArgs e)
         {            
             switch (popUpList.SelectedIndex) {
@@ -179,12 +184,10 @@ namespace MaintenanceApp
             }
             POPup.IsOpen = false;
         }
-
         private void ServiceList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             POPup.IsOpen = true;
         }
-
         private void DeleteFinishedButtom_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -200,6 +203,48 @@ namespace MaintenanceApp
                 i++;
             }
             */
+        }
+        public static ObservableCollection<Task> GetTasks(string connectionString)
+{
+            const string GetProductsQuery = "select Task_ID, ID_ROOM, Task_Type," +
+               " Task_Note, Status" +
+               " from Tasks";
+
+            var products = new ObservableCollection<Task>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = GetProductsQuery;
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                tasks.Clear();
+                                while (reader.Read())
+                                {
+                                    Task task = new Task();
+                                    task.Task_ID = reader.GetInt32(0);
+                                    task.Room_ID = reader.GetInt32(1);
+                                    task.Task_Type = reader.GetString(2);
+                                    task.Task_Note = reader.GetString(3);
+                                    task.Status = reader.GetString(4);
+                                    tasks.Add(task);
+                                }
+                            }
+                        }
+                    }
+                }
+                return products;
+            }
+            catch (Exception eSql)
+            {
+                Debug.WriteLine("Exception: " + eSql.Message);
+            }
+            return null;
         }
     }
     }

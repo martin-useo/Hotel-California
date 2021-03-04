@@ -86,8 +86,8 @@ namespace Hotel_California___Data_manipulation_Layer
             foreach (Rooms r in rooms)
             {
                 List<Booked_Rooms> reservations = Get_Rooms_Reservations(r.Rooms_ID);
-                if (reservations != null) 
-                { 
+                if (reservations != null)
+                {
                     foreach (Booked_Rooms br in reservations)
                     {
                         if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
@@ -120,7 +120,7 @@ namespace Hotel_California___Data_manipulation_Layer
             Booked_Rooms br = new Booked_Rooms();
             br.Clients_ID = Login(cname, cpassword);
 
-            if (br.Clients_ID == -1 || (0 < DateTime.Compare(begins, ends))){}  // If client login fails or dates don't make sense: Do not create reservation
+            if (br.Clients_ID == -1 || (0 < DateTime.Compare(begins, ends))) { }  // If client login fails or dates don't make sense: Do not create reservation
             else
             {
                 br.Rooms_ID = rid;
@@ -161,7 +161,7 @@ namespace Hotel_California___Data_manipulation_Layer
                 }
             }
         }
-        public void Del_Reservation( int bid)
+        public void Del_Reservation(int bid)
         {
             Booked_Rooms bdel = dc.Booked_Rooms.Where(rm => rm.Reservation_ID == bid).FirstOrDefault();
 
@@ -185,7 +185,7 @@ namespace Hotel_California___Data_manipulation_Layer
         {
             List<Booked_Rooms> reservations = new List<Booked_Rooms>();
 
-            IQueryable <Booked_Rooms> rQuery = dc.Booked_Rooms.Where(r => r.Rooms_ID == roomid);
+            IQueryable<Booked_Rooms> rQuery = dc.Booked_Rooms.Where(r => r.Rooms_ID == roomid);
             foreach (Booked_Rooms r in rQuery)
             {
                 reservations.Add(r);
@@ -193,7 +193,7 @@ namespace Hotel_California___Data_manipulation_Layer
             return reservations;
         }
 
-        public void Add_Client( string cname, string cpassword)
+        public void Add_Client(string cname, string cpassword)
         {
             Clients ncl = new Clients();
 
@@ -206,11 +206,11 @@ namespace Hotel_California___Data_manipulation_Layer
             Clients client = dc.Clients.Where(gid => gid.Name == cname && gid.Password == cpassword).FirstOrDefault();
             if (client == null)
             {
-            dc.Clients.Add(ncl);
-            dc.SaveChanges();
+                dc.Clients.Add(ncl);
+                dc.SaveChanges();
             }
         }
-        public void Del_Client( string cname, string cpassword)
+        public void Del_Client(string cname, string cpassword)
         {
             int cid = 0;
             cid = Login(cname, cpassword);
@@ -224,37 +224,49 @@ namespace Hotel_California___Data_manipulation_Layer
             }
 
         }
-        
-        public void Add_Task( String taskType, int rid)
-        {
-            Tasks nt = new Tasks();
-            nt.ID_ROOM = rid;
-            nt.Status = "new";
-            nt.Task_Type = taskType;
-            nt.Task_Note = "";
 
+        public void Add_Task(String taskType, int rid)
+        {
             int newTaskID = 0;
             bool pkTaken = false;
             List<Tasks> tasks = Get_All_Tasks();
-            foreach (Tasks t in tasks)
+            foreach (Tasks t in tasks)          // 1.Makes sure room is not taken 2. Create unique task id
             {
-                if (t.Task_ID >= newTaskID)
+                if (t.Task_ID >= newTaskID)     
                 {
                     newTaskID = t.Task_ID + 1;
                 }
-                if (t.ID_ROOM == nt.ID_ROOM && t.Task_Type == nt.Task_Type)
+                if (t.ID_ROOM == rid && t.Task_Type == taskType)         // 
                 {
                     pkTaken = true;
                 }
             }
-            nt.Task_ID = newTaskID;
 
-            if (!pkTaken)
+            bool exists = false;
+            List<Rooms> rooms = Get_All_Rooms();
+            int i = 0;
+            while (!exists && (i < rooms.Count))    // Makes sure room exists
             {
+                if (rooms[i].Rooms_ID == rid)
+                {
+                    exists = true;
+                }
+                i++;
+            }
+            if (!pkTaken && exists)
+            {
+                Tasks nt = new Tasks();
+                nt.ID_ROOM = rid;
+                nt.Status = "new";
+                nt.Task_Type = taskType;
+                nt.Task_Note = "";
+                nt.Task_ID = newTaskID;
+
                 dc.Tasks.Add(nt);
                 dc.SaveChanges();
             }
         }
+
         public void Del_Task(int tid)
         {
             Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).FirstOrDefault();
