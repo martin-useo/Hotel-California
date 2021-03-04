@@ -25,7 +25,18 @@
 </div>
 
 
+
+
 @code {
+
+
+    // WHAT NEEDS TO BE IMPLEMENTED----------------------------------------------------------------------------------------------+
+    //                                                                                                                           |
+    // A way of checking if the password and it's confirmation match => if not display a message to notify it                    |
+    // A way of knowing if the combination name/password already exists in the db => if not display a message to notify it       |
+    // Implementing the add_client method                                                                                        |
+    //---------------------------------------------------------------------------------------------------------------------------+
+
     [Parameter]
     public string cname { get; set; }
     public string cpassword { get; set; }
@@ -37,14 +48,14 @@
     public void Update(MouseEventArgs e)
     {
         // Checking if the passwords match
-        if (@cpassword == @confirmcpassword)
-        {
-            this.check = "normal";
-        }
-        else
-        {
-            this.check = "abnormal";
-        }
+        //if (@cpassword == @confirmcpassword)
+        //{
+        //    this.check = "normal";
+        //}
+        //else
+        //{
+        //    this.check = "abnormal";
+        //}
 
     }
 
