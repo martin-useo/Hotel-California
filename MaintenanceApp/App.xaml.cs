@@ -70,12 +70,6 @@ namespace MaintenanceApp
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();
             }
-
-            MainPage.GetTasks("data source=hotel-california.database.windows.net;" +
-            "initial catalog=Hotel-California;" +
-            "persist security info=True;" +
-            "user id=eagle;" +
-            "password=Kv!gSci4KsrXp6D;");
         }
         /// <summary>
         /// Appelé lorsque la navigation vers une page donnée échoue

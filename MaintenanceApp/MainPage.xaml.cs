@@ -39,7 +39,7 @@ namespace MaintenanceApp
         }
         private void MaintainerButton_Click(object sender, RoutedEventArgs e)
         {
-            GetTasks(connectionString);
+            GetTasks(connectionString, "Maintenance");
 
             while (TaskList.Items.Count != 0)
             {
@@ -49,17 +49,13 @@ namespace MaintenanceApp
 
             foreach (Task t in tasks)
             {
-                if (t.Task_Type == "Maintenance")
-                {
-                    TaskList.Items.Add(t.Room_ID);
-                    ServiceList.Items.Add(t.Status);
-                }
+                TaskList.Items.Add(t.Room_ID);
+                ServiceList.Items.Add(t.Status);
             }
         }
         private void ServiceButton_Click(object sender, RoutedEventArgs e)
         {
-
-            GetTasks(connectionString);
+            GetTasks(connectionString, "Service");
 
             while (TaskList.Items.Count != 0)
             {
@@ -69,16 +65,13 @@ namespace MaintenanceApp
 
             foreach (Task t in tasks)
             {
-                if (t.Task_Type == "Service")
-                {
-                    TaskList.Items.Add(t.Room_ID);
-                    ServiceList.Items.Add(t.Status);
-                }
+                TaskList.Items.Add(t.Room_ID);
+                ServiceList.Items.Add(t.Status);
             }
         }
         private void CleanerButton_Click(object sender, RoutedEventArgs e)
         {
-            GetTasks(connectionString);
+            GetTasks(connectionString, "Cleaning");
 
             while (TaskList.Items.Count != 0)
             {
@@ -88,11 +81,8 @@ namespace MaintenanceApp
 
             foreach (Task t in tasks)
             {
-                if (t.Task_Type == "Cleaning")
-                {
-                    TaskList.Items.Add(t.Room_ID);
-                    ServiceList.Items.Add(t.Status);
-                }
+                TaskList.Items.Add(t.Room_ID);
+                ServiceList.Items.Add(t.Status);
             }
         }
         private void Okey_Click(object sender, RoutedEventArgs e)
@@ -130,11 +120,11 @@ namespace MaintenanceApp
             }
             */
         }
-        public static ObservableCollection<Task> GetTasks(string connectionString)
+        public static ObservableCollection<Task> GetTasks(string connectionString, String taskType)
 {
-            const string GetProductsQuery = "select Task_ID, ID_ROOM, Task_Type," +
+            string GetProductsQuery = String.Format("select Task_ID, ID_ROOM, Task_Type," +
                " Task_Note, Status" +
-               " from Tasks";
+               " from Tasks where Task_Type = '{0}'", taskType);
 
             var products = new ObservableCollection<Task>();
             try
@@ -171,6 +161,65 @@ namespace MaintenanceApp
                 Debug.WriteLine("Exception: " + eSql.Message);
             }
             return null;
+        }
+        public static void UpdateTask(string connectionString, int taskId, String note)
+        {
+            String taskIdString = taskId.ToString();
+            string updateQuery = String.Format("UPDATE Tasks SET Tasks_Note='{0}' WHERE Task_ID={1}", note, taskIdString);
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = updateQuery;
+                            /*
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                            }
+                            */
+                        }
+                    }
+                }
+            }
+            catch (Exception eSql)
+            {
+                Debug.WriteLine("Exception: " + eSql.Message);
+            }
+        }
+
+        public static void UpdateTaskStatus(string connectionString, int taskId, String status)
+        {
+            String taskIdString = taskId.ToString();
+            string updateQuery = String.Format("UPDATE Tasks SET Status='{0}' WHERE Task_ID={1}", status, taskIdString);
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (conn.State == System.Data.ConnectionState.Open)
+                    {
+                        using (SqlCommand cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = updateQuery;
+                            /*
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                            }
+                            */
+                        }
+                    }
+                }
+            }
+            catch (Exception eSql)
+            {
+                Debug.WriteLine("Exception: " + eSql.Message);
+            }
         }
     }
     }
