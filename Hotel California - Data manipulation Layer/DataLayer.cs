@@ -189,6 +189,12 @@ namespace Hotel_California___Data_manipulation_Layer
             }
             return reservations;
         }
+        public List<Booked_Rooms> Get_Clients_Reservations(int clientId)
+        {
+            List<Booked_Rooms> reservations = dc.Booked_Rooms.Where(room => room.Clients_ID == clientId).ToList<Booked_Rooms>();
+            return reservations;
+        }
+
         public void Add_Client(string cname, string cpassword)
         {
             Clients ncl = new Clients();

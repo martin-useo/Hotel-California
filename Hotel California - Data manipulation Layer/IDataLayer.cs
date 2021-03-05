@@ -21,6 +21,7 @@ namespace Hotel_California___Data_manipulation_Layer
         void Add_Reservation(int rid, string cname, string cpassword, DateTime begins, DateTime ends);
         void Del_Reservation(int bid);
         List<Booked_Rooms> Get_All_Reservations();
+        List<Booked_Rooms> Get_Clients_Reservations(int clientId);
 
         ////////////////////////////////////                   Client          ///////////////////////////////////////////////////////////
         void Add_Client(string cname, string cpassword);
