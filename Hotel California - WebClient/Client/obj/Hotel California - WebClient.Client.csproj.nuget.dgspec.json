@@ -4,6 +4,16 @@
     "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj",
+        "projectName": "Hotel California - Data manipulation Layer",
+        "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - WebClient\\Client\\Hotel California - WebClient.Client.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +37,11 @@
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+                "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

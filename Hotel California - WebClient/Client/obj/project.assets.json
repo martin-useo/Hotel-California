@@ -664,6 +664,15 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "Hotel California - Data manipulation Layer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hotel California - Data manipulation Layer.dll": {}
+        }
       }
     }
   },
@@ -2465,11 +2474,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Hotel California - Data manipulation Layer/1.0.0": {
+      "type": "project",
+      "path": "../../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj",
+      "msbuildProject": "../../Hotel California - Data manipulation Layer/Hotel California - Data manipulation Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "EntityFramework >= 6.4.4",
+      "Hotel California - Data manipulation Layer >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.Build >= 3.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 3.2.1",
@@ -2502,7 +2517,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj": {
+              "projectPath": "C:\\Users\\Bruker 1\\Documents\\GitHub\\Hotel-California\\Hotel California - Data manipulation Layer\\Hotel California - Data manipulation Layer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

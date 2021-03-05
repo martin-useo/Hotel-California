@@ -7,11 +7,13 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Hotel_California___WebClient;
+using Hotel_California___Data_manipulation_Layer;
 
 namespace Hotel_California___WebClient.Client
 {
     public class Program
-    {
+    {       
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);

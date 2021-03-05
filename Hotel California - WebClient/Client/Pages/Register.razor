@@ -30,6 +30,7 @@
 
 @code {
 
+    IDataLayer IDL = new DataLayer();
 
     // WHAT NEEDS TO BE IMPLEMENTED----------------------------------------------------------------------------------------------+
     //                                                                                                                           |
@@ -64,6 +65,7 @@
             cpassword = password_input;
 
             // NEED TO CALL THE CLIENT_ADD METHOD
+            IDL.Add_Client(cname, cpassword);
         }
         else
         {
