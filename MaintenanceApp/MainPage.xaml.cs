@@ -46,25 +46,7 @@ namespace MaintenanceApp
                 TaskList.Items.RemoveAt(0);
                 ServiceList.Items.RemoveAt(0);
             }
-            /*
-            List<Task> Tasks = new List<Task>();
-            Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 202, Task_ID = 3, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 203, Task_ID = 4, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 204, Task_ID = 5, Status = "Finished" });
-            Tasks.Add(new Task() { Room_ID = 205, Task_ID = 6, Status = "new" });
 
-            List<Task_Type> Task_Types = new List<Task_Type>();
-            Task_Types.Add(new Task_Type() { Task_ID = 1, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 2, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 3, Post_ID = 3, Type = "Maintance" });
-            Task_Types.Add(new Task_Type() { Task_ID = 4, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 5, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 6, Post_ID = 3, Type = "Maintance" });
-          
-            */
-            TaskList.SelectedIndex = 0;
             foreach (Task t in tasks)
             {
                 if (t.Task_Type == "Maintenance")
@@ -73,101 +55,45 @@ namespace MaintenanceApp
                     ServiceList.Items.Add(t.Status);
                 }
             }
-
-            // Cleaning
-            // Maintenance 
-            // Service
         }
         private void ServiceButton_Click(object sender, RoutedEventArgs e)
         {
 
+            GetTasks(connectionString);
+
             while (TaskList.Items.Count != 0)
             {
                 TaskList.Items.RemoveAt(0);
                 ServiceList.Items.RemoveAt(0);
             }
 
-            /*
-            List<Task> Tasks = new List<Task>();
-            Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 202, Task_ID = 3, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 203, Task_ID = 4, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 204, Task_ID = 5, Status = "Finished" });
-            Tasks.Add(new Task() { Room_ID = 205, Task_ID = 6, Status = "new" });
-
-            List<Task_Type> Task_Types = new List<Task_Type>();
-            Task_Types.Add(new Task_Type() { Task_ID = 1, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 2, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 3, Post_ID = 3, Type = "Maintance" });
-            Task_Types.Add(new Task_Type() { Task_ID = 4, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 5, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 6, Post_ID = 3, Type = "Maintance" });
-           
-
-            foreach (ListViewItem eachItem in TaskList.SelectedItems)
+            foreach (Task t in tasks)
             {
-                TaskList.Items.Remove(eachItem);
-            }
-
-
-            foreach (Task_Type t in Task_Types)
-            {
-                if (t.Post_ID == 2)
+                if (t.Task_Type == "Service")
                 {
-                    foreach (Task task in Tasks)
-                    {
-                        if (task.Task_ID == t.Task_ID)
-                        {
-                            TaskList.Items.Add(task.Task_ID);
-                            ServiceList.Items.Add(task.Status);
-                        }
-                    }
+                    TaskList.Items.Add(t.Room_ID);
+                    ServiceList.Items.Add(t.Status);
                 }
             }
-            */
         }
         private void CleanerButton_Click(object sender, RoutedEventArgs e)
         {
+            GetTasks(connectionString);
+
             while (TaskList.Items.Count != 0)
             {
                 TaskList.Items.RemoveAt(0);
                 ServiceList.Items.RemoveAt(0);
             }
-            /*
-            List<Task> Tasks = new List<Task>();
-            Tasks.Add(new Task() { Room_ID = 200, Task_ID = 1, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 201, Task_ID = 2, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 202, Task_ID = 3, Status = "In process" });
-            Tasks.Add(new Task() { Room_ID = 203, Task_ID = 4, Status = "new" });
-            Tasks.Add(new Task() { Room_ID = 204, Task_ID = 5, Status = "Finished" });
-            Tasks.Add(new Task() { Room_ID = 205, Task_ID = 6, Status = "new" });
 
-            List<Task_Type> Task_Types = new List<Task_Type>();
-            Task_Types.Add(new Task_Type() { Task_ID = 1, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 2, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 3, Post_ID = 3, Type = "Maintance" });
-            Task_Types.Add(new Task_Type() { Task_ID = 4, Post_ID = 1, Type = "Cleaning" });
-            Task_Types.Add(new Task_Type() { Task_ID = 5, Post_ID = 2, Type = "Service" });
-            Task_Types.Add(new Task_Type() { Task_ID = 6, Post_ID = 3, Type = "Maintance" });
-            
-
-
-            foreach (Task_Type t in Task_Types)
+            foreach (Task t in tasks)
             {
-                if (t.Post_ID == 1)
+                if (t.Task_Type == "Cleaning")
                 {
-                    foreach (Task task in Tasks)
-                    {
-                        if (task.Task_ID == t.Task_ID)
-                        {
-                            TaskList.Items.Add(task.Task_ID);
-                            ServiceList.Items.Add(task.Status);
-                        }
-                    }
+                    TaskList.Items.Add(t.Room_ID);
+                    ServiceList.Items.Add(t.Status);
                 }
             }
-            */
         }
         private void Okey_Click(object sender, RoutedEventArgs e)
         {            
