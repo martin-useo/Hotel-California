@@ -31,7 +31,6 @@ namespace MaintenanceApp
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
-
         /// <summary>
         /// Invoqué lorsque l'application est lancée normalement par l'utilisateur final.  D'autres points d'entrée
         /// seront utilisés par exemple au moment du lancement de l'application pour l'ouverture d'un fichier spécifique.
@@ -71,8 +70,13 @@ namespace MaintenanceApp
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();
             }
-        }
 
+            MainPage.GetTasks("data source=hotel-california.database.windows.net;" +
+            "initial catalog=Hotel-California;" +
+            "persist security info=True;" +
+            "user id=eagle;" +
+            "password=Kv!gSci4KsrXp6D;");
+        }
         /// <summary>
         /// Appelé lorsque la navigation vers une page donnée échoue
         /// </summary>
@@ -82,7 +86,6 @@ namespace MaintenanceApp
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
-
         /// <summary>
         /// Appelé lorsque l'exécution de l'application est suspendue.  L'état de l'application est enregistré
         /// sans savoir si l'application pourra se fermer ou reprendre sans endommager

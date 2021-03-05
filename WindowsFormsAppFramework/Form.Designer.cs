@@ -373,7 +373,7 @@ namespace WindowsFormsApp
             this.comboBoxWorkType.FormattingEnabled = true;
             this.comboBoxWorkType.Items.AddRange(new object[] {
             "Cleaning",
-            "Maintenence",
+            "Maintenance",
             "Service"});
             this.comboBoxWorkType.Location = new System.Drawing.Point(807, 395);
             this.comboBoxWorkType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
