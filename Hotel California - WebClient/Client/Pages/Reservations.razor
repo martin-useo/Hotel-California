@@ -9,12 +9,12 @@
 
     <div class="flexchildren">
         Name :<br />
-        <input type="text" id="cname" /><br />
+        <input type="text" @bind="name_input" /><br />
         <br />
         Password :<br />
-        <input type="password" id="cpassword" /><br />
+        <input type="password" @bind="password_input" /><br />
         <br />
-        <input type="button" id="confirm" class="button" value="Confirm" />
+        <input type="button" class="button" value="Confirm" @onclick="Confirm" />
     </div>
 </div>
 
@@ -63,8 +63,23 @@
     //---------------------------------------------------------------------------------------------------------------------------------+
 
     [Parameter]
-    public string cname { get; set; }
-    public string cpassword { get; set; }
+    public string name_input { get; set; }
+    public string password_input { get; set; }
+
+    public string cname;
+    public string cpassword;
+
+
+    public void Confirm(MouseEventArgs e)
+    {
+
+        // Clients client = dc.Clients.Where(gid => gid.Name == cname && gid.Password == cpassword).FirstOrDefault();
+        cname = name_input;
+        cpassword = password_input;
+
+        // NEED TO CALL THE LOGIN METHOD
+        
+    }
 
     public void Display_Reservations(MouseEventArgs e)
     {

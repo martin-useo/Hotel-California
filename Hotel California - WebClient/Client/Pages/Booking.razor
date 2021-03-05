@@ -2,10 +2,9 @@
 
 <div>
     <h1>This is the Booking section</h1>
-</div>
+</div><br />
 
-<br />
-<div id="Step 1">
+<div id="Step 1 Dates">
     <h3>Step 1</h3>
     Choose the dates of booking for your room :<br />
 
@@ -14,11 +13,11 @@
         <div class="flexchildren">
 
             Start date<br />
-            <input type="date" id="begin" /><br />
+            <input type="date" @bind="begin_input" /><br />
             <br />
 
             End date<br />
-            <input type="date" id="end" /><br />
+            <input type="date" @bind="end_input" /><br />
             <br />
             <input type="button" class="button" value="Confirm" @onclick="DateConfirm"/>
         </div>
@@ -28,7 +27,7 @@
 @* -------------------------------------------------------------------------------------------------------------------------------------------------- *@
 
 <br />
-<div id="Step 2">
+<div id="Step 2 Properties">
     <h3>Step 2</h3>
     Select the properties of the room you want to see :<br />
 
@@ -56,6 +55,11 @@
                         <input type="checkbox" id="pplcnt2" @onchange="two" /><br />
                         <input type="checkbox" id="pplcnt4" @onchange="four" /><br />
                         <input type="checkbox" id="pplcnt6" @onchange="six" /><br />
+                        @foreach (int i in pplcnt)
+                        {
+                            <input type="button" value=i />
+                        }
+
                     </div>
                 </div>
             </div>
@@ -80,6 +84,10 @@
                         <input type="checkbox" id="qlt1" /><br />
                         <input type="checkbox" id="qlt2" /><br />
                         <input type="checkbox" id="qlt3" /><br />
+                        @foreach (string s in qlt)
+                        {
+                            <input type="button" value=s />
+                        }
                     </div>
                 </div>
             </div>
@@ -101,6 +109,10 @@
                         <input type="checkbox" id="sizeS" @onchange="S" /><br />
                         <input type="checkbox" id="sizeM" @onchange="M" /><br />
                         <input type="checkbox" id="sizeL" @onchange="L" /><br />
+                        @foreach (string s in size)
+                        {
+                            <input type="button" value=s />
+                        }
                     </div>
                 </div>
             </div>
@@ -112,7 +124,7 @@
 @* -------------------------------------------------------------------------------------------------------------------------------------------------- *@
 
 <br />
-<div>
+<div id="Step 3 Login">
     <h3>Step 3</h3>
     Please identify yourself :<br />
 
@@ -120,10 +132,10 @@
 
         <div class="flexchildren">
             Name :<br />
-            <input type="text" id="cname" /><br />
+            <input type="text" @bind="name_input" /><br />
             <br />
             Password :<br />
-            <input type="password" id="cpassword" /><br />
+            <input type="password" @bind="password_input" /><br />
             <br />
             <input type="button" id="confirm_login" class="button" value="Confirm" @onclick="LoginConfirm" />
         </div>
@@ -133,7 +145,7 @@
 @* -------------------------------------------------------------------------------------------------------------------------------------------------- *@
 
 <br />
-<div>
+<div id="Step 4 Display Reservations">
     <h3>Step 4</h3>
     Choose from the list of Rooms available for the properties you selected : <input type="button" id="confirm_query" class="button" value="Search" @onclick="SearchConfirm" />
     <br />
@@ -150,26 +162,34 @@
 
 @code {
 
-    // WHAT NEEDS TO BE IMPLEMENTED----------------------------------------------------------------------------------------------------+
-    //                                                                                                                                 |
-    // H E L P                                                                                                                         |
-    //                                                                                                                                 |
-    //---------------------------------------------------------------------------------------------------------------------------------+
-
-    [Parameter]
+    #region Step 1 Dates
 
     // Step 1
-    public DateTime begin { get; set; }
-    public DateTime end { get; set; }
+
+    public DateTime begin_input;
+    public DateTime end_input;
+
+    public DateTime begin;
+    public DateTime end;
 
     public void DateConfirm(MouseEventArgs e)
     {
+        // Test if the dates are not like end < begin
 
+        begin = begin_input;
+        end = end_input;
     }
 
+    #endregion
 
+    #region Step 2 Properties
     // Step 2
-    public string check = "unchecked";
+
+    // Individual check values for each checkbox cause I'm to bad to design something better
+    public string check1 = "unchecked";
+    public string check2 = "unchecked";
+    public string check3 = "unchecked";
+    public string check4 = "unchecked";
 
     public int pplcnt1 = 1;
     public int pplcnt2 = 2;
@@ -179,67 +199,174 @@
 
     private void one()
     {
-        if (this.check == "check")
+        if (this.check1 == "unchecked")
         {
-            this.check = "checked";
-            pplcnt.Add(1);
+            this.check1 = "check";
+            pplcnt.Add(pplcnt1);
         }
 
         else
         {
-            this.check = "unchecked";
+            this.check1 = "unchecked";
+            pplcnt.Remove(pplcnt1);
         }
-
-        //if (this.TxtType == "password")
-        //{
-        //    this.TxtType = "text";
-        //}
-        //else
-        //{
-        //    this.TxtType = "password";
-        //}
     }
 
     public void two()
     {
+        if (this.check2 == "unchecked")
+        {
+            this.check2 = "check";
+            pplcnt.Add(pplcnt2);
+        }
 
+        else
+        {
+            this.check2 = "unchecked";
+            pplcnt.Remove(pplcnt2);
+        }
     }
 
     public void four()
     {
+        if (this.check3 == "unchecked")
+        {
+            this.check3 = "check";
+            pplcnt.Add(pplcnt4);
+        }
 
+        else
+        {
+            this.check3 = "unchecked";
+            pplcnt.Remove(pplcnt4);
+        }
     }
 
     public void six()
     {
+        if (this.check4 == "unchecked")
+        {
+            this.check4 = "check";
+            pplcnt.Add(pplcnt6);
+        }
 
+        else
+        {
+            this.check4 = "unchecked";
+            pplcnt.Remove(pplcnt6);
+        }
     }
+
+
+
+    public string check11 = "unchecked";
+    public string check12 = "unchecked";
+    public string check13 = "unchecked";
 
     public string qlt1 = "*";
     public string qlt2 = "**";
     public string qlt3 = "***";
     List<string> qlt = new List<string>();
 
+    private void firststar()
+    {
+        if (this.check11 == "unchecked")
+        {
+            this.check11 = "check";
+            qlt.Add(qlt1);
+        }
+
+        else
+        {
+            this.check11 = "unchecked";
+            qlt.Remove(qlt1);
+        }
+    }
+
+    private void secondstar()
+    {
+        if (this.check12 == "unchecked")
+        {
+            this.check12 = "check";
+            qlt.Add(qlt2);
+        }
+
+        else
+        {
+            this.check12 = "unchecked";
+            qlt.Remove(qlt2);
+        }
+    }
+
+    private void thirdstar()
+    {
+        if (this.check13 == "unchecked")
+        {
+            this.check13 = "check";
+            qlt.Add(qlt3);
+        }
+
+        else
+        {
+            this.check13 = "unchecked";
+            qlt.Remove(qlt3);
+        }
+    }
 
 
-    public string sizeS = "S";
-    public string sizeM = "M";
-    public string sizeL = "L";
+
+    public string check21 = "unchecked";
+    public string check22 = "unchecked";
+    public string check23 = "unchecked";
+
+    public string size1 = "S";
+    public string size2 = "M";
+    public string size3 = "L";
     List<string> size = new List<string>();
 
     public void S()
     {
+        if (this.check21 == "unchecked")
+        {
+            this.check21 = "check";
+            size.Add(size1);
+        }
 
+        else
+        {
+            this.check21 = "unchecked";
+            size.Remove(size1);
+        }
     }
 
     public void M()
     {
+        if (this.check22 == "unchecked")
+        {
+            this.check22 = "check";
+            size.Add(size2);
+        }
 
+        else
+        {
+            this.check22 = "unchecked";
+            size.Remove(size2);
+        }
     }
 
     public void L()
     {
+        if (this.check23 == "unchecked")
+        {
+            this.check23 = "check";
+            size.Add(size3);
+        }
 
+        else
+        {
+            this.check23 = "unchecked";
+            size.Remove(size3);
+        }
     }
 
 
@@ -248,22 +375,33 @@
 
     }
 
+    #endregion
 
-
-
+    #region Step 3 Login
     // Step 3
     public string cname { get; set; }
     public string cpassword { get; set; }
 
+    public string name_input;
+    public string password_input;
+
     public void LoginConfirm(MouseEventArgs e)
     {
 
+        // Clients client = dc.Clients.Where(gid => gid.Name == cname && gid.Password == cpassword).FirstOrDefault();
+        cname = name_input;
+        cpassword = password_input;
+
+        // NEED TO CALL THE LOGIN METHOD
+
     }
+    #endregion
 
-
+    #region Step 4 Display Reservations
     // Step 4
     public void SearchConfirm(MouseEventArgs e)
     {
 
     }
+    #endregion
 }
