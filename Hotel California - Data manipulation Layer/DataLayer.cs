@@ -86,17 +86,15 @@ namespace Hotel_California___Data_manipulation_Layer
             foreach (Rooms r in rooms)
             {
                 List<Booked_Rooms> reservations = Get_Rooms_Reservations(r.Rooms_ID);
-                if (reservations != null)
+                foreach (Booked_Rooms br in reservations)
                 {
-                    foreach (Booked_Rooms br in reservations)
+                    if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
                     {
-                        if (((0 <= DateTime.Compare(br.Begins, begins)) && (0 >= DateTime.Compare(br.Begins, ends))))       // Compares dates to see if there is collision
-                        {
-                            if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
-                            {
-                                availableRooms.Remove(r);
-                            }
-                        }
+                        availableRooms.Remove(r);
+                    }
+                    else if (((0 <= DateTime.Compare(br.Ends, begins)) && (0 >= DateTime.Compare(br.Ends, ends))))
+                    {
+                        availableRooms.Remove(r);
                     }
                 }
             }
@@ -180,7 +178,6 @@ namespace Hotel_California___Data_manipulation_Layer
 
             return reservationList;
         }
-
         public List<Booked_Rooms> Get_Rooms_Reservations(int roomid)
         {
             List<Booked_Rooms> reservations = new List<Booked_Rooms>();
@@ -192,7 +189,6 @@ namespace Hotel_California___Data_manipulation_Layer
             }
             return reservations;
         }
-
         public void Add_Client(string cname, string cpassword)
         {
             Clients ncl = new Clients();
@@ -266,7 +262,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 dc.SaveChanges();
             }
         }
-
         public void Del_Task(int tid)
         {
             Tasks tdel = dc.Tasks.Where(rm => rm.Task_ID == tid).FirstOrDefault();
@@ -298,6 +293,23 @@ namespace Hotel_California___Data_manipulation_Layer
             return taskList;
         }
 
+        public int Login( string cname, string cpassword)
+        {
+            int cid = -1;
+            Clients client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+
+            if (client != null)
+            {
+                cid = client.Clients_ID;
+            }
+            else
+            {
+                Add_Client(cname, cpassword);
+                client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
+                cid = client.Clients_ID;
+            }
+            return (cid);
+        }
 
         public void Disp_Rooms()
         {
@@ -308,7 +320,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
-
         public void Disp_Available_Rooms(DateTime begins, DateTime ends)
         {
             List<Rooms> roomsList = Get_All_Available_Rooms(begins, ends);
@@ -317,7 +328,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 Console.WriteLine("{0} {1} {2} {3}", r0.Rooms_ID, r0.People_Count, r0.Quality, r0.Size);
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
-
         public void Disp_Tasks()
         {
             DbSet<Tasks> Tasks = dc.Tasks;
@@ -338,7 +348,6 @@ namespace Hotel_California___Data_manipulation_Layer
                 Console.WriteLine("{0} {1} {2}", c0.Clients_ID, c0.Name, c0.Password);
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
-
         public void Disp_Reservations()
         {
             var reservationList = dc.Booked_Rooms.OrderBy(r => r.Reservation_ID);
@@ -349,24 +358,7 @@ namespace Hotel_California___Data_manipulation_Layer
             Console.WriteLine("=====================================" + "\n" + "\n" + "\n");
         }
 
-        public int Login( string cname, string cpassword)
-        {
-            int cid = -1;
-            Clients client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
-
-            if (client != null)
-            {
-                cid = client.Clients_ID;
-            }
-            else
-            {
-                Add_Client(cname, cpassword);
-                client = dc.Clients.Where(gid => gid.Name == cname).Where(gid => gid.Password == cpassword).FirstOrDefault();
-                cid = client.Clients_ID;
-            }
-            return (cid);
-        }
-
+        
         static void Main()
         {
 
